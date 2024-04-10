@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    @keyframes fadeIn {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .ButtonLink {
+      display: inline-block;
+      padding: 0px;
+      background-color: None;
+      width: 125px;
+      height: 65px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .img-738djcnd84jfcjbjjgdjad3jdi48k {
+
+      filter: brightness(1.3);
+      transition: .2s;
+      width: 100%;
+      height: 100%;
+      opacity: 100%
+    }
+
+    .ButtonLink:hover {
+      background-color: lightgray;
+      opacity: 75%;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="You can't know">
+  <meta name="description" content="Play the online web game Multiplication golf">
+  <title>Multiplication golf</title>
+  <link rel="icon" type=".png" href="mult golf logo.png">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 0px;
+      width: 10px;
+      height: 10px;
+
+      border: 4px solid black;
+      /* Add border around the grid */
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .input_-box {
+      width: 250px;
+      height: 50px;
+      left: 40%;
+      border: 1px solid black;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      border: 4px solid black;
+      border-radius: 5px;
+    }
+
+    .grid-item {
+      background-color: #e0e0e0;
+      padding: 10px;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      font-size: 11px;
+    }
+
+    .grid-item p {
+      /* text-align: center;*/
+      /* Center the text */
+      margin-top: 0px;
+      margin-right: 20px;
+      margin-left: -5px;
+      margin-bottom: 0px;
+      /* Remove any default margin */
+    }
+
+    .what_is {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      text-align: center;
+      position: ;
+    }
+
+    .swing_button {
+      width: 170px;
+      height: 55px;
+      border: 1px solid black;
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      border: 2px solid black;
+      border-radius: 5px;
+      background-color: white;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      position: absolute;
+      left: 975px;
+      top: 100px;
+    }
+
+    .x {
+      margin-top: 5px;
+      margin-right: 0px;
+      margin-left: 5px;
+      margin-bottom: 5px;
+    }
+
+    .xx {
+      margin: 12.5px;
+    }
+
+    .xxx {
+      position: absolute;
+      top: 450px;
+      left: 210px;
+    }
+
+    .xxxh {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+
+    .xxxx {
+      top: 25%;
+      left: 36%;
+      position: absolute;
+      width: 420px;
+      height: 530px;
+      border: 4px solid black;
+
+    }
+
+    .base-timer {
+      position: absolute;
+      left: 550px;
+      top: 200px;
+      height: 300px;
+      width: 300px;
+    }
+
+    /* Removes SVG styling that would hide the time label */
+    .base-timer__circle {
+      fill: none;
+      stroke: none;
+    }
+
+    /* The SVG path that displays the timer's progress */
+    .base-timer__path-elapsed {
+      stroke-width: 7px;
+      stroke: grey;
+    }
+
+    .container-side-by-side {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 5%;
+      left: 60%;
+    }
+
+    .base-timer__label {
+      position: absolute;
+
+      /* Size should match the parent container */
+      width: 300px;
+      height: 300px;
+
+      /* Keep the label aligned to the top */
+      top: 0;
+
+      /* Create a flexible box that centers content vertically and horizontally */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* Sort of an arbitrary number; adjust to your liking */
+      font-size: 48px;
+    }
+
+    .base-timer__path-remaining {
+      /* Just as thick as the original ring */
+      stroke-width: 7px;
+
+      /* Rounds the line endings to create a seamless circle */
+      stroke-linecap: round;
+
+      /* Makes sure the animation starts at the top of the circle */
+      transform: rotate(90deg);
+      transform-origin: center;
+
+      /* One second aligns with the speed of the countdown timer */
+      transition: 1s linear all;
+
+      /* Allows the ring to change color when the color value updates */
+      stroke: currentColor;
+    }
+
+    .base-timer__svg {
+      /* Flips the svg and makes the animation to move left-to-right */
+      transform: scaleX(-1);
+    }
+
+    .base-timer__path-remaining.green {
+      color: rgb(65, 184, 131);
+    }
+
+    .base-timer__path-remaining.orange {
+      color: rgb(245, 125, 12);
+    }
+
+    .base-timer__path-remaining.red {
+      color: rgb(242, 35, 22);
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0.00000001px;
+      background-color: #2E2E2E;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .imggolf {
+      /*padding: 8px 8px 8px 32px;*/
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      width: 50px;
+      width: 50px;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      color: black;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+    }
+
+    .openbtn:hover {
+      background-color: ;
+    }
+
+    .open {
+      display: block;
+      color: white;
+      border: 2px solid black;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      background-color: #2E2E2E;
+      position: absolute;
+      right: 0.0000001px;
+      top: 50%;
+
+      margin-top: -76px;
+      width: 50px;
+      height: 150px;
+      transition: 0.5s;
+    }
+
+    .golfbutton {
+      background-color: #2E2E2E;
+      color: white;
+      width: 70px;
+      height: 70px;
+      font-size: 16px;
+      border: 5px solid black;
+      cursor: pointer;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    .IDbox {
+      background-color: #2E2E2E;
+      color: white;
+      width: 120px;
+      height: 150px;
+      font-size: 16px;
+      margin: 5px;
+      border: 5px solid black;
+      border-radius: 15px;
+      cursor: pointer;
+      padding: 1px;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    .gridgolf {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      margin: 10px;
+      width: 30px;
+      height: 30px;
+      border: 4px solid black;
+      /* Add border around the grid */
+    }
+
+    .grid-IDbox {
+      background-color: #e0e0e0;
+      padding: 10px;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      font-size: 11px;
+    }
+
+    ._timdis_ {
+      font-size: 35px;
+      background-color: white;
+    }
+
+    ._timdis_div {
+      position: absolute;
+      top: 5%;
+      left: 69%;
+      font-size: 35px;
+      text-align: center;
+      border: 2px black solid;
+      background-color: white;
+      margin-left: 15px;
+      margin-right: 15px;
+      border-radius: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 2px 5px 2px 5px;
+    }
+
+    .nextpageC {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    ._nextbutton___ {
+      position: absolute;
+      top: 48%;
+      left: 42%;
+      width: 15%;
+      height: 12%;
+      font-size: 35px;
+      text-align: center;
+      border: 2px black solid;
+      background-color: white;
+      margin-left: 15px;
+      margin-right: 15px;
+      border-radius: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 2px 5px 2px 5px;
+    }
+
+    # _nextbutton___:hover {
+      background-color: lightgrey;
+    }
+
+    .XsidebarX {
+      position: absolute;
+      top: 120px;
+      left: 50px;
+      text-align: center;
+      width: 225px;
+      height: 400px;
+      overflow-x: hidden;
+      background-color: white;
+      border: 2px black solid;
+      border-radius: 15px;
+    }
+
+    .golfbutton_t {
+      background-color: #2E2E2E;
+      color: white;
+      width: 70px;
+      height: 70px;
+      font-size: 16px;
+      border: 5px solid black;
+      cursor: pointer;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    .XIDboxX {
+      margin: 10px;
+      background-color: #2E2E2E;
+      color: white;
+      width: 120px;
+      height: 150px;
+      font-size: 16px;
+      margin: 5px;
+      border: 5px solid black;
+      border-radius: 15px;
+      cursor: pointer;
+      padding: 1px;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    .selectBox {
+      position: absolute;
+      top: 120px;
+      left: 150px;
+      text-align: center;
+    }
+
+    .innerselect {
+      margin: 10px;
+      background-color: #2E2E2E;
+      color: white;
+      width: 220px;
+      height: 150px;
+      font-size: 16px;
+      margin: 5px;
+      border: 5px solid black;
+      border-radius: 15px;
+      padding: 1px;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    .selectBoxText {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+
+    }
+
+    .rotate-up {
+      transform: rotate(0deg);
+    }
+
+    .rotate-down {
+      transform: rotate(180deg);
+    }
+
+    .rotate-left {
+      transform: rotate(-90deg);
+    }
+
+    .rotate-right {
+      transform: rotate(90deg);
+    }
+
+    .cover_ {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .start__button__ {
+      width: 15vw;
+      height: 12vh;
+      font-size: 38px;
+      text-align: center;
+      font-family: 'Brush Script MT', brushe, cursive;
+      border: 2px black solid;
+      background-color: white;
+      margin-left: 15px;
+      margin-right: 15px;
+      border-radius: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 2px 5px 2px 5px;
+    }
+
+    .soiUGDJDJ__S-HHPQO_K_golf_ball_ {
+      transform: rotate(-90deg);
+    }
+
+    .coin-ejjeji83jjiejuUUUE {
+      width: 55px;
+      height: 55px;
+      display: inline-block;
+      float: left;
+    }
+
+    .moneytext {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 30px;
+      top: -20px;
+      display: inline-block;
+      position: relative;
+      top: 21.5px;
+      left: 57px;
+      z-index: 1;
+    }
+
+    .ei39--8rfakw3i_-2iek {
+      position: relative;
+      top: 40px;
+      left: 50px;
+      z-index: 1;
+    }
+
+    .LinkToLevelBuilder {
+      font-size: 20px;
+      color: blue;
+    }
+
+    # LinkToLevelBuilder:hover {
+      color: lightblue;
+    }
+
+    .startdiv {
+      position: absolute;
+      top: 48%;
+      left: 42%;
+    }
+
+    .fullimg-jej3di3jf933jaasmczp {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='_(login)_'>
+    <p id='NoneLeveldata' style='display: none;'></p>
+    <script>
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      //alert(getCookie("Userlevel"));
+      const _LEVEL_ = getCookie("Userlevel");
+      //alert(_LEVEL_, "Userlevel");
+    </script>
+    <img src='cover page.gif' id='coverpage-' class="cover_" />
+    <div class='startdiv'>
+      <button id='start__button_' class="start__button__">START</button>
+      <br>
+      <div class='center'>
+        <a class='ButtonLink'
+          href='https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/levelmaker.html'><img
+            class="img-738djcnd84jfcjbjjgdjad3jdi48k" src='Level BUILDER_.png'></img></a>
+      </div>
+    </div>
+    <div class='selectBox'>
+      <div class="innerselect">
+        <label for="course" class="selectBoxText">Choose a course:</label><br>
+        <select name="course" class="selectBoxText" id="course">
+          <option value="classic" class="selectBoxText">classic</option>
+        </select>
+      </div>
+      <p id='NoneCourse' style="display: none;"></p>
+    </div>
+  </div>
+  <div id='_(level)_'>
+    <div class='center'>
+      <div class="center">
+        <div class="grid" id="myGrid"></div>
+      </div>
+      <form>
+        <div class='container-side-by-side'>
+          <input type="text" id="input-box" class='input_-box' placeholder="Enter the awnser">
+        </div>
+        <p class='what_is' id="what is"></p>
+      </form>
+      <button type="button" class="swing_button" id="swing_button">
+        <p class="xx">Swing</p>
+        <div class='x'><img src="swing.png" /></div>
+      </button>
+      <div class="xxx" id='golfHolder'>
+        <img src="golf balls/firegolf.png" id='fly_ball' class="soiUGDJDJ__S-HHPQO_K_golf_ball_" />
+      </div>
+    </div>
+    <div id="timer">
+      <div class="base-timer">
+        <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <g class="base-timer__circle">
+            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+          </g>
+        </svg>
+        <span id="base-timer-label" class="base-timer__label">
+          0:20
+        </span>
+      </div>
+    </div>
+    <p id='swinglevel' style="display: none;"></p>
+    <p id='noneANWSER' style="display: none;"></p>
+    <p id='noneLevel' style="display: none;"></p>
+    <p id='wrong_gessus__' style="display: none;">0</p>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <div class='center'>
+        <div class='IDbox'>
+          <p>unlocks at level 0</p>
+          <button class='golfbutton' onclick="why_did_you_click_this()"><img class='imggolf' id='p'
+              src="displaypngs/17.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 3</p>
+          <button class='golfbutton' onclick="aa()"><img class='imggolf' id='a' src="displaypngs/18.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 3</p>
+          <button class='golfbutton' onclick="bb()"><img class='imggolf' id='b' src="displaypngs/19.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 3</p>
+          <button class='golfbutton' onclick="cc()"><img class='imggolf' id='c' src="displaypngs/20.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 10</p>
+          <button class='golfbutton' onclick="dd()"><img class='imggolf' id='d' src="displaypngs/21.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 10</p>
+          <button class='golfbutton' onclick="ee()"><img class='imggolf' id='e' src="displaypngs/22.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 10</p>
+          <button class='golfbutton' onclick="ff()"><img class='imggolf' id='f' src="displaypngs/23.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 20</p>
+          <button class='golfbutton' onclick="hh()"><img class='imggolf' id='h' src="displaypngs/24.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 30</p>
+          <button class='golfbutton' onclick="ii()"><img class='imggolf' id='i' src="displaypngs/25.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 50</p>
+          <button class='golfbutton' onclick="jj()"><img class='imggolf' id='j' src="displaypngs/26.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <p>unlocks at level 50</p>
+          <button class='golfbutton' onclick="gg()"><img class='imggolf' id='g' src="displaypngs/27.png" /></button>
+        </div>
+        <div class='IDbox'>
+          <br>
+          <button class='golfbutton' onclick="kk()"><img class='imggolf' id='k' src="displaypngs/28.png" /></button>
+          <br><br><big>UNLOCKS at LEVEL 100</big>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <script>
+        var aaa = document.getElementById('a');
+        var bbb = document.getElementById('b');
+        var ccc = document.getElementById('c');
+        var ddd = document.getElementById('d');
+        var eee = document.getElementById('e');
+        var fff = document.getElementById('f');
+        var hhh = document.getElementById('h');
+        var iii = document.getElementById('i');
+        var jjj = document.getElementById('j');
+        var kkk = document.getElementById('g');
+        var ggg = document.getElementById('k');
+        function getJavaSRC() {
+          var LEveL = document.getElementById('noneLevel').innerText;
+          var a = document.getElementById('a');
+          var b = document.getElementById('b');
+          var c = document.getElementById('c');
+          var d = document.getElementById('d');
+          var e = document.getElementById('e');
+          var f = document.getElementById('f');
+          var h = document.getElementById('h');
+          var i = document.getElementById('i');
+          var j = document.getElementById('j');
+          var k = document.getElementById('g');
+          var g = document.getElementById('k');
+          console.log("image LEVEL", LEveL);
+          if (LEveL > 3) {
+            a.src = 'displaypngs/18.png';
+            b.src = 'displaypngs/19.png';
+            c.src = 'displaypngs/20.png';
+          }
+          if (LEveL < 3) {
+            a.src = 'locked/22.png';
+            b.src = 'locked/23.png';
+            c.src = 'locked/24.png';
+          }
+          if (LEveL > 10) {
+            d.src = 'displaypngs/21.png';
+            e.src = 'displaypngs/22.png';
+            f.src = 'displaypngs/23.png';
+          }
+          if (LEveL < 10) {
+            d.src = 'locked/25.png';
+            e.src = 'locked/27.png';
+            f.src = 'locked/28.png';
+          }
+          if (LEveL > 20) {
+            h.src = 'displaypngs/24.png';
+          }
+          if (LEveL < 20) {
+            h.src = 'locked/29.png';
+          }
+          if (LEveL > 30) {
+            i.src = 'displaypngs/25.png';
+          }
+          if (LEveL < 30) {
+            i.src = 'locked/30.png';
+          }
+          if (LEveL > 50) {
+            j.src = 'displaypngs/26.png';
+            g.src = 'displaypngs/27.png';
+          }
+          if (LEveL < 50) {
+            j.src = 'locked/31.png';
+            g.src = 'locked/32.png';
+          }
+          if (LEveL > 100) {
+            k.src = 'displaypngs/28.png';
+          }
+          if (LEveL < 100) {
+            k.src = 'locked/33.png';
+          }
+        }
+        function aa() {
+
+          console.log(aaa.src)
+          if (aaa.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/18.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/blue.png';
+          }
+        }
+        function bb() {
+          console.log(bbb.src)
+          if (bbb.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/19.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/red.png';
+          }
+        }
+        function cc() {
+          console.log(ccc.src)
+          if (ccc.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/20.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/green.png';
+          }
+        }
+        function dd() {
+          console.log(ddd.src)
+          if (ddd.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/21.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/blue yellow.png';
+          }
+        }
+
+        function ee() {
+          console.log(ccc.src)
+          if (ccc.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/22.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/rainbow_.png';
+          }
+        }
+
+        function ff() {
+          console.log(fff.src)
+          if (fff.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/23.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/blue red.png';
+          }
+        }
+        function hh() {
+          console.log(hhh.src)
+          if (hhh.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/24.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/fire.png';
+          }
+        }
+        function jj() {
+          if (jjj.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/25.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/ocean.png';
+          }
+        }
+        function ii() {
+          if (iii.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/26.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/gold.png';
+          }
+        }
+        function kk() {
+          if (jjj.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/27.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/pixel.png';
+          }
+        }
+        function gg() {
+          if (jjj.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/28.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/black hole.png';
+          }
+        }
+
+        function why_did_you_click_this() {
+          var FlY_balL = document.getElementById('fly_ball');
+          FlY_balL.src = 'golf balls/plain.png';
+        }
+        getJavaSRC();
+      </script>
+    </div>
+    <button class="open" onclick="openNav()"><img src="open buttons pngs/out.png"></img></button>
+  </div>
+  <div id='_(intoP)_'>
+    <div id='display_page'>
+      <img class="nextpageC" id='disIMG' src="" />
+    </div>
+    <div class='ei39--8rfakw3i_-2iek'>
+      <img class='coin-ejjeji83jjiejuUUUE' src='coin.gif' />
+    </div>
+    <p id='money_-__-' class="moneytext">130</p>
+    <button id='nextbutton___' class='_nextbutton___' onclick="next()">next</button>
+    <div class="_timdis_div">
+      <p id='timedis' class="_timdis_"></p>
+    </div>
+    <div id="mySidebar" class="XsidebarX">
+      <p style="font-size: 20px;">choose a golf ball</p>
+      <div style="text-align: center; padding-left: 20%; padding-right: 25%;">
+        <div class='XIDboxX'>
+          <p>plain</p>
+          <button class='golfbutton_t' onclick="why_did_you_click_this()"><img class='imggolf_' id='p'
+              src="displaypngs/17.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 3</p>
+          <button class='golfbutton_t' onclick="aa()"><img class='imggolf_' id='aX' src="displaypngs/18.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 3</p>
+          <button class='golfbutton_t' onclick="bb()"><img class='imggolf_' id='bX' src="displaypngs/19.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 3</p>
+          <button class='golfbutton_t' onclick="cc()"><img class='imggolf_' id='cX' src="displaypngs/20.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 10</p>
+          <button class='golfbutton_t' onclick="dd()"><img class='imggolf_' id='dX' src="displaypngs/21.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 10</p>
+          <button class='golfbutton_t' onclick="ee()"><img class='imggolf_' id='eX' src="displaypngs/22.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 10</p>
+          <button class='golfbutton_t' onclick="ff()"><img class='imggolf_' id='fX' src="displaypngs/23.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 20</p>
+          <button class='golfbutton_t' onclick="hh()"><img class='imggolf_' id='hX' src="displaypngs/24.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 30</p>
+          <button class='golfbutton_t' onclick="ii()"><img class='imggolf_' id='iX' src="displaypngs/25.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 50</p>
+          <button class='golfbutton_t' onclick="jj()"><img class='imggolf_' id='jX' src="displaypngs/26.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 50</p>
+          <button class='golfbutton_t' onclick="kk()"><img class='imggolf_' id='kX' src="displaypngs/27.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <br>
+          <button class='golfbutton_t' onclick="gg()"><img class='imggolf_' id='gX' src="displaypngs/28.png" /></button>
+          <br><br><big>UNLOCKS at LEVEL 100</big>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <script>
+        var money______ = document.getElementById("money_-__-");
+        var aaaX = document.getElementById('aX');
+        var bbbX = document.getElementById('bX');
+        var cccX = document.getElementById('cX');
+        var dddX = document.getElementById('dX');
+        var eeeX = document.getElementById('eX');
+        var fffX = document.getElementById('fX');
+        var hhhX = document.getElementById('hX');
+        var iiiX = document.getElementById('iX');
+        var jjjX = document.getElementById('jX');
+        var kkkX = document.getElementById('kX');
+        var gggX = document.getElementById('gX');
+        function getJavaSRCX() {
+          var LEveL = document.getElementById('noneLevel').innerText;
+          var aX = document.getElementById('aX');
+          var bX = document.getElementById('bX');
+          var cX = document.getElementById('cX');
+          var dX = document.getElementById('dX');
+          var eX = document.getElementById('eX');
+          var fX = document.getElementById('fX');
+          var hX = document.getElementById('hX');
+          var iX = document.getElementById('iX');
+          var jX = document.getElementById('jX');
+          var kX = document.getElementById('kX');
+          var gX = document.getElementById('gX');
+          console.log("image LEVEL", LEveL);
+          LEveL++;
+          if (LEveL >= 3 || money______ >= 50) {
+            aX.src = 'displaypngs/18.png';
+            bX.src = 'displaypngs/19.png';
+            cX.src = 'displaypngs/20.png';
+          }
+          else if (LEveL < 3) {
+            aX.src = 'locked/22.png';
+            bX.src = 'locked/23.png';
+            cX.src = 'locked/24.png';
+          }
+          if (LEveL >= 10 || money______ >= 120) {
+            dX.src = 'displaypngs/21.png';
+            eX.src = 'displaypngs/22.png';
+            fX.src = 'displaypngs/23.png';
+          }
+          else if (LEveL < 10) {
+            dX.src = 'locked/25.png';
+            eX.src = 'locked/27.png';
+            fX.src = 'locked/28.png';
+          }
+          if (LEveL >= 20 || money______ >= 250) {
+            hX.src = 'displaypngs/24.png';
+          }
+          else if (LEveL < 20) {
+            hX.src = 'locked/29.png';
+          }
+          if (LEveL >= 30 || money______ >= 410) {
+            iX.src = 'displaypngs/25.png';
+          }
+          else if (LEveL < 30) {
+            iX.src = 'locked/30.png';
+          }
+          if (LEveL >= 50 || money______ >= 600) {
+            jX.src = 'displaypngs/26.png';
+            gX.src = 'displaypngs/27.png';
+          }
+          else if (LEveL < 50) {
+            jX.src = 'locked/31.png';
+            kX.src = 'locked/32.png';
+          }
+          if (LEveL >= 100 || money______ >= 1000) {
+            gX.src = 'displaypngs/28.png';
+          }
+          else if (LEveL < 100) {
+            gX.src = 'locked/33.png';
+          }
+        }
+        function aa() {
+
+          console.log(aaaX.src)
+          if (aaaX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/18.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/blue.png';
+          }
+        }
+        function bb() {
+          console.log(bbbX.src)
+          if (bbbX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/19.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/red.png';
+          }
+        }
+        function cc() {
+          console.log(cccX.src)
+          if (cccX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/20.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/green.png';
+          }
+        }
+        function dd() {
+          console.log(dddX.src)
+          if (dddX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/21.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/blue yellow.png';
+          }
+        }
+        function ee() {
+          console.log(cccX.src)
+          if (eeeX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/22.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/rainbow_.png';
+          }
+        }
+        function ff() {
+          console.log(fffX.src)
+          if (fffX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/23.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/blue red.png';
+          }
+        }
+        function hh() {
+          console.log(hhhX.src)
+          if (hhhX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/24.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/fire.png';
+          }
+        }
+        function jj() {
+          if (jjjX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/25.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/ocean.png';
+          }
+        }
+        function ii() {
+          if (iiiX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/26.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/gold.png';
+          }
+        }
+        function kk() {
+          if (gggX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/27.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/pixel.png';
+          }
+        }
+        function gg() {
+          if (kkkX.src == 'https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/displaypngs/28.png') {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/black hole.png';
+          }
+        }
+
+        function why_did_you_click_this() {
+          var FlY_balL = document.getElementById('fly_ball');
+          FlY_balL.src = 'golf balls/plain.png';
+        }
+        getJavaSRC();
+      </script>
+    </div>
+  </div>
+  <div id='_(courseDone)_'>
+    <style>
+      .fullimg-jej3di3jf933jaasmczp {
+        width: 100vw;
+        height: 100vh;
+        margin: 0px 0px 0px 0px;
+      }
+
+      .reward--339rkfj4iso {
+        font-size: 49px;
+        color: white;
+        position: absolute;
+      }
+
+      .course_-_ {
+        font-size: 44px;
+        color: white;
+        position: absolute;
+        top: 53%;
+        left: 26%;
+      }
+
+      .coin-gif--lb0owlqodkewkd {
+        height: 45px;
+        width: 45px;
+        position: retive;
+      }
+    </style>
+    <img src="you completed the course.gif" class="fullimg-jej3di3jf933jaasmczp" />
+    <h3 id='coures--___---_--' class='course_-_'></h3>
+    <div style="position: absolute; top: 71%; left: 43.5%; white-space: nowrap;">
+      <h3 id='reward' class='reward--339rkfj4iso'><img src="---.gif" class="coin-gif--lb0owlqodkewkd" /></h3>
+    </div>
+    <button style='position: absolute; top: 10px; right:5.00000000px;'
+      herf='https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/'>X</button>
+  <p id='NoneTime' style="display: none;"></p>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

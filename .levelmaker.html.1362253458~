@@ -1,0 +1,166 @@
+<head>
+  <style>
+    .itembar {
+      height: 100%;
+      width: 15%;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0.00000001px;
+      background-color: whitesmoke;
+      overflow-x: hidden;
+      text-align: center;
+      transition: 0.5s;
+      padding-top: 60px;
+      border-right: 3px solid black;
+    }
+
+    .itemimg {
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      padding: 20px;
+      margin: 5px;
+      border: 3px solid black;
+    }
+
+    .gridXXX {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0px;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 60px;
+      left: 30%;
+      /*border: 4px solid black;
+      /* Add border around the grid */
+    }
+
+    ._grid-item_ {
+      background-color: #e0e0e0;
+      padding: 10px;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      font-size: 11px;
+      border: 1px solid black;
+    }
+
+    .clearGridButton_ {
+      margin: 1%;
+    }
+
+    .pointButton_ {
+      margin: 1%;
+      background-color: red;
+    }
+
+    .toolsbar {
+      height: 7.5%;
+      width: 85%;
+      position: absolute;
+      z-index: 0.9;
+      top: 0;
+      right: 0.00000001px;
+      background-color: whitesmoke;
+      overflow-x: hidden;
+      text-align: left;
+      transition: 0.5s;
+      padding-top: 0px;
+      border-bottom: 3px solid black;
+    }
+
+    .point {
+      position: fixed;
+      width: 36px;
+      height: 36px;
+      margin: 3px;
+      border-radius: 50%;
+      background-color: rgb(0, 0, 255);
+    }
+
+    .xxx {
+      position: absolute;
+      top: 450px;
+      left: 210px;
+    }
+
+    .levelContainer {
+      height: 92.5%;
+      width: 6.7%;
+      position: absolute;
+      z-index: 0.9;
+      top: 7.5%;
+      right: 0.00000001px;
+      background-color: whitesmoke;
+      overflow-x: hidden;
+      text-align: center;
+      transition: 0.5s;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-top: 3px solid black;
+      border-left: 3px solid black;
+    }
+
+    .levelBox {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+
+    .levelBox.compact {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+    }
+
+    .levelBox_P {
+      top: 50%;
+      left: 50%;
+      translate: -50%, -50%;
+      margin: 0px;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>multiplication golf level builder</title>
+</head>
+
+<body>
+  <div id="items bar" class='itembar'>
+  </div>
+  <div id="gridXXX" class='gridXXX'></div>
+  <div class='toolsbar'>
+    <button id="clearGridButton" class='clearGridButton_'>Clear Grid</button>
+    <button id="clearPoints" class='clearGridButton_'>Clear Points</button>
+    <button id="create point" class='pointButton_'>create point</button>
+    <button id="clear text" class='clearGridButton_'>Clear Text</button>
+    <button id="clear text" class='clearGridButton_'>Clear Text</button>
+  </div>
+  <div class="xxx" id='golfHolder'>
+    <img src="golf balls/firegolf.png" id='fly_ball' class="soiUGDJDJ__S-HHPQO_K_golf_ball_" />
+  </div>
+  <canvas class='djdskwl' id='mycanvas'></canvas>
+
+  <p id='noneSlect' style="display: none;"></p>
+  <p id='NoneCreate' style="display: none;"></p>
+
+  <div class="levelContainer">
+    <button style='padding:1px'>
+      <div class="levelBox">
+        <p class='levelBox_P'>Level 1</p>
+      </div>
+    </button>
+    <button style='padding:1px'>
+      <div class="levelBox">
+        <p class='levelBox_P' id="+">+</p>
+      </div>
+    </button>
+  </div>
+
+  <script src='levelmaker.js'></script>
+</body>

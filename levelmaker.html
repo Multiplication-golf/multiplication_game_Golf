@@ -1,0 +1,419 @@
+<head>
+  <style>
+    .itembar {
+      height: 100%;
+      width: 15%;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0.00000001px;
+      background-color: whitesmoke;
+      overflow-x: hidden;
+      text-align: center;
+      transition: 0.5s;
+      padding-top: 60px;
+      border-right: 3px solid black;
+    }
+
+    .itemimg {
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      padding: 20px;
+      margin: 5px;
+      border: 3px solid black;
+    }
+
+    .gridXXX {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0px;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 60px;
+      left: 30%;
+      /*border: 4px solid black;
+      /* Add border around the grid */
+    }
+
+    ._grid-item_ {
+      background-color: #e0e0e0;
+      padding: 10px;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      font-size: 11px;
+      border: 1px solid black;
+    }
+
+    .clearGridButton_ {
+      margin: 1%;
+    }
+
+    .inPointButton_ {
+      margin: 1%;
+    }
+
+    .pointButton_ {
+      margin: 1%;
+      background-color: red;
+    }
+
+    .toolsbar {
+      height: 7.5%;
+      width: 85%;
+      position: absolute;
+      z-index: 0.9;
+      top: 0;
+      right: 0.00000001px;
+      background-color: whitesmoke;
+      overflow-x: hidden;
+      text-align: left;
+      transition: 0.5s;
+      padding-top: 0px;
+      border-bottom: 3px solid black;
+      overflow: auto;
+      white-space: nowrap;
+    }
+
+    .point {
+      position: fixed;
+      width: 36px;
+      height: 36px;
+      margin: 3px;
+      border-radius: 50%;
+      background-color: rgb(0, 0, 255);
+    }
+
+    .InncorrectPoint p {
+      text-align: center;
+      font-size: 20px;
+      color: rgb(255, 255, 255, 1);
+      font-weight: bold;
+      opacity: 1;
+      margin: 5px;
+      z-index: 9999;
+    }
+
+    .InncorrectPoint {
+      position: fixed;
+      width: 36px;
+      height: 36px;
+      margin: 3px;
+      border-radius: 50%;
+      background-color: rgb(255, 0, 0, 0.5);
+    }
+
+    .xxx {
+      position: absolute;
+      top: 450px;
+      left: 210px;
+    }
+
+    .levelContainer {
+      height: 92.5%;
+      width: 6.7%;
+      position: absolute;
+      z-index: 0.9;
+      top: 7.5%;
+      right: 0.00000001px;
+      background-color: whitesmoke;
+      overflow-x: hidden;
+      text-align: center;
+      transition: 0.5s;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-top: 3px solid black;
+      border-left: 3px solid black;
+    }
+
+    .levelBox {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+
+    .paddx {
+      padding: 1px;
+    }
+
+    .levelBoxX {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+
+    .levelBox.compact {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+    }
+
+    .levelBox_P {
+      top: 50%;
+      left: 50%;
+      translate: -50%, -50%;
+      margin: 0px;
+    }
+
+    .levelBox_P-6jgj8r8e-gkgkgkg-r84ikk1i-djfiiwowkskmnv-fjdkeie {
+      top: 50%;
+      left: 50%;
+      translate: -50%, -50%;
+      margin: 0px;
+      font-size: 40;
+      font-weight: bold;
+    }
+
+    .container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .description {
+      transform: translateX(-50%);
+      background-color: #f9f9f9;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .hover:description {
+      display: block;
+    }
+
+    .child_ {
+      margin-top: 0.9%;
+      margin-left: 3px;
+      margin-right: 3px;
+      margin-buttom: 3px;
+      display: inline-block;
+    }
+
+    /* Styling for submit button */
+    .submit-button {
+      background-color: black;
+      border: none;
+      /* No border */
+      color: white;
+      /* White text */
+      padding: 10px 12px;
+      /* Padding */
+      text-align: center;
+      /* Center text */
+      text-decoration: none;
+      /* No underline */
+      display: inline-block;
+      /* Display as inline-block */
+      font-size: 13px;
+      /* Font size */
+      margin: 2px 1px;
+      /* Margin */
+      cursor: pointer;
+      /* Cursor on hover */
+      border-radius: 10px;
+      /* Rounded corners */
+      transition-duration: 0.4s;
+      /* Smooth transition */
+    }
+
+    .submit-button-fjejfki3 {
+      background-color: whitesmoke;
+      border: 1px solid white;
+      /* No border */
+      color: black;
+      /* White text */
+      padding: 14px 18px;
+      /* Padding */
+      text-align: center;
+      /* Center text */
+      text-decoration: none;
+      /* No underline */
+      display: inline-block;
+      /* Display as inline-block */
+      font-size: 13px;
+      /* Font size */
+      margin: 2px 1px;
+      /* Margin */
+      cursor: pointer;
+      /* Cursor on hover */
+      border-radius: 10px;
+      /* Rounded corners */
+      transition-duration: 0.4s;
+    }
+
+    /* Change button background color on hover */
+    .submit-button-fjejfki3:hover {
+      background-color: lightgrey;
+      /* Darker green */
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+    .subname {
+      /* Default border */
+      border: 1px solid #ccc;
+
+      /* Default padding */
+      padding: 9px 14px;
+
+      /* Default margin */
+      margin: 2px;
+
+      /* Default font size */
+      font-size: 24px;
+
+      /* Default line height */
+      line-height: 1.5;
+
+      border-radius: 10px;
+
+      /* Default outline (visible when input is focused) */
+      outline: none;
+    }
+
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 200px;
+      /* Could be 100-200px based on your preference */
+    }
+
+    /* Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .sendname {
+      top: 50%;
+      left: 50%;
+      translate: -50%, -50%;
+    }
+
+    .levelSUB {
+      width: 100%;
+      height: 100%;
+      display: none;
+      background-color: black;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 10;
+    }
+
+    .center---dkeik93if {
+      /*position: absolute;*/
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      margin-top: 15%;
+      translate: -50%, -50%;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Multiplication Golf/Level Builder</title>
+  <link rel="icon" type=".png" href="mult golf logo_hammer.png">
+</head>
+
+<body>
+  <div id="items bar" class='itembar'>
+    <p style="font-size: 30px; margin-top: 2.5px;">Blocks</p>
+  </div>
+  <div id="gridXXX" class='gridXXX'></div>
+  <div class='toolsbar'>
+    <button id="clearPoints" class='clearGridButton_'>Clear Points</button>
+    <button id="clearGridButton" class='clearGridButton_'>Clear Grid</button>
+    <button id="clear text" class='clearGridButton_'>Clear Text</button>
+    <button id="create point" class='pointButton_'>create point</button>
+    <button id="Incorrect point" class='pointButton_'>Incorrect point</button>
+    <button id="Run Course" class='clearGridButton_'>Run correct Course</button>
+    <button id="Run incorrect Course" class='clearGridButton_'>Run incorrect Course</button>
+    <button id='submit button' onclick="confermSUB();" class='submit-button'>Submit</button>
+  </div>
+  <div class="xxx" id='golfHolder'>
+    <img src="golf balls/firegolf.png" id='fly_ball' class="soiUGDJDJ__S-HHPQO_K_golf_ball_" />
+  </div>
+  <canvas class='djdskwl' id='mycanvas'></canvas>
+
+  <p id='noneSlect' style="display: none;"></p>
+  <p id='NoneCreate' style="display: none;"></p>
+  <p id='NoneIncreate' style="display: none;"></p>
+  <p id='NoneClear' style="display: none;"></p>
+  <p id='NoneLevel' style="display: none;"></p>
+  <p id='NoneCurrentLevel' style="display: none;"></p>
+  <p id='NoneId' style="display: none;"></p>
+
+  <div class='levelContainer' id='levels'>
+    <div id='levelContainer'>
+      <button class="paddx">
+        <div class="levelBox">
+          <p class='levelBox_P' id='level1'>Level 1</p>
+        </div>
+      </button>
+    </div>
+    <button style='padding:1px'>
+      <div class="levelBoxX">
+        <p class='levelBox_P-6jgj8r8e-gkgkgkg-r84ikk1i-djfiiwowkskmnv-fjdkeie' id="+">+</p>
+      </div>
+    </button>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p>Are you sure you want to submit?</p>
+      <button onclick="submitAction()">Yes</button>
+      <button onclick="closeModal()">No</button>
+    </div>
+  </div>
+  <div id='levelsub' class='levelSUB'>
+    <div class="center---dkeik93if">
+      <input type='text' id='name_' placeholder="course name" class='subname'></input>
+      <br><br>
+      <button id='submit--button' class='submit-button-fjejfki3'>Submit</button>
+    </div>
+  </div>
+
+  <script src='levelmaker.js'></script>
+</body>

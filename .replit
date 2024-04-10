@@ -1,0 +1,10 @@
+hidden=[".config"]
+modules = ["web:v2-20230623-0b7a606"]
+
+[deployment]
+publicDir = "/"
+deploymentTarget = "static"
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
