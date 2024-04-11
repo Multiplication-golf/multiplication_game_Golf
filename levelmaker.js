@@ -299,7 +299,18 @@ const __baselist__ = new Map();
 const pointsMap = new Map();
 
 __X__ = []
-
+var resetList = [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]];
 
 function moveBallToSquare(x, y, speed) {
   const ballXnow = ball.getBoundingClientRect().left;
@@ -519,7 +530,7 @@ class Level_Builder {
     this.in_X_Load = [];
     this.inPointNumber_ = 1;
     this.basecreate = [0, 0, 255];
-    this.baselist = this.resetList;
+    this.baselist = resetList;
   }
   clearText() {
     console.log(gridItems, "clearText -> exe")

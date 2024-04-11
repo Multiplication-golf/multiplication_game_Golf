@@ -47,6 +47,7 @@ const start__button_ = document.getElementById("start__button_");
 const LeveL_ = getCookie("Userlevel");
 console.log("LeveL_", LeveL_);
 const MONEYCOIN = getCookie("Moneyscore");
+// ToDO: add exsamples
 window.onload = function() {
   const swingbutton = document.getElementById("swing_button");
   const start__button_ = document.getElementById("start__button_");
@@ -115,6 +116,19 @@ window.onload = function() {
   } else {
     document.getElementById("money_-__-").innerText = 0;
   }
+  function preventSubmission(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Call swing__() function
+    swing__();
+  }
+
+  // Get the form element
+  var form = document.getElementById('sudmit__jej439ak2'); // Replace 'yourFormId' with the actual ID of your form
+
+  // Add event listener to the form for 'submit' event
+  form.addEventListener('submit', preventSubmission);
 }
 async function o() {
   console.log("opp")
