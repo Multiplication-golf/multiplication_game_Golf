@@ -192,7 +192,7 @@ function done() {
       console.log("xhr:", response)
 
       var reward_ = (response*10)+100;
-      document.getElementById("reward").innerText = reward_;
+      document.getElementById("reward").innerHTML = reward_+"<img src='---.gif' class='coin-gif--lb0owlqodkewkd' />";
     } else {
       console.error('Request failed');
     }
