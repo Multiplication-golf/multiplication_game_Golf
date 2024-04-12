@@ -40,13 +40,17 @@ function init() {
   };
   xhr.send();
 }
-
+enableScroll();
 init();
+
+// { vars == === == === == === == ===}
 const swingbutton = document.getElementById("swing_button");
 const start__button_ = document.getElementById("start__button_");
 const LeveL_ = getCookie("Userlevel");
 console.log("LeveL_", LeveL_);
 const MONEYCOIN = getCookie("Moneyscore");
+// { vars == === == === == === == ===}
+
 // ToDO: add exsamples
 window.onload = function() {
   const swingbutton = document.getElementById("swing_button");
@@ -130,6 +134,31 @@ window.onload = function() {
   // Add event listener to the form for 'submit' event
   form.addEventListener('submit', preventSubmission);
 }
+function enableScroll() {
+  // Remove the event listener that disables scrolling
+  window.onscroll = null;
+}
+function getScrollDisableCount() {
+  return scrollDisableCount;
+}
+function disableScroll() {
+  // Get the current page scroll position in the vertical direction
+  scrollTop =
+    window.scrollY || document.documentElement.scrollTop;
+
+
+  // Get the current page scroll position in the horizontal direction 
+
+  scrollLeft =
+    window.scrollX || document.documentElement.scrollLeft;
+
+
+  // if any scroll is attempted,
+  // set this to the previous value
+  window.onscroll = function() {
+    window.scrollTo(scrollLeft, scrollTop);
+  };
+}
 async function o() {
   console.log("opp")
 }
@@ -193,6 +222,7 @@ function done() {
   document.getElementById('_(level)_').style.display = 'none';
   document.getElementById('_(login)_').style.display = 'none';
   document.getElementById('_(intoP)_').style.display = 'none';
+  disableScroll();
   var course_____ = document.getElementById('NoneCourse').innerText;
   document.getElementById('coures--___---_--').innerText = course_____;
   var xhr = new XMLHttpRequest();
@@ -437,7 +467,6 @@ async function loadasyncData(___level_) {
   console.log(processedData)
   return processedData;
 }
-
 function next() {
   const _LEVEL___ = document.getElementById("swinglevel").innerText;
   console.log('_LEVEL__ is : ', Number(_LEVEL___) + 1)

@@ -3,6 +3,18 @@ function restball() {
   console.log()
 }
 
+let scrollDisableCount = 0; // Counter variable to keep track of how many times scrolling has been disabled
+
+function enableScroll() {
+  // Remove the event listener that disables scrolling
+  window.onscroll = null;
+}
+
+function getScrollDisableCount() {
+  return scrollDisableCount;
+}
+
+
 function disableScroll() {
   // Get the current page scroll position in the vertical direction
   scrollTop =
@@ -24,7 +36,7 @@ function disableScroll() {
 
 
 const ball = document.getElementById("golfHolder");
-//disableScroll();
+disableScroll();
 function runCourse(pointsList, level) {
   console.log("pointsList: ", typeof (pointsList))
 
