@@ -657,23 +657,49 @@ function getkey(key) {
         console.log('Level submitted successfully:', responseData);
         levels___ = responseData;
         document.getElementById("key----").style.display = "none";
-        console.log(levels___);
+        console.log(levels___,Object.keys(levels___).length);
         var gridContainer = document.getElementById("gridXXX");
         gridContainer.innerHTML = "";
-        for (let a = 0; a < levels___.length; a++) {
-          
+
+        for (let a = 1; a-1 < Object.keys(levels___).length; a++) {
+            Levels___["level" + a] = new Level_Builder(`Level ${a}`);
+            levels___["level" + a].name = Levels___["level" + a].name;
+            levels___["level" + a].name = Levels___["level" + a].name;
+            levels___["level" + a].isPointCreationMode = Levels___["level" + a].isPointCreationMode;
+            levels___["level" + a].incorrect_point_data_to_send = Levels___["level" + a].incorrect_point_data_to_send;
+            levels___["level" + a].data_to_send = Levels___["level" + a].data_to_send;
+            levels___["level" + a].basecreate = Levels___["level" + a].basecreate;
+            levels___["level" + a].inPointNumber_ = Levels___["level" + a].inPointNumber_;
+            levels___["level" + a].points = Levels___["level" + a].points;
+            levels___["level" + a]._X_ = Levels___["level" + a]._X_;
+            levels___["level" + a]._X_Load = Levels___["level" + a]._X_Load;
+            levels___["level" + a].in_X_ = Levels___["level" + a].in_X_;
+            levels___["level" + a].in_X_Load = Levels___["level" + a].in_X_Load;
+            levels___["level" + a].resetList = Levels___["level" + a].resetList;
+            levels___["level" + a].LevelList = Levels___["level" + a].LevelList;
+            levels___["level" + a].gridContainer = Levels___["level" + a].gridContainer;
+            levels___["level" + a].slected_item = Levels___["level" + a].slected_item;
+            levels___["level" + a].new = Levels___["level" + a].new;
+            levels___["level" + a].id = Levels___["level" + a].id;
+        }
+
+        
+        for (let a = 1; a-1 < Object.keys(levels___).length; a++) {
+          console.log("a",a)
+            Levels___["level" + a].loadmesh(true);
+            Levels___["level" + a].loadpoints();
         }
 
         document.getElementById("levelContainer").innerHTML = '';
         
-        for (let i = 1; i-1 < levels___.length; i++) {
+        for (let i = 1; i-1 < Object.keys(levels___).length; i++) {
           var newButton = document.createElement('button');
           var newDiv = document.createElement('div');
           var newText = document.createElement('p');
           newDiv.classList = 'levelBox';
           newText.classList = 'levelBox_P';
           newButton.style = 'padding:1px';
-          newText.innerText = `Level ${levels + 1}`;
+          newText.innerText = `Level ${i + 1}`;
           newDiv.appendChild(newText);
           newButton.appendChild(newDiv);
           document.getElementById("levelContainer").appendChild(newButton);
@@ -686,35 +712,35 @@ function getkey(key) {
             levels_loaded.forEach(level => {
               level.style["backgroundColor"] = "white";
             });
-            console.log(levels___.length);
+            console.log(Levels___.length);
             for (let t = 1; t < lenthOfLevel; t++) {
-              levels___["level" + t].clearGridForNewLevel();
+              Levels___["level" + t].clearGridForNewLevel();
             }
             newButton.style["backgroundColor"] = "lightgrey";
 
-            console.log(levels___["level" + (i + 1)]);
-            console.log(levels___["level" + i].new);
-            levels___["level" + i].loadmesh(true);
-            levels___["level" + i].loadpoints();
+            console.log(Levels___["level" + (i + 1)]);
+            console.log(Levels___["level" + i].new);
+              Levels___["level" + i].loadmesh(true);
+              Levels___["level" + i].loadpoints();
 
-            clearButton.removeEventListener("click", function() { levels___["level" + 1].clearGrid(); levels___["level" + 1].loadmesh(true); });
-            clearButton.addEventListener("click", function() { levels___["level" + i].clearGrid(); levels___["level" + i].loadmesh(true); });
+            clearButton.removeEventListener("click", function() { Levels___["level" + 1].clearGrid(); Levels___["level" + 1].loadmesh(true); });
+            clearButton.addEventListener("click", function() { Levels___["level" + i].clearGrid(); Levels___["level" + i].loadmesh(true); });
 
-            clearTextButton.removeEventListener("click", function() { levels___["level" + 1].clearText(); });
-            clearTextButton.addEventListener("click", function() { levels___["level" + i].clearText(); });
+            clearTextButton.removeEventListener("click", function() { Levels___["level" + 1].clearText(); });
+            clearTextButton.addEventListener("click", function() { Levels___["level" + i].clearText(); });
 
-            __clearPoints.removeEventListener("click", function() { levels___["level" + 1].clearPoints(); });
-            __clearPoints.addEventListener("click", function() { levels___["level" + i].clearPoints(); });
+            __clearPoints.removeEventListener("click", function() { Levels___["level" + 1].clearPoints(); });
+            __clearPoints.addEventListener("click", function() { Levels___["level" + i].clearPoints(); });
 
             // Save the edited level here
             console.log(lastvisted_id);
             console.log(lenthOfLevel);
             for (let e = 1; e < lenthOfLevel; e++) {
-              console.log(JSON.stringify(levels___["level" + e]));
-              levels___["level" + e].saveLevel();
+              console.log(JSON.stringify(Levels___["level" + e]));
+                Levels___["level" + e].saveLevel();
             }
             // Add this line to save the edited level
-            levels___["level" + i].saveLevel();
+              Levels___["level" + i].saveLevel();
 
           });
         }
