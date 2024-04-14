@@ -638,6 +638,31 @@ function confermSUB() {
   modal.style.display = "block";
 }
 
+function getkey(key) {
+  return new Promise((resolve, reject) => {
+
+  const url = `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/levelSubmit/${key}`;
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', url, true);
+
+  xhr.setRequestHeader('Content-Type', 'application/json');
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        const responseData = JSON.parse(xhr.responseText);
+        console.log('Level submitted successfully:', responseData);
+        levels___ = responseData;
+      } else {
+        console.error('Error submitting level:', xhr.statusText);
+        reject(new Error('Failed to submit level'));
+      }
+    }
+  };
+  xhr.send();
+  });
+}
+
 // Close the modal
 function closeModal() {
   var modal = document.getElementById("myModal");
@@ -646,7 +671,9 @@ function closeModal() {
 var sub = document.getElementById("submit--button");
 sub.addEventListener('click',() => {
   var name__ = document.getElementById('name_').value;
-  submitLevel(name__,levels___);
+  var KEY = document.getElementById('KEY__').value;
+
+  submitLevel(name__,levels___,KEY);
 })
 // Perform the submit action
 function submitAction() {
@@ -775,11 +802,11 @@ function submitAction() {
   
   document.getElementById("levelsub").style.display = 'block';
 }
-async function submitLevel(name, levelData) {
+async function submitLevel(name, levelData,key) {
   var rawdata = JSON.stringify(levelData); // Serialize levelData to JSON
   return new Promise((resolve, reject) => {
     const encodedData = encodeURIComponent(rawdata);
-    const url = `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/levelSubmit/${encodedData}/${name}`;
+    const url = `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/levelSubmit/${encodedData}/${name}/${key}`;
     const xhr = new XMLHttpRequest();
     xhr.open('POST', url, true);
 

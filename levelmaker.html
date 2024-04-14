@@ -371,6 +371,7 @@
     <button id="Run Course" class='clearGridButton_'>Run correct Course</button>
     <button id="Run incorrect Course" class='clearGridButton_'>Run incorrect Course</button>
     <button id='submit button' onclick="confermSUB();" class='submit-button'>Submit</button>
+    <button id='Load form key button' onclick="confermSUB();" class='submit-button'>Load form key</button>
   </div>
   <div class="xxx" id='golfHolder'>
     <img src="golf balls/firegolf.png" id='fly_ball' class="soiUGDJDJ__S-HHPQO_K_golf_ball_" />
@@ -413,13 +414,20 @@
       <input type='text' id='name_' placeholder="course name" class='subname'></input>
       <br>
       <br>
-      <p>if you want to edit this later then you will enter this</p>
+      <p style='color: white;font-size: 20px;'>if you want to edit this later then you will enter this</p>
       <br>
-      <br>
-      <input type='text' id='name_' placeholder="key" class='subname'></input>
+      <input type='text' id='KEY__' placeholder="key" class='subname'></input>
       <br>
       <br>
       <button id='submit--button' class='submit-button-fjejfki3'>Submit</button>
+    </div>
+  </div>
+  <div id="key----" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p>KEY:</p>
+      <input type='text' id='KEY__cm' placeholder="key" class='subname'></input>
+      <button onclick="getkey(document.getElementById(KEY__cm).value)"></button>
     </div>
   </div>
 
