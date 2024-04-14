@@ -53,6 +53,9 @@ const MONEYCOIN = getCookie("Moneyscore");
 
 // ToDO: add exsamples
 window.onload = function() {
+  var baseURL_ = window.location.href;
+  const herf = document.getElementById("herf to next builder");
+  herf.setAttribute("href", `${baseURL_}/levelmaker.html`);
   const swingbutton = document.getElementById("swing_button");
   const start__button_ = document.getElementById("start__button_");
   const LeveL_ = getCookie("Userlevel");

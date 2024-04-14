@@ -31,7 +31,7 @@
       width: 10px;
       height: 10px;
       position: absolute;
-      top: 60px;
+      top: 70px;
       left: 30%;
       /*border: 4px solid black;
       /* Add border around the grid */
@@ -61,7 +61,7 @@
     }
 
     .toolsbar {
-      height: 7.5%;
+      height: 11%;
       width: 85%;
       position: absolute;
       z-index: 0.9;
@@ -350,6 +350,13 @@
       margin-top: 15%;
       translate: -50%, -50%;
     }
+
+    .css-4792 {
+      /*margin-top: 0.5%;*/
+      margin-left: 1%;
+      margin-right: 1%;
+      margin-buttom: 1%;
+    }
   </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -371,7 +378,8 @@
     <button id="Run Course" class='clearGridButton_'>Run correct Course</button>
     <button id="Run incorrect Course" class='clearGridButton_'>Run incorrect Course</button>
     <button id='submit button' onclick="confermSUB();" class='submit-button'>Submit</button>
-    <button id='Load form key button' onclick="confermSUB();" class='submit-button'>Load form key</button>
+    <br>
+    <button id='Load form key button' onclick="confermSUB2();" class='css-4792'>Load form key</button>
   </div>
   <div class="xxx" id='golfHolder'>
     <img src="golf balls/firegolf.png" id='fly_ball' class="soiUGDJDJ__S-HHPQO_K_golf_ball_" />
@@ -409,6 +417,15 @@
       <button onclick="closeModal()">No</button>
     </div>
   </div>
+  <div id="myModal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal2()">&times;</span>
+      <p>Are you sure you want load from a key?</p>
+      <small>this will clear all level data</small>
+      <button onclick="submitAction2()">Yes</button>
+      <button onclick="closeModal2()">No</button>
+    </div>
+  </div>
   <div id='levelsub' class='levelSUB'>
     <div class="center---dkeik93if">
       <input type='text' id='name_' placeholder="course name" class='subname'></input>
@@ -422,13 +439,11 @@
       <button id='submit--button' class='submit-button-fjejfki3'>Submit</button>
     </div>
   </div>
-  <div id="key----" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <p>KEY:</p>
-      <input type='text' id='KEY__cm' placeholder="key" class='subname'></input>
-      <button onclick="getkey(document.getElementById(KEY__cm).value)"></button>
-    </div>
+  <div id="key----" class="levelSUB">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p>KEY:</p>
+    <input type='text' id='KEY__cm' placeholder="key" class='subname'></input>
+    <button onclick="Levels___ = getkey(document.getElementById('KEY__cm').value)">GET DATA</button>
   </div>
 
   <script src='levelmaker.js'></script>

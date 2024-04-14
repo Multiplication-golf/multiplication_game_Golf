@@ -638,14 +638,17 @@ function confermSUB() {
   modal.style.display = "block";
 }
 
+function confermSUB2() {
+  var modal = document.getElementById("myModal2");
+  modal.style.display = "block";
+}
+
 function getkey(key) {
   return new Promise((resolve, reject) => {
 
-  const url = `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/levelSubmit/${key}`;
+  const url = `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/loadFromKey/${key}`;
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', url, true);
-
-  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.open('GET', url, true);
 
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -653,6 +656,69 @@ function getkey(key) {
         const responseData = JSON.parse(xhr.responseText);
         console.log('Level submitted successfully:', responseData);
         levels___ = responseData;
+        document.getElementById("key----").style.display = "none";
+        console.log(levels___);
+        var gridContainer = document.getElementById("gridXXX");
+        gridContainer.innerHTML = "";
+        for (let a = 0; a < levels___.length; a++) {
+          
+        }
+
+        document.getElementById("levelContainer").innerHTML = '';
+        
+        for (let i = 1; i-1 < levels___.length; i++) {
+          var newButton = document.createElement('button');
+          var newDiv = document.createElement('div');
+          var newText = document.createElement('p');
+          newDiv.classList = 'levelBox';
+          newText.classList = 'levelBox_P';
+          newButton.style = 'padding:1px';
+          newText.innerText = `Level ${levels + 1}`;
+          newDiv.appendChild(newText);
+          newButton.appendChild(newDiv);
+          document.getElementById("levelContainer").appendChild(newButton);
+          
+          newButton.addEventListener("click", () => {
+            var lenthOfLevel = document.getElementById("NoneLevel").innerText;
+
+            lastvisted_id = levels___["level" + i].id;
+            var levels_loaded = document.querySelectorAll(".paddx");
+            levels_loaded.forEach(level => {
+              level.style["backgroundColor"] = "white";
+            });
+            console.log(levels___.length);
+            for (let t = 1; t < lenthOfLevel; t++) {
+              levels___["level" + t].clearGridForNewLevel();
+            }
+            newButton.style["backgroundColor"] = "lightgrey";
+
+            console.log(levels___["level" + (i + 1)]);
+            console.log(levels___["level" + i].new);
+            levels___["level" + i].loadmesh(true);
+            levels___["level" + i].loadpoints();
+
+            clearButton.removeEventListener("click", function() { levels___["level" + 1].clearGrid(); levels___["level" + 1].loadmesh(true); });
+            clearButton.addEventListener("click", function() { levels___["level" + i].clearGrid(); levels___["level" + i].loadmesh(true); });
+
+            clearTextButton.removeEventListener("click", function() { levels___["level" + 1].clearText(); });
+            clearTextButton.addEventListener("click", function() { levels___["level" + i].clearText(); });
+
+            __clearPoints.removeEventListener("click", function() { levels___["level" + 1].clearPoints(); });
+            __clearPoints.addEventListener("click", function() { levels___["level" + i].clearPoints(); });
+
+            // Save the edited level here
+            console.log(lastvisted_id);
+            console.log(lenthOfLevel);
+            for (let e = 1; e < lenthOfLevel; e++) {
+              console.log(JSON.stringify(levels___["level" + e]));
+              levels___["level" + e].saveLevel();
+            }
+            // Add this line to save the edited level
+            levels___["level" + i].saveLevel();
+
+          });
+        }
+        
       } else {
         console.error('Error submitting level:', xhr.statusText);
         reject(new Error('Failed to submit level'));
@@ -666,6 +732,10 @@ function getkey(key) {
 // Close the modal
 function closeModal() {
   var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+function closeModal2() {
+  var modal = document.getElementById("myModal2");
   modal.style.display = "none";
 }
 var sub = document.getElementById("submit--button");
@@ -801,6 +871,11 @@ function submitAction() {
   closeModal();
   
   document.getElementById("levelsub").style.display = 'block';
+}
+function submitAction2() {
+  console.log(JSON.stringify(levels___))
+  closeModal2();
+  document.getElementById("key----").style.display = 'block';
 }
 async function submitLevel(name, levelData,key) {
   var rawdata = JSON.stringify(levelData); // Serialize levelData to JSON
