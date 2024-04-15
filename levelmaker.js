@@ -312,17 +312,17 @@ const pointsMap = new Map();
 
 __X__ = []
 var resetList = [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]];
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]];
 
 function moveBallToSquare(x, y, speed) {
   const ballXnow = ball.getBoundingClientRect().left;
@@ -359,7 +359,7 @@ function Direction(toX, toY, initialX, initialY) {
   return normalizedAngle; // Return true or any other value if needed
 }
 class Level_Builder {
-  
+
   constructor(name) {
     this.name = name;
     this.isPointCreationMode = false;
@@ -644,116 +644,14 @@ function confermSUB2() {
 }
 
 function getkey(key) {
-  return new Promise((resolve, reject) => {
-
-  const url = `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/loadFromKey/${key}`;
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        const responseData = JSON.parse(xhr.responseText);
-        console.log('Level submitted successfully:', responseData);
-        levels___ = responseData;
-        document.getElementById("key----").style.display = "none";
-        console.log(levels___,Object.keys(levels___).length);
-        var gridContainer = document.getElementById("gridXXX");
-        gridContainer.innerHTML = "";
-
-        for (let a = 1; a-1 < Object.keys(levels___).length; a++) {
-            Levels___["level" + a] = new Level_Builder(`Level ${a}`);
-            levels___["level" + a].name = Levels___["level" + a].name;
-            levels___["level" + a].name = Levels___["level" + a].name;
-            levels___["level" + a].isPointCreationMode = Levels___["level" + a].isPointCreationMode;
-            levels___["level" + a].incorrect_point_data_to_send = Levels___["level" + a].incorrect_point_data_to_send;
-            levels___["level" + a].data_to_send = Levels___["level" + a].data_to_send;
-            levels___["level" + a].basecreate = Levels___["level" + a].basecreate;
-            levels___["level" + a].inPointNumber_ = Levels___["level" + a].inPointNumber_;
-            levels___["level" + a].points = Levels___["level" + a].points;
-            levels___["level" + a]._X_ = Levels___["level" + a]._X_;
-            levels___["level" + a]._X_Load = Levels___["level" + a]._X_Load;
-            levels___["level" + a].in_X_ = Levels___["level" + a].in_X_;
-            levels___["level" + a].in_X_Load = Levels___["level" + a].in_X_Load;
-            levels___["level" + a].resetList = Levels___["level" + a].resetList;
-            levels___["level" + a].LevelList = Levels___["level" + a].LevelList;
-            levels___["level" + a].gridContainer = Levels___["level" + a].gridContainer;
-            levels___["level" + a].slected_item = Levels___["level" + a].slected_item;
-            levels___["level" + a].new = Levels___["level" + a].new;
-            levels___["level" + a].id = Levels___["level" + a].id;
-        }
-
-        
-        for (let a = 1; a-1 < Object.keys(levels___).length; a++) {
-          console.log("a",a)
-            Levels___["level" + a].loadmesh(true);
-            Levels___["level" + a].loadpoints();
-        }
-
-        document.getElementById("levelContainer").innerHTML = '';
-        
-        for (let i = 1; i-1 < Object.keys(levels___).length; i++) {
-          var newButton = document.createElement('button');
-          var newDiv = document.createElement('div');
-          var newText = document.createElement('p');
-          newDiv.classList = 'levelBox';
-          newText.classList = 'levelBox_P';
-          newButton.style = 'padding:1px';
-          newText.innerText = `Level ${i + 1}`;
-          newDiv.appendChild(newText);
-          newButton.appendChild(newDiv);
-          document.getElementById("levelContainer").appendChild(newButton);
-          
-          newButton.addEventListener("click", () => {
-            var lenthOfLevel = document.getElementById("NoneLevel").innerText;
-
-            lastvisted_id = levels___["level" + i].id;
-            var levels_loaded = document.querySelectorAll(".paddx");
-            levels_loaded.forEach(level => {
-              level.style["backgroundColor"] = "white";
-            });
-            console.log(Levels___.length);
-            for (let t = 1; t < lenthOfLevel; t++) {
-              Levels___["level" + t].clearGridForNewLevel();
-            }
-            newButton.style["backgroundColor"] = "lightgrey";
-
-            console.log(Levels___["level" + (i + 1)]);
-            console.log(Levels___["level" + i].new);
-              Levels___["level" + i].loadmesh(true);
-              Levels___["level" + i].loadpoints();
-
-            clearButton.removeEventListener("click", function() { Levels___["level" + 1].clearGrid(); Levels___["level" + 1].loadmesh(true); });
-            clearButton.addEventListener("click", function() { Levels___["level" + i].clearGrid(); Levels___["level" + i].loadmesh(true); });
-
-            clearTextButton.removeEventListener("click", function() { Levels___["level" + 1].clearText(); });
-            clearTextButton.addEventListener("click", function() { Levels___["level" + i].clearText(); });
-
-            __clearPoints.removeEventListener("click", function() { Levels___["level" + 1].clearPoints(); });
-            __clearPoints.addEventListener("click", function() { Levels___["level" + i].clearPoints(); });
-
-            // Save the edited level here
-            console.log(lastvisted_id);
-            console.log(lenthOfLevel);
-            for (let e = 1; e < lenthOfLevel; e++) {
-              console.log(JSON.stringify(Levels___["level" + e]));
-                Levels___["level" + e].saveLevel();
-            }
-            // Add this line to save the edited level
-              Levels___["level" + i].saveLevel();
-
-          });
-        }
-        
-      } else {
-        console.error('Error submitting level:', xhr.statusText);
-        reject(new Error('Failed to submit level'));
-      }
-    }
-  };
-  xhr.send();
-  });
+  window.location.href = window.location.pathname + '?key=' + encodeURIComponent(key);
+  setTimeout(function() {
+    location.reload();
+  }, 2000);
 }
+// Adjust the delay as needed (here, it's set to 2 seconds)
+
+
 
 // Close the modal
 function closeModal() {
@@ -765,11 +663,11 @@ function closeModal2() {
   modal.style.display = "none";
 }
 var sub = document.getElementById("submit--button");
-sub.addEventListener('click',() => {
+sub.addEventListener('click', () => {
   var name__ = document.getElementById('name_').value;
   var KEY = document.getElementById('KEY__').value;
 
-  submitLevel(name__,levels___,KEY);
+  submitLevel(name__, levels___, KEY);
 })
 // Perform the submit action
 function submitAction() {
@@ -821,7 +719,7 @@ function submitAction() {
         codetoload.push('setTimeout(() => {')
         codetoload.push('  restball(_timeleft);');
         codetoload.push('},500);')
-        
+
         finaldata = codetoload.join('');
         _____LEVEL__.data_to_send = finaldata;
       }
@@ -895,7 +793,7 @@ function submitAction() {
   }
   console.log(JSON.stringify(levels___))
   closeModal();
-  
+
   document.getElementById("levelsub").style.display = 'block';
 }
 function submitAction2() {
@@ -903,7 +801,7 @@ function submitAction2() {
   closeModal2();
   document.getElementById("key----").style.display = 'block';
 }
-async function submitLevel(name, levelData,key) {
+async function submitLevel(name, levelData, key) {
   var rawdata = JSON.stringify(levelData); // Serialize levelData to JSON
   return new Promise((resolve, reject) => {
     const encodedData = encodeURIComponent(rawdata);
@@ -938,118 +836,152 @@ document.getElementById("NoneLevel").innerText = 1;
 
 var lastvisted_id = 1;
 var levels___ = {};
+var parm
 
-window.onload = function() {
+function getKeyFromUrl() {
+  let urlString = window.location.href;
+  let url = new URL(urlString);
+  let key = url.searchParams.get("key");
+  return key;
+}
 
-  var clearButton = document.getElementById("clearGridButton");
-  clearButton.addEventListener("click", function() {
-    levels___["level" + 1].clearGrid();
-    levels___["level" + 1].loadmesh(true);
+// Example usage:
+let key = getKeyFromUrl();
+console.log(key); // Output will be "dddd"
+var Levels___ = {}
+function abc(parm__) {
+  return new Promise((resolve, reject) => {
+
+    const url = `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/loadFromKey/${parm__}`;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    // Save the critical variable before reloading
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          const responseData = JSON.parse(xhr.responseText);
+          console.log('Level submitted successfully:', responseData);
+          Levels___ = responseData;
+          document.getElementById("key----").style.display = "none";
+          resolve(responseData)
+        } else {
+          console.error('Error submitting level:', xhr.statusText);
+          reject(new Error('Failed to submit level'));
+        }
+      }
+    };
+    xhr.send();
   });
-  var clearTextButton = document.getElementById("clear text");
-  var addpoint = document.getElementById("create point");
-  var __clearPoints = document.getElementById("clearPoints");
+}
 
-  addpoint.addEventListener("click", function() {
-    var isPointCreationMode = document.getElementById("NoneCreate").innerText;
-    isPointCreationMode = (isPointCreationMode === "true") ? "false" : "true";
-    document.getElementById("NoneCreate").innerText = isPointCreationMode;
-    if (isPointCreationMode === "true") {
-      addpoint.style['background-color'] = "green";
-    } else {
-      addpoint.style['background-color'] = "red";
+function onloadcon__() {
+  window.onload = function() {
+    if (getKeyFromUrl() == null) {
+      var levels = 1;
+
+      lastvisted_id = 1;
+      levels___["level" + Number(levels)] = new Level_Builder(`Level ${levels}`);
+      levels___["level" + levels].loadmesh(true);
+      levels___["level" + levels].id = levels;
     }
-  });
-  var addincorrectpoint = document.getElementById("Incorrect point");
+    if (getKeyFromUrl() != null) {
+      async function leveldatatransfer() {
+        await abc();
+        console.log(Object.keys(Levels___).length)
+        for (let cccc = 1; cccc - 1 < Object.keys(Levels___).length; cccc++) {
+          levels___["level" + cccc] = new Level_Builder(`Level ${cccc}`);
+          levels___["level" + cccc].name = Levels___["level" + cccc].name;
+          levels___["level" + cccc].isPointCreationMode = Levels___["level" + cccc].isPointCreationMode;
+          levels___["level" + cccc].incorrect_point_data_to_send = Levels___["level" + cccc].incorrect_point_data_to_send;
+          levels___["level" + cccc].data_to_send = Levels___["level" + cccc].data_to_send;
+          levels___["level" + cccc].basecreate = Levels___["level" + cccc].basecreate;
+          levels___["level" + cccc].inPointNumber_ = Levels___["level" + cccc].inPointNumber_;
+          levels___["level" + cccc].points = Levels___["level" + cccc].points;
+          levels___["level" + cccc]._X_ = Levels___["level" + cccc]._X_;
+          levels___["level" + cccc]._X_Load = Levels___["level" + cccc]._X_Load;
+          levels___["level" + cccc].in_X_ = Levels___["level" + cccc].in_X_;
+          levels___["level" + cccc].in_X_Load = Levels___["level" + cccc].in_X_Load;
+          levels___["level" + cccc].resetList = Levels___["level" + cccc].resetList;
+          levels___["level" + cccc].LevelList = Levels___["level" + cccc].LevelList;
+          levels___["level" + cccc].gridContainer = Levels___["level" + cccc].gridContainer;
+          levels___["level" + cccc].slected_item = Levels___["level" + cccc].slected_item;
+          levels___["level" + cccc].new = Levels___["level" + cccc].new;
+          levels___["level" + cccc].id = Levels___["level" + cccc].id;
 
-  addincorrectpoint.addEventListener("click", function() {
-    var inisPointCreationMode = document.getElementById("NoneIncreate").innerText;
-    inisPointCreationMode = (inisPointCreationMode === "true") ? "false" : "true";
-    document.getElementById("NoneIncreate").innerText = inisPointCreationMode;
-    if (inisPointCreationMode === "true") {
-      addincorrectpoint.style['background-color'] = "green";
-    } else {
-      addincorrectpoint.style['background-color'] = "red";
+        }
+      }
+      leveldatatransfer();
     }
-  });
 
 
 
-  __clearPoints.addEventListener("click", function() { levels___["level" + 1].clearPoints(); });
-  clearTextButton.addEventListener("click", function() { levels___["level" + 1].clearText(); });
-
-  var plusButton = document.getElementById("+");
-  var levels = 1;
-
-  lastvisted_id = 1;
-  levels___["level" + Number(levels)] = new Level_Builder(`Level ${levels}`);
-  levels___["level" + levels].loadmesh(true);
-  levels___["level" + levels].id = levels;
-
-  plusButton.addEventListener("click", function() {
-    levels___["level" + (levels + 1)] = new Level_Builder(`Level ${(levels + 1)}`);
-    levels___["level" + (levels + 1)].id = (levels + 1);
-    levels___["level" + (levels + 1)].loadmesh(true);
-    console.log("resetList", levels___["level" + (levels + 1)].resetList)
-    console.log("baselist", levels___["level" + (levels + 1)].baselist)
-    console.log(levels___.length, (levels + 1));
-    document.getElementById("gridXXX").innerHTML = "";
-    var newButton = document.createElement('button');
-    var newDiv = document.createElement('div');
-    var newText = document.createElement('p');
-    newDiv.classList = 'levelBox';
-    newText.classList = 'levelBox_P';
-    newButton.style = 'padding:1px';
-    newText.innerText = `Level ${levels + 1}`;
-    console.log(__baselist__);
-    var i = levels + 1;
-    levels___["level" + i].saveLevel();
-    newDiv.appendChild(newText);
-    newButton.appendChild(newDiv);
-    document.getElementById("levelContainer").appendChild(newButton);
-    newButton.addEventListener("click", () => { });
-    newButton.style["backgroundColor"] = "lightgrey";
-    newButton.classList = 'paddx';
-
-    var lenthOfLevel = document.getElementById("NoneLevel").innerText;
-
-    lastvisted_id = levels___["level" + i].id;
-    var levels_loaded = document.querySelectorAll(".paddx");
-    levels_loaded.forEach(level => {
-      level.style["backgroundColor"] = "white";
+    var clearButton = document.getElementById("clearGridButton");
+    clearButton.addEventListener("click", function() {
+      levels___["level" + 1].clearGrid();
+      levels___["level" + 1].loadmesh(true);
     });
-    console.log(levels___.length);
-    for (let t = 1; t < lenthOfLevel; t++) {
-      levels___["level" + t].clearGridForNewLevel();
-    }
-    newButton.style["backgroundColor"] = "lightgrey";
+    var clearTextButton = document.getElementById("clear text");
+    var addpoint = document.getElementById("create point");
+    var __clearPoints = document.getElementById("clearPoints");
 
-    console.log(levels___["level" + (i + 1)]);
-    console.log(levels___["level" + i].new);
-    levels___["level" + i].loadmesh(true);
-    levels___["level" + i].loadpoints();
+    addpoint.addEventListener("click", function() {
+      var isPointCreationMode = document.getElementById("NoneCreate").innerText;
+      isPointCreationMode = (isPointCreationMode === "true") ? "false" : "true";
+      document.getElementById("NoneCreate").innerText = isPointCreationMode;
+      if (isPointCreationMode === "true") {
+        addpoint.style['background-color'] = "green";
+      } else {
+        addpoint.style['background-color'] = "red";
+      }
+    });
+    var addincorrectpoint = document.getElementById("Incorrect point");
 
-    clearButton.removeEventListener("click", function() { levels___["level" + 1].clearGrid(); levels___["level" + 1].loadmesh(true); });
-    clearButton.addEventListener("click", function() { levels___["level" + i].clearGrid(); levels___["level" + i].loadmesh(true); });
-
-    clearTextButton.removeEventListener("click", function() { level1.clearText(); });
-    clearTextButton.addEventListener("click", function() { levels___["level" + i].clearText(); });
-
-    __clearPoints.removeEventListener("click", function() { level1.clearPoints(); });
-    __clearPoints.addEventListener("click", function() { levels___["level" + i].clearPoints(); });
-
-    // Save the edited level here
-    console.log(lastvisted_id);
-    console.log(lenthOfLevel);
-    for (let e = 1; e < lenthOfLevel; e++) {
-      console.log(JSON.stringify(levels___["level" + e]));
-      levels___["level" + e].saveLevel();
-    }
-    // Add this line to save the edited level
-    levels___["level" + i].saveLevel();
+    addincorrectpoint.addEventListener("click", function() {
+      var inisPointCreationMode = document.getElementById("NoneIncreate").innerText;
+      inisPointCreationMode = (inisPointCreationMode === "true") ? "false" : "true";
+      document.getElementById("NoneIncreate").innerText = inisPointCreationMode;
+      if (inisPointCreationMode === "true") {
+        addincorrectpoint.style['background-color'] = "green";
+      } else {
+        addincorrectpoint.style['background-color'] = "red";
+      }
+    });
 
 
-    newButton.addEventListener("click", () => {
+
+    __clearPoints.addEventListener("click", function() { levels___["level" + 1].clearPoints(); });
+    clearTextButton.addEventListener("click", function() { levels___["level" + 1].clearText(); });
+
+    var plusButton = document.getElementById("+");
+    var levels = 1;
+
+    lastvisted_id = 1;
+
+    plusButton.addEventListener("click", function() {
+      levels___["level" + (levels + 1)] = new Level_Builder(`Level ${(levels + 1)}`);
+      levels___["level" + (levels + 1)].id = (levels + 1);
+      levels___["level" + (levels + 1)].loadmesh(true);
+      console.log("resetList", levels___["level" + (levels + 1)].resetList)
+      console.log("baselist", levels___["level" + (levels + 1)].baselist)
+      console.log(levels___.length, (levels + 1));
+      document.getElementById("gridXXX").innerHTML = "";
+      var newButton = document.createElement('button');
+      var newDiv = document.createElement('div');
+      var newText = document.createElement('p');
+      newDiv.classList = 'levelBox';
+      newText.classList = 'levelBox_P';
+      newButton.style = 'padding:1px';
+      newText.innerText = `Level ${levels + 1}`;
+      console.log(__baselist__);
+      var i = levels + 1;
+      levels___["level" + i].saveLevel();
+      newDiv.appendChild(newText);
+      newButton.appendChild(newDiv);
+      document.getElementById("levelContainer").appendChild(newButton);
+      newButton.addEventListener("click", () => { });
+      newButton.style["backgroundColor"] = "lightgrey";
+      newButton.classList = 'paddx';
+
       var lenthOfLevel = document.getElementById("NoneLevel").innerText;
 
       lastvisted_id = levels___["level" + i].id;
@@ -1071,10 +1003,10 @@ window.onload = function() {
       clearButton.removeEventListener("click", function() { levels___["level" + 1].clearGrid(); levels___["level" + 1].loadmesh(true); });
       clearButton.addEventListener("click", function() { levels___["level" + i].clearGrid(); levels___["level" + i].loadmesh(true); });
 
-      clearTextButton.removeEventListener("click", function() { levels___["level" + 1].clearText(); });
+      clearTextButton.removeEventListener("click", function() { level1.clearText(); });
       clearTextButton.addEventListener("click", function() { levels___["level" + i].clearText(); });
 
-      __clearPoints.removeEventListener("click", function() { levels___["level" + 1].clearPoints(); });
+      __clearPoints.removeEventListener("click", function() { level1.clearPoints(); });
       __clearPoints.addEventListener("click", function() { levels___["level" + i].clearPoints(); });
 
       // Save the edited level here
@@ -1087,80 +1019,117 @@ window.onload = function() {
       // Add this line to save the edited level
       levels___["level" + i].saveLevel();
 
-    });
 
-    console.log(levels);
-    levels++;
-    document.getElementById("NoneLevel").innerText = levels;
-  });
+      newButton.addEventListener("click", () => {
+        var lenthOfLevel = document.getElementById("NoneLevel").innerText;
 
-  var levels_loaded = document.querySelectorAll(".levelBox")
-  console.log(levels_loaded);
-  levels_loaded.forEach(level => {
-    level.addEventListener("click", () => {
-      var lenthOfLevel = document.getElementById("NoneLevel").innerText;
-      console.log("lastvisted_id", lastvisted_id)
-      console.log("level _ 1")
-      lastvisted_id = levels___["level" + 1].id;
-      console.log("lastvisted_id", lastvisted_id)
-      var levels_loaded = document.querySelectorAll(".paddx");
-      levels_loaded.forEach(level => {
-        level.style["backgroundColor"] = "white";
-      });
+        lastvisted_id = levels___["level" + i].id;
+        var levels_loaded = document.querySelectorAll(".paddx");
+        levels_loaded.forEach(level => {
+          level.style["backgroundColor"] = "white";
+        });
+        console.log(levels___.length);
+        for (let t = 1; t < lenthOfLevel; t++) {
+          levels___["level" + t].clearGridForNewLevel();
+        }
+        newButton.style["backgroundColor"] = "lightgrey";
 
-      for (let t = 1; t < lenthOfLevel; t++) {
-        console.log(levels___["level" + t])
-        levels___["level" + t].clearGridForNewLevel();
-      }
-
-      levels___["level" + 1].loadmesh(true);
-      levels___["level" + 1].loadpoints();
-
-      clearButton.addEventListener("click", function() {
-        levels___["level" + 1].clearGrid();
-        levels___["level" + 1].loadmesh(true);
-      });
-      clearButton.removeEventListener("click", function() {
-        levels___["level" + i].clearGrid();
+        console.log(levels___["level" + (i + 1)]);
+        console.log(levels___["level" + i].new);
         levels___["level" + i].loadmesh(true);
+        levels___["level" + i].loadpoints();
+
+        clearButton.removeEventListener("click", function() { levels___["level" + 1].clearGrid(); levels___["level" + 1].loadmesh(true); });
+        clearButton.addEventListener("click", function() { levels___["level" + i].clearGrid(); levels___["level" + i].loadmesh(true); });
+
+        clearTextButton.removeEventListener("click", function() { levels___["level" + 1].clearText(); });
+        clearTextButton.addEventListener("click", function() { levels___["level" + i].clearText(); });
+
+        __clearPoints.removeEventListener("click", function() { levels___["level" + 1].clearPoints(); });
+        __clearPoints.addEventListener("click", function() { levels___["level" + i].clearPoints(); });
+
+        // Save the edited level here
+        console.log(lastvisted_id);
+        console.log(lenthOfLevel);
+        for (let e = 1; e < lenthOfLevel; e++) {
+          console.log(JSON.stringify(levels___["level" + e]));
+          levels___["level" + e].saveLevel();
+        }
+        // Add this line to save the edited level
+        levels___["level" + i].saveLevel();
+
       });
 
-
-
-      clearTextButton.addEventListener("click", function() { levels___["level" + 1].clearText(); });
-      clearTextButton.removeEventListener("click", function() { levels___["level" + i].clearText(); });
-
-      __clearPoints.addEventListener("click", function() { levels___["level" + 1].clearPoints(); });
-      __clearPoints.removeEventListener("click", function() { levels___["level" + i].clearPoints(); });
-
-
-
-      // Save the edited level here
-      console.log(lastvisted_id);
-      console.log(lenthOfLevel);
-      for (let e = 1; e < lenthOfLevel; e++) {
-        console.log(JSON.stringify(levels___["level" + e]));
-        levels___["level" + e].saveLevel();
-      }
-      console.log(levels___["level" + 1]._X_)
-
+      console.log(levels);
+      levels++;
+      document.getElementById("NoneLevel").innerText = levels;
     });
-  });
 
-  var run_ = document.getElementById("Run Course");
-  console.log(levels___["level" + lastvisted_id]._X_);
-  run_.addEventListener("click", () => {
-    console.log(lastvisted_id);
-    console.log(levels___["level" + lastvisted_id]?._X_);
-    runCourse(levels___["level" + lastvisted_id]?._X_, levels___["level" + lastvisted_id]);
-  });
-  var run_incorrect = document.getElementById("Run incorrect Course");
-  console.log(levels___["level" + lastvisted_id].in_X_);
-  run_incorrect.addEventListener("click", () => {
-    console.log(lastvisted_id);
-    console.log(levels___["level" + lastvisted_id]?.in_X_);
-    run_as_inncorect_Course(levels___["level" + lastvisted_id]?.in_X_, levels___["level" + lastvisted_id]);
-  });
-  restball();
+    var levels_loaded = document.querySelectorAll(".levelBox")
+    console.log(levels_loaded);
+    levels_loaded.forEach(level => {
+      level.addEventListener("click", () => {
+        var lenthOfLevel = document.getElementById("NoneLevel").innerText;
+        console.log("lastvisted_id", lastvisted_id)
+        console.log("level _ 1")
+        lastvisted_id = levels___["level" + 1].id;
+        console.log("lastvisted_id", lastvisted_id)
+        var levels_loaded = document.querySelectorAll(".paddx");
+        levels_loaded.forEach(level => {
+          level.style["backgroundColor"] = "white";
+        });
+
+        levels___["level" + 1].loadmesh(true);
+        levels___["level" + 1].loadpoints();
+
+        clearButton.addEventListener("click", function() {
+          levels___["level" + 1].clearGrid();
+          levels___["level" + 1].loadmesh(true);
+        });
+        clearButton.removeEventListener("click", function() {
+          levels___["level" + i].clearGrid();
+          levels___["level" + i].loadmesh(true);
+        });
+
+
+
+        clearTextButton.addEventListener("click", function() { levels___["level" + 1].clearText(); });
+        clearTextButton.removeEventListener("click", function() { levels___["level" + i].clearText(); });
+
+        __clearPoints.addEventListener("click", function() { levels___["level" + 1].clearPoints(); });
+        __clearPoints.removeEventListener("click", function() { levels___["level" + i].clearPoints(); });
+
+
+
+        // Save the edited level here
+        console.log(lastvisted_id);
+        console.log(lenthOfLevel);
+        for (let e = 1; e < lenthOfLevel; e++) {
+          console.log(JSON.stringify(levels___["level" + e]));
+          levels___["level" + e].saveLevel();
+        }
+        console.log(levels___["level" + 1]._X_)
+
+      });
+    });
+    console.log(levels___)
+    var run_ = document.getElementById("Run Course");
+    console.log(levels___["level" + lastvisted_id]._X_);
+    run_.addEventListener("click", () => {
+      console.log(lastvisted_id);
+      console.log(levels___["level" + lastvisted_id]?._X_);
+      runCourse(levels___["level" + lastvisted_id]?._X_, levels___["level" + lastvisted_id]);
+    });
+    var run_incorrect = document.getElementById("Run incorrect Course");
+    console.log(levels___["level" + lastvisted_id].in_X_);
+    run_incorrect.addEventListener("click", () => {
+      console.log(lastvisted_id);
+      console.log(levels___["level" + lastvisted_id]?.in_X_);
+      run_as_inncorect_Course(levels___["level" + lastvisted_id]?.in_X_, levels___["level" + lastvisted_id]);
+    });
+    restball();
+
+
+  }
 }
-
+onloadcon__();
