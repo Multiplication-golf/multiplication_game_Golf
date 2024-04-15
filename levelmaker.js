@@ -891,6 +891,8 @@ async function onloadcon__() {
   }
   if (getKeyFromUrl() != null) {
 
+    document.getElementById("NoneLevel").innerText = Object.keys(Levels___).length;
+
 
     console.log(Object.keys(Levels___).length)
     for (let cccc = 1; cccc - 1 < Object.keys(Levels___).length; cccc++) {
@@ -900,6 +902,7 @@ async function onloadcon__() {
       levels___["level" + cccc].incorrect_point_data_to_send = Levels___["level" + cccc].incorrect_point_data_to_send;
       levels___["level" + cccc].data_to_send = Levels___["level" + cccc].data_to_send;
       levels___["level" + cccc].basecreate = Levels___["level" + cccc].basecreate;
+      levels___["level" + cccc].baselist = Levels___["level" + cccc].baselist;
       levels___["level" + cccc].inPointNumber_ = Levels___["level" + cccc].inPointNumber_;
       levels___["level" + cccc].points = Levels___["level" + cccc].points;
       levels___["level" + cccc]._X_ = Levels___["level" + cccc]._X_;
@@ -907,16 +910,80 @@ async function onloadcon__() {
       levels___["level" + cccc].in_X_ = Levels___["level" + cccc].in_X_;
       levels___["level" + cccc].in_X_Load = Levels___["level" + cccc].in_X_Load;
       levels___["level" + cccc].resetList = Levels___["level" + cccc].resetList;
-      levels___["level" + cccc].LevelList = Levels___["level" + cccc].LevelList;
-      levels___["level" + cccc].gridContainer = Levels___["level" + cccc].gridContainer;
+      levels___["level" + cccc].gridContainer = document.getElementById("gridXXX");
       levels___["level" + cccc].slected_item = Levels___["level" + cccc].slected_item;
       levels___["level" + cccc].new = Levels___["level" + cccc].new;
-      levels___["level" + cccc].id = Levels___["level" + cccc].id;
+      console.log(cccc)
+      levels___["level" + cccc].id = cccc;
 
     }
 
-  }
+    
+    for (let aa = 1; aa < Object.keys(Levels___).length; aa++) {
+      var levels_loaded = document.querySelectorAll(".levelBox")
+      console.log(levels_loaded);
+      var newButton = document.createElement('button');
+      var newDiv = document.createElement('div');
+      var newText = document.createElement('p');
+      newDiv.classList = 'levelBox';
+      newText.classList = 'levelBox_P';
+      newButton.style = 'padding:1px';
+      newText.innerText = `Level ${aa + 1}`;
+      newDiv.appendChild(newText);
+      newButton.appendChild(newDiv);
+      document.getElementById("levelContainer").appendChild(newButton);
+      newButton.style["backgroundColor"] = "lightgrey";
+      newButton.classList = 'paddx';
+      console.log("____id____", levels___["level" + aa].id)
+      newButton.addEventListener("click", () => {
+        var lenthOfLevel = Object.keys(Levels___).length;
+        console.log(aa+1,levels___["level" + Number(aa+1)],levels___["level" + 2])
+        
+        lastvisted_id = levels___["level" + Number(aa+1)].id;
+        console.log("id", levels___["level" + Number(aa+1)].id)
+        var levels_loaded = document.querySelectorAll(".paddx");
+        levels_loaded.forEach(level => {
+          level.style["backgroundColor"] = "white";
+        });
+        console.log(aa)
 
+        for (let t = 1; t < lenthOfLevel; t++) {
+          levels___["level" + t].clearGridForNewLevel();
+        }
+
+
+
+        levels___["level" + Number(aa+1)].loadmesh(true);
+        levels___["level" + Number(aa+1)].loadpoints();
+        console.log(levels___["level" + Number(aa+1)])
+
+        clearButton.addEventListener("click", function() {
+          levels___["level" + Number(aa+1)].clearGrid();
+          levels___["level" + Number(aa+1)].loadmesh(true);
+        });
+        clearButton.removeEventListener("click", function() {
+          levels___["level" + lastvisted_id].clearGrid();
+          levels___["level" + lastvisted_id].loadmesh(true);
+        });
+
+
+
+        clearTextButton.addEventListener("click", function() { levels___["level" + Number(aa+1)].clearText(); });
+        clearTextButton.removeEventListener("click", function() { levels___["level" + lastvisted_id].clearText(); });
+
+        __clearPoints.addEventListener("click", function() { levels___["level" + Number(aa+1)].clearPoints(); });
+        __clearPoints.removeEventListener("click", function() { levels___["level" + lastvisted_id].clearPoints(); });
+
+
+      });
+      console.log("LEVELDATA:", levels___["level" + 1].basecreate)
+
+      
+    }
+    levels___["level" + 1].loadmesh(true);
+    levels___["level" + 1].loadpoints();
+    levels___["level" + 1].id = 1;
+  }
 
 
   var clearButton = document.getElementById("clearGridButton");
@@ -1082,6 +1149,10 @@ async function onloadcon__() {
       levels_loaded.forEach(level => {
         level.style["backgroundColor"] = "white";
       });
+      console.log(lenthOfLevel);
+      for (let t = 1; t < lenthOfLevel; t++) {
+        levels___["level" + t].clearGridForNewLevel();
+      }
 
       levels___["level" + 1].loadmesh(true);
       levels___["level" + 1].loadpoints();
@@ -1116,6 +1187,7 @@ async function onloadcon__() {
 
     });
   });
+
   console.log(levels___)
   var run_ = document.getElementById("Run Course");
   console.log(levels___["level" + lastvisted_id]._X_);
