@@ -2,6 +2,8 @@
 
 Multiplication Golf is a fun and educational game designed to help students practice their multiplication skills in a playful way.
 
+Link: https://multiplication-golf.github.io/multiplication_game_Golf/
+
 ## How to Play
 
 1. **Objective:** The objective of the game is to solve multiplication problems correctly to advance through the golf course.
