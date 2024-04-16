@@ -1,4 +1,14 @@
 // author: Orso Games
+
+// { vars == === == === == === == ===}
+const swingbutton = document.getElementById("swing_button");
+const start__button_ = document.getElementById("start__button_");
+const LeveL_ = getCookie("Userlevel");
+console.log("LeveL_", LeveL_);
+const MONEYCOIN = getCookie("Moneyscore");
+const flaskURL = "https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080";
+// { vars == === == === == === == ===}
+
 function init() {
   document.getElementById('_(level)_').style.display = 'none';
   document.getElementById('_(login)_').style.display = 'block';
@@ -11,7 +21,8 @@ function init() {
   }
   // Create an AJAX request
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/returnjson', true);
+  xhr.open('GET', `${flaskURL}/returnjson`, true);
+  console.log(`${flaskURL}/returnjson`)
 
   xhr.onload = function() {
     if (xhr.status == 200) {
@@ -43,13 +54,7 @@ function init() {
 enableScroll();
 init();
 
-// { vars == === == === == === == ===}
-const swingbutton = document.getElementById("swing_button");
-const start__button_ = document.getElementById("start__button_");
-const LeveL_ = getCookie("Userlevel");
-console.log("LeveL_", LeveL_);
-const MONEYCOIN = getCookie("Moneyscore");
-// { vars == === == === == === == ===}
+
 
 // ToDO: add exsamples
 window.onload = function() {
@@ -229,7 +234,7 @@ function done() {
   var course_____ = document.getElementById('NoneCourse').innerText;
   document.getElementById('coures--___---_--').innerText = course_____;
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/returnHowManyLevels/${course_____}`, true);
+  xhr.open('GET', `${flaskURL}/returnHowManyLevels/${course_____}`, true);
 
   xhr.onload = function() {
     if (xhr.status == 200) {
@@ -456,7 +461,7 @@ async function loadasyncData(___level_) {
     var course_ = document.getElementById("NoneCourse").innerText;
     console.log("course____", course_);
     let obj;
-    const res = await fetch(`https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/returnLevel/${course_}`);
+    const res = await fetch(`${flaskURL}/returnLevel/${course_}`);
     obj = await res.json();
     console.log(obj);
     console.log(___level_, obj[Number(___level_) - 1], obj[0], "response.length", obj.length);
@@ -1101,7 +1106,7 @@ async function swing__() {
       var _timeleft = document.getElementById('base-timer-label').innerHTML;
       async function getpoints() {
         let obj;
-        const res = await fetch(`https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/returnPoints/${course_}`);
+        const res = await fetch(`${flaskURL}/returnPoints/${course_}`);
         obj = await res.json();
         console.log(obj);
         return obj;
@@ -1245,7 +1250,7 @@ async function swing__() {
       var _timeleft = document.getElementById('base-timer-label').innerHTML;
       async function returnIncorrectPoints() {
         let obj;
-        const res = await fetch(`https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/returnIncorrectPoints/${course_}`);
+        const res = await fetch(`${flaskURL}/returnIncorrectPoints/${course_}`);
         obj = await res.json();
         console.log(obj);
         return obj;
