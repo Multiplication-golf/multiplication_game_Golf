@@ -18,7 +18,8 @@ Link: https://multiplication-golf.github.io/multiplication_game_Golf/
    
 3. **Scoring:**
    - The fewer strokes taken to complete the course, the better the score.
-   - Players can aim to achieve a hole-in-one by answering all questions correctly with no penalty strokes.
+   - Players can aim to achieve a hole-in-one by answering all questions correctly with no penalty strokes
+   - (awnsers incorret).
 
 ## Features
 

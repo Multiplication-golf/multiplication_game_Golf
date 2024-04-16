@@ -86,14 +86,14 @@ window.onload = function() {
       } else {
         var __level___ = 1;
       }
-      console.log("not null :",__level___)
+      console.log("not null :", __level___)
       loadlevelandsetUpGame(__level___);
       if (course_ === "classic") {
         document.getElementById("swinglevel").innerText = level + 1;
       } else {
         document.getElementById("swinglevel").innerText = 1;
       }
-      
+
       swingbutton.addEventListener("click", function() { swing__(); });
     });
 
@@ -195,7 +195,6 @@ function openDIS(__time_____) {
     var obj = document.getElementById(id);
     var current = obj.innerHTML;
 
-    console.log(timeperframe)
     for (var i = 0; i < (total_money - current); i++) {
       if (current <= total_money) {
         setTimeout(() => {
@@ -233,23 +232,37 @@ function done() {
   disableScroll();
   var course_____ = document.getElementById('NoneCourse').innerText;
   document.getElementById('coures--___---_--').innerText = course_____;
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', `${flaskURL}/returnHowManyLevels/${course_____}`, true);
+  console.log(course_____)
+  if (course_____ != 'classic') {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', `${flaskURL}/returnHowManyLevels/${course_____}`, true);
 
-  xhr.onload = function() {
-    if (xhr.status == 200) {
-      // Parse the response as JSON
-      var response = JSON.parse(xhr.responseText);
+    xhr.onload = function() {
+      if (xhr.status == 200) {
+        // Parse the response as JSON
+        var response = JSON.parse(xhr.responseText);
 
-      console.log("xhr:", response)
+        console.log("xhr:", response)
 
-      var reward_ = (response*10)+100;
-      document.getElementById("reward").innerHTML = reward_+"<img src='---.gif' class='coin-gif--lb0owlqodkewkd' />";
-    } else {
-      console.error('Request failed');
-    }
-  };
-  xhr.send();
+        var reward_ = (response * 10) + 100;
+        document.getElementById("reward").innerHTML = reward_ + "<img src='---.gif' class='coin-gif--lb0owlqodkewkd' />";
+        var money_now = document.getElementById("money_-__-").innerText;
+        var total_money = Number(reward_) + Number(money_now);
+        setCookie("Moneyscore", Number(total_money), 765);
+      } else {
+        console.error('Request failed');
+      }
+    };
+  }
+  if (course_____ == 'classic') {
+
+    var reward_ = (response * 10) + 100;
+    document.getElementById("reward").innerHTML = reward_ + "<img src='---.gif' class='coin-gif--lb0owlqodkewkd' />";
+    var money_now = document.getElementById("money_-__-").innerText;
+    var total_money = Number(reward_) + Number(money_now);
+    setCookie("Moneyscore", Number(total_money), 765);
+
+  }
 }
 function loadLevelData(___level_) {
   var course_ = document.getElementById("NoneCourse").innerText;
@@ -472,7 +485,7 @@ async function loadasyncData(___level_) {
     for (let i = 0; i < response.length; i++) {
       console.log("i", i);
       const levelsData = response;
-      console.log("___level_",___level_)
+      console.log("___level_", ___level_)
       if (Number(___level_) === i + 1) {  // Adjust index to match level number
         var data__ = levelsData[i];
         console.log(data__);
@@ -547,7 +560,7 @@ async function loadlevelandsetUpGame(LEVEL) {
       // Add text element to the grid item
       if (imageNumbers[i][j] === 2) {
         var textElement = document.createElement('p');
-        textElement.innerText = `${i+1}X${j+1}`;
+        textElement.innerText = `${i + 1}X${j + 1}`;
         gridItem.appendChild(textElement);
       }
       if (imageNumbers[i][j] === 3) {
@@ -556,7 +569,7 @@ async function loadlevelandsetUpGame(LEVEL) {
         console.log(answer)
         document.getElementById("noneANWSER").innerText = answer;
         document.getElementById("what is").innerText = `What is ${i} X ${j}?`
-        textElement.innerText = `${i+1}X${j+1}`;
+        textElement.innerText = `${i + 1}X${j + 1}`;
         gridItem.appendChild(textElement);
       }
       // Append the grid item to the grid container
@@ -815,8 +828,8 @@ async function newround() {
     var imageNumbers = await loadasyncData(level____);
   }
 
-  console.log(typeof(imageNumbers));
-  if (typeof(imageNumbers) == (null || undefined || 0)) {
+  console.log(typeof (imageNumbers));
+  if (typeof (imageNumbers) == (null || undefined || 0)) {
     done();
     console.log("done")
     return ""
@@ -843,11 +856,11 @@ async function newround() {
       gridItem_.className = 'grid-item';
       // Set the background image based on the image number
       try {
-      if (imageNumbers[c][z] == 11) {
-        gridItem_.style.backgroundImage = `url('golfpngs/${imageNumbers[c][z]}.gif')`;
-      } else {
-        gridItem_.style.backgroundImage = `url('golfpngs/${imageNumbers[c][z]}.png')`;
-      }
+        if (imageNumbers[c][z] == 11) {
+          gridItem_.style.backgroundImage = `url('golfpngs/${imageNumbers[c][z]}.gif')`;
+        } else {
+          gridItem_.style.backgroundImage = `url('golfpngs/${imageNumbers[c][z]}.png')`;
+        }
       } catch (error) {
         console.log(error)
         done();
@@ -857,7 +870,7 @@ async function newround() {
       // Add text element to the grid item
       if (imageNumbers[c][z] === 2) {
         var textElement_ = document.createElement('p');
-        textElement_.innerText = `${c+1}X${z+1}`;
+        textElement_.innerText = `${c + 1}X${z + 1}`;
         gridItem_.appendChild(textElement_);
       }
       if (imageNumbers[c][z] === 3) {
@@ -867,7 +880,7 @@ async function newround() {
         document.getElementById("noneANWSER").innerText = answer;
         document.getElementById("noneANWSER").style.display = 'none';
         document.getElementById("what is").innerText = `What is ${c} X ${z}?`
-        textElement_.innerText = `${c+1}X${z+1}`;
+        textElement_.innerText = `${c + 1}X${z + 1}`;
         gridItem_.appendChild(textElement_);
       }
       // Append the grid item to the grid container
@@ -1111,12 +1124,12 @@ async function swing__() {
         console.log(obj);
         return obj;
       }
-      
+
       async function returndata() {
         const response = await getpoints();
         for (let i = 0; i < response.length; i++) {
           var levelsData = response;
-          console.log("_LEVEL__",_LEVEL__,i)
+          console.log("_LEVEL__", _LEVEL__, i)
           if (i == _LEVEL__ - 1) {
             console.log(i, levelsData);
             var data__ = levelsData[i]; // Store the current level data
@@ -1125,7 +1138,7 @@ async function swing__() {
         }
       }
       var returndated = await returndata();
-      
+
       console.log("returndated", returndated)
       eval(returndated); // yes i know :| (EVAL IS BAD but i had to)
     }
