@@ -19,6 +19,7 @@ function init() {
   dropdownList.onchange = (ev) => {
     document.getElementById('NoneCourse').innerText = dropdownList.value;
   }
+  
   // Create an AJAX request
   var xhr = new XMLHttpRequest();
   xhr.open('GET', `${flaskURL}/returnjson`, true);
@@ -61,7 +62,7 @@ window.onload = function() {
   var baseURL_ = window.location.href;
   const herf = document.getElementById("herf to next builder");
   herf.setAttribute("href", `${baseURL_}/levelmaker.html`);
-  const swingbutton = document.getElementById("swing_button");
+  const swingbutton = document.getElementById("_swing_button_");
   const start__button_ = document.getElementById("start__button_");
   const LeveL_ = getCookie("Userlevel");
   console.log("LeveL_", LeveL_);
@@ -137,7 +138,7 @@ window.onload = function() {
   }
 
   // Get the form element
-  var form = document.getElementById('sudmit__jej439ak2'); // Replace 'yourFormId' with the actual ID of your form
+  var form = document.getElementById('sudmit___'); // Replace 'yourFormId' with the actual ID of your form
 
   // Add event listener to the form for 'submit' event
   form.addEventListener('submit', preventSubmission);
@@ -518,13 +519,14 @@ function next() {
   newround();
 }
 async function loadlevelandsetUpGame(LEVEL) {
+  
   document.getElementById('_(level)_').style.display = 'block';
   document.getElementById('_(login)_').style.display = 'none';
   document.getElementById('_(intoP)_').style.display = 'none';
 
   document.getElementById("base-timer-label");
   document.getElementById("noneLevel").innerText = LEVEL;
-  getJavaSRC();
+
   timerINIT();
   var ____level___ = LEVEL;
 
@@ -552,10 +554,12 @@ async function loadlevelandsetUpGame(LEVEL) {
       var gridItem = document.createElement('div');
       gridItem.className = 'grid-item';
       // Set the background image based on the image number
-      if (imageNumbers[i][j] == 11) {
-        gridItem.style.backgroundImage = `url('golfpngs/${imageNumbers[i][j]}.gif')`;
+      if (imageNumbers[i][j] == 11 || imageNumbers[i][j] == 13) {
+        var img = document.createElement('img');
+        
+        gridItem.style.backgroundImage = `url('golfpngs2/${imageNumbers[i][j]}.gif')`;
       } else {
-        gridItem.style.backgroundImage = `url('golfpngs/${imageNumbers[i][j]}.png')`;
+        gridItem.style.backgroundImage = `url('golfpngs2/${imageNumbers[i][j]}.png')`;
       }
       // Add text element to the grid item
       if (imageNumbers[i][j] === 2) {
@@ -588,6 +592,28 @@ async function loadlevelandsetUpGame(LEVEL) {
       }
     }
   }
+  const ball = document.getElementById("golfHolder");
+  const ballX = ball.getBoundingClientRect().left;
+  const ballY = ball.getBoundingClientRect().top;
+  function moveBallToSquare(x, y, speed) {
+    ball.style.transition = `transform ${speed}s linear`;
+    ball.style.transform = `translate(${x - ballX}px, ${y - ballY}px)`;
+    setTimeout(() => {
+      var offsets = document.getElementById('golfHolder').getBoundingClientRect();
+      console.log("top",offsets.top);
+      console.log("left",offsets.left);
+    },200)
+  };
+  function moveBall(id, offsetx, offsety, speed_) {
+    var square = document.getElementById(id);
+    let squareCoords = square.getBoundingClientRect();
+    let x = Number(squareCoords.left);
+    let y = Number(squareCoords.top);
+    moveBallToSquare(x - offsetx, y - offsety, speed_);
+  }
+  
+  moveBall("11X5",0,0,0.00001)
+  
   var wrong_gessus = 0;
   console.log(positions)
 
@@ -856,10 +882,10 @@ async function newround() {
       gridItem_.className = 'grid-item';
       // Set the background image based on the image number
       try {
-        if (imageNumbers[c][z] == 11) {
-          gridItem_.style.backgroundImage = `url('golfpngs/${imageNumbers[c][z]}.gif')`;
+        if (imageNumbers[c][z] == 11 || imageNumbers[c][z] == 13) {
+          gridItem_.style.backgroundImage = `url('golfpngs2/${imageNumbers[c][z]}.gif')`;
         } else {
-          gridItem_.style.backgroundImage = `url('golfpngs/${imageNumbers[c][z]}.png')`;
+          gridItem_.style.backgroundImage = `url('golfpngs2/${imageNumbers[c][z]}.png')`;
         }
       } catch (error) {
         console.log(error)
