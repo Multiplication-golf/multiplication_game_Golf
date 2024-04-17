@@ -600,8 +600,11 @@ async function loadlevelandsetUpGame(LEVEL) {
     ball.style.transform = `translate(${x - ballX}px, ${y - ballY}px)`;
     setTimeout(() => {
       var offsets = document.getElementById('golfHolder').getBoundingClientRect();
+      var restet = document.getElementById('golfHolder')
       console.log("top",offsets.top);
       console.log("left",offsets.left);
+      restet.style.top = offsets.top;
+      restet.style.left = offsets.left;
     },200)
   };
   function moveBall(id, offsetx, offsety, speed_) {
@@ -612,7 +615,7 @@ async function loadlevelandsetUpGame(LEVEL) {
     moveBallToSquare(x - offsetx, y - offsety, speed_);
   }
   
-  moveBall("11X5",0,0,0.00001)
+  //moveBall("11X5",0,0,0.00001)
   
   var wrong_gessus = 0;
   console.log(positions)

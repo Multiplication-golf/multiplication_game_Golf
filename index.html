@@ -132,6 +132,7 @@
       background-color: white;
       z-index: 1000000;
     }
+
     .flex {
       display: flex;
       flex-direction: row;
@@ -155,8 +156,8 @@
 
     .xxx {
       position: absolute;
-      top: 595px;
-      left: 277px;
+      top: 92.5vh;
+      left: 24.2vw;
       z-index: 1000000000000;
     }
 
@@ -462,6 +463,23 @@
       text-align: center;
     }
 
+    .XIDboxX____ {
+      margin: 10px;
+      background-color: #2E2E2E;
+      color: white;
+      width: 140px;
+      height: 170px;
+      font-size: 16px;
+      margin-left: -5px;
+      margin-top: 5px;
+      border: 5px solid black;
+      border-radius: 15px;
+      cursor: pointer;
+      padding: 1px;
+      border-radius: 2px;
+      text-align: center;
+    }
+
     .selectBox {
       position: absolute;
       top: 120px;
@@ -622,7 +640,7 @@
       width: 40vw;
       height: 100vh;
       background-color: white;
-      left:60vw;
+      left: 60vw;
       top: 10px;
       z-index: 500;
       text-align: center;
@@ -698,38 +716,45 @@
     </div>
   </div>
   <div id='_(level)_'>
-    <div style='background-color: black; position: absolute; top:-1px; left: -1px; width: 100vw; height: 100vw; z-index: 0.1;'></div>
+    <div
+      style='background-color: black; position: absolute; top:-1px; left: -1px; width: 100vw; height: 100vw; z-index: 0.1;'>
+    </div>
     <div>
       <div class='center'>
-        <div class="grid" id="myGrid"></div>
+        <div style="margin-top: 1.25%;">
+          <div class="grid" id="myGrid"></div>
+        </div>
+
         <div class='offff'>
           <p class='what_is' id='what is'></p>
           <form id='sudmit___'>
             <input type="text" id="input-box" class='input_-box' placeholder="Enter the answer">
           </form>
-          
+          <br>
           <button class="swing_button" id="_swing_button_">
             <div class='flex'>
-            <p class="xx">Swing</p>
-            <div class='x'><img src="swing.png" /></div>
+              <p class="xx">Swing</p>
+              <div class='x'><img src="swing.png" /></div>
             </div>
           </button>
           <br>
           <br>
           <br>
-          <div id="timer" style='z-index: 10000;'>
-            <div class="base-timer">
-              <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <g class="base-timer__circle">
-                  <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
-                </g>
-              </svg>
-              <span id="base-timer-label" class="base-timer__label">
-                0:20
-              </span>
-              <script>
-                function getJavaSRC() {}
-              </script>
+          <div style='margin-left: 15%'>
+            <div id="timer" style='z-index: 10000;'>
+              <div class="base-timer">
+                <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <g class="base-timer__circle">
+                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+                  </g>
+                </svg>
+                <span id="base-timer-label" class="base-timer__label">
+                  0:20
+                </span>
+                <script>
+                  function getJavaSRC() { }
+                </script>
+              </div>
             </div>
           </div>
         </div>
@@ -739,7 +764,7 @@
           </div>
         </div>
       </div>
-      
+
       <p id='swinglevel' style="display: none;"></p>
       <p id='noneANWSER' style="display: none;"></p>
       <p id='noneLevel' style="display: none;"></p>
@@ -814,11 +839,14 @@
           <p>unlocks at level 50 or 900<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
           <button class='golfbutton_t' onclick="kk()"><img class='imggolf_' id='kX' src="displaypngs/27.png" /></button>
         </div>
-        <div class='XIDboxX'>
-          <br>
-          <button class='golfbutton_t' onclick="gg()"><img class='imggolf_' id='gX' src="displaypngs/28.png" /></button>
-          <br><br><big>UNLOCKS at LEVEL 100 <br> or 1500<img src='coingif_1.gif'
-              class='img-css-jf483kdkoqaanajsjpqlsm' /></big>
+        <div class='center'>
+          <div class='XIDboxX____'>
+            <br>
+            <button class='golfbutton_t' onclick="gg()"><img class='imggolf_' id='gX'
+                src="displaypngs/28.png" /></button>
+            <br><br><big>UNLOCKS at LEVEL 100 <br> or 1500<img src='coingif_1.gif'
+                class='img-css-jf483kdkoqaanajsjpqlsm' /></big>
+          </div>
         </div>
       </div>
       <br>
@@ -853,8 +881,11 @@
           var kX = document.getElementById('kX');
           var gX = document.getElementById('gX');
           console.log("image LEVEL", LEveL);
+          console.log(money______)
+          console.log(money______ >= 50)
+          var _money______ = Number(money______.innerText);
           LEveL++;
-          if (LEveL >= 3 || money______ >= 50) {
+          if (LEveL >= 3 || _money______ >= 50) {
             aX.src = 'displaypngs/18.png';
             bX.src = 'displaypngs/19.png';
             cX.src = 'displaypngs/20.png';
@@ -864,7 +895,7 @@
             bX.src = 'locked/23.png';
             cX.src = 'locked/24.png';
           }
-          if (LEveL >= 10 || money______ >= 120) {
+          if (LEveL >= 10 || _money______ >= 120) {
             dX.src = 'displaypngs/21.png';
             eX.src = 'displaypngs/22.png';
             fX.src = 'displaypngs/23.png';
@@ -874,19 +905,19 @@
             eX.src = 'locked/27.png';
             fX.src = 'locked/28.png';
           }
-          if (LEveL >= 20 || money______ >= 250) {
+          if (LEveL >= 20 || _money______ >= 250) {
             hX.src = 'displaypngs/24.png';
           }
           else if (LEveL < 20) {
             hX.src = 'locked/29.png';
           }
-          if (LEveL >= 30 || money______ >= 510) {
+          if (LEveL >= 30 || _money______ >= 510) {
             iX.src = 'displaypngs/25.png';
           }
           else if (LEveL < 30) {
             iX.src = 'locked/30.png';
           }
-          if (LEveL >= 50 || money______ >= 900) {
+          if (LEveL >= 50 || _money______ >= 900) {
             jX.src = 'displaypngs/26.png';
             gX.src = 'displaypngs/27.png';
           }
@@ -894,13 +925,14 @@
             jX.src = 'locked/31.png';
             kX.src = 'locked/32.png';
           }
-          if (LEveL >= 100 || money______ >= 1500) {
+          if (LEveL >= 100 || _money______ >= 1500) {
             gX.src = 'displaypngs/28.png';
           }
           else if (LEveL < 100) {
             gX.src = 'locked/33.png';
           }
         }
+        var baseURL = window.location.href;
         function aa() {
           console.log(aaaX.src)
           console.log(`${baseURL}displaypngs/18.png`)
