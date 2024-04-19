@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+.p-jf83iw {
+  text-align: center;
+  font-size: 50px;
+}
+table, td {
+  border:1px solid black;
+}
+th {
+  border:1px solid black;
+  margin: 1px;
+  font-size: 30px;
+  padding: 5px;
+}

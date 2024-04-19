@@ -19,7 +19,41 @@ function init() {
   dropdownList.onchange = (ev) => {
     document.getElementById('NoneCourse').innerText = dropdownList.value;
   }
-  
+  if (window.location.href != "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
+    window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
+    if (getCookie("Name") == null) {
+      var Name = generate()
+      setCookie("Name",Name,756)
+    }
+    var nameList = [
+      'Time', 'Past', 'Future', 'Dev',
+      'Fly', 'Flying', 'Soar', 'Soaring', 'Power', 'Falling',
+      'Fall', 'Jump', 'Cliff', 'Mountain', 'Rend', 'Red', 'Blue',
+      'Green', 'Yellow', 'Gold', 'Demon', 'Demonic', 'Panda', 'Cat',
+      'Kitty', 'Kitten', 'Zero', 'Memory', 'Trooper', 'XX', 'Bandit',
+      'Fear', 'Light', 'Glow', 'Tread', 'Deep', 'Deeper', 'Deepest',
+      'Mine', 'Your', 'Worst', 'Enemy', 'Hostile', 'Force', 'Video',
+      'Game', 'Donkey', 'Mule', 'Colt', 'Cult', 'Cultist', 'Magnum',
+      'Gun', 'Assault', 'Recon', 'Trap', 'Trapper', 'Redeem', 'Code',
+      'Script', 'Writer', 'Near', 'Close', 'Open', 'Cube', 'Circle',
+      'Geo', 'Genome', 'Germ', 'Spaz', 'Shot', 'Echo', 'Beta', 'Alpha',
+      'Gamma', 'Omega', 'Seal', 'Squid', 'Money', 'Cash', 'Lord', 'King',
+      'Duke', 'Rest', 'Fire', 'Flame', 'Morrow', 'Break', 'Breaker', 'Numb',
+      'Ice', 'Cold', 'Rotten', 'Sick', 'Sickly', 'Janitor', 'Camel', 'Rooster',
+      'Sand', 'Desert', 'Dessert', 'Hurdle', 'Racer', 'Eraser', 'Erase', 'Big',
+      'Small', 'Short', 'Tall', 'Sith', 'Bounty', 'Hunter', 'Cracked', 'Broken',
+      'Sad', 'Happy', 'Joy', 'Joyful', 'Crimson', 'Destiny', 'Deceit', 'Lies',
+      'Lie', 'Honest', 'Destined', 'Bloxxer', 'Hawk', 'Eagle', 'Hawker', 'Walker',
+      'Zombie', 'Sarge', 'Capt', 'Captain', 'Punch', 'One', 'Two', 'Uno', 'Slice',
+      'Slash', 'Melt', 'Melted', 'Melting', 'Fell', 'Wolf', 'Hound',
+      'Legacy', 'Sharp', 'Dead', 'Mew', 'Chuckle', 'Bubba', 'Bubble', 'Sandwich', 'Smasher', 'Extreme', 'Multi', 'Universe', 'Ultimate', 'Death', 'Ready', 'Monkey', 'Elevator', 'Wrench', 'Grease', 'Head', 'Theme', 'Grand', 'Cool', 'Kid', 'Boy', 'Girl', 'Vortex', 'Paradox'
+    ];
+    function generate() {
+      var finalName = nameList[Math.floor(Math.random() * nameList.length)]+nameList[Math.floor(Math.random() * nameList.length)]+nameList[Math.floor(Math.random() * nameList.length)];
+      return finalName
+    };
+  }
+
   // Create an AJAX request
   var xhr = new XMLHttpRequest();
   xhr.open('GET', `${flaskURL}/returnjson`, true);
@@ -62,6 +96,8 @@ window.onload = function() {
   var baseURL_ = window.location.href;
   const herf = document.getElementById("herf to next builder");
   herf.setAttribute("href", `${baseURL_}/levelmaker.html`);
+  const herfLB = document.getElementById("herf to next board");
+  herfLB.setAttribute("href", `${baseURL_}/leaderboard.html`);
   const swingbutton = document.getElementById("_swing_button_");
   const start__button_ = document.getElementById("start__button_");
   const LeveL_ = getCookie("Userlevel");
@@ -128,6 +164,11 @@ window.onload = function() {
     document.getElementById("money_-__-").innerText = MONEYCOIN;
   } else {
     document.getElementById("money_-__-").innerText = 0;
+  }
+  if (MONEYCOIN !== "") {
+    document.getElementById("money_-__---").innerHTML = "<img class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + MONEYCOIN;
+  } else {
+    document.getElementById("money_-__---").innerHTML = "<img class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + 0;
   }
   function preventSubmission(event) {
     // Prevent the default form submission behavior
@@ -519,7 +560,7 @@ function next() {
   newround();
 }
 async function loadlevelandsetUpGame(LEVEL) {
-  
+
   document.getElementById('_(level)_').style.display = 'block';
   document.getElementById('_(login)_').style.display = 'none';
   document.getElementById('_(intoP)_').style.display = 'none';
@@ -556,7 +597,7 @@ async function loadlevelandsetUpGame(LEVEL) {
       // Set the background image based on the image number
       if (imageNumbers[i][j] == 11 || imageNumbers[i][j] == 13) {
         var img = document.createElement('img');
-        
+
         gridItem.style.backgroundImage = `url('golfpngs2/${imageNumbers[i][j]}.gif')`;
       } else {
         gridItem.style.backgroundImage = `url('golfpngs2/${imageNumbers[i][j]}.png')`;
@@ -601,11 +642,11 @@ async function loadlevelandsetUpGame(LEVEL) {
     setTimeout(() => {
       var offsets = document.getElementById('golfHolder').getBoundingClientRect();
       var restet = document.getElementById('golfHolder')
-      console.log("top",offsets.top);
-      console.log("left",offsets.left);
+      console.log("top", offsets.top);
+      console.log("left", offsets.left);
       restet.style.top = offsets.top;
       restet.style.left = offsets.left;
-    },200)
+    }, 200)
   };
   function moveBall(id, offsetx, offsety, speed_) {
     var square = document.getElementById(id);
@@ -614,9 +655,9 @@ async function loadlevelandsetUpGame(LEVEL) {
     let y = Number(squareCoords.top);
     moveBallToSquare(x - offsetx, y - offsety, speed_);
   }
-  
+
   //moveBall("11X5",0,0,0.00001)
-  
+
   var wrong_gessus = 0;
   console.log(positions)
 
@@ -844,6 +885,21 @@ function setCookie(cname, cvalue, exdays) {
 function cooookies() {
   setCookie("userlevel", level, 10000000000000)
 }
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 async function newround() {
   document.getElementById("noneLevel").innerText = Number(document.getElementById("noneLevel").innerText) + 1
   let level____ = parseInt(document.getElementById("noneLevel").innerText); // Parse level as an integer
@@ -966,8 +1022,8 @@ async function swing__() {
   console.log((myanswer == awnser__))
   const ball = document.getElementById("golfHolder");
 
-  const ballX = ball.getBoundingClientRect().left;
-  const ballY = ball.getBoundingClientRect().top;
+  var ballX = ball.getBoundingClientRect().left;
+  var ballY = ball.getBoundingClientRect().top;
 
 
   function moveBallToSquare(x, y, speed) {
@@ -1287,6 +1343,8 @@ async function swing__() {
           }, 301);
         }
       }
+      ballX = ball.getBoundingClientRect().left;
+      ballY = ball.getBoundingClientRect().top;
     } else {
       var course_ = document.getElementById("NoneCourse").innerText;
       var _timeleft = document.getElementById('base-timer-label').innerHTML;
@@ -1311,6 +1369,8 @@ async function swing__() {
       var returndated = await returndata();
       console.log("returndated", returndated)
       eval(returndated);
+      ballX = ball.getBoundingClientRect().left;
+      ballY = ball.getBoundingClientRect().top;
     }
   }
 }
