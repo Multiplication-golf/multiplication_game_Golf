@@ -19,35 +19,36 @@ function init() {
   dropdownList.onchange = (ev) => {
     document.getElementById('NoneCourse').innerText = dropdownList.value;
   }
+  var nameList = [
+    'Time', 'Past', 'Future', 'Dev',
+    'Fly', 'Flying', 'Soar', 'Soaring', 'Power', 'Falling',
+    'Fall', 'Jump', 'Cliff', 'Mountain', 'Rend', 'Red', 'Blue',
+    'Green', 'Yellow', 'Gold', 'Demon', 'Demonic', 'Panda', 'Cat',
+    'Kitty', 'Kitten', 'Zero', 'Memory', 'Trooper', 'XX', 'Bandit',
+    'Fear', 'Light', 'Glow', 'Tread', 'Deep', 'Deeper', 'Deepest',
+    'Mine', 'Your', 'Worst', 'Enemy', 'Hostile', 'Force', 'Video',
+    'Game', 'Donkey', 'Mule', 'Colt', 'Cult', 'Cultist', 'Magnum',
+    'Gun', 'Assault', 'Recon', 'Trap', 'Trapper', 'Redeem', 'Code',
+    'Script', 'Writer', 'Near', 'Close', 'Open', 'Cube', 'Circle',
+    'Geo', 'Genome', 'Germ', 'Spaz', 'Shot', 'Echo', 'Beta', 'Alpha',
+    'Gamma', 'Omega', 'Seal', 'Squid', 'Money', 'Cash', 'Lord', 'King',
+    'Duke', 'Rest', 'Fire', 'Flame', 'Morrow', 'Break', 'Breaker', 'Numb',
+    'Ice', 'Cold', 'Rotten', 'Sick', 'Sickly', 'Janitor', 'Camel', 'Rooster',
+    'Sand', 'Desert', 'Dessert', 'Hurdle', 'Racer', 'Eraser', 'Erase', 'Big',
+    'Small', 'Short', 'Tall', 'Sith', 'Bounty', 'Hunter', 'Cracked', 'Broken',
+    'Sad', 'Happy', 'Joy', 'Joyful', 'Crimson', 'Destiny', 'Deceit', 'Lies',
+    'Lie', 'Honest', 'Destined', 'Bloxxer', 'Hawk', 'Eagle', 'Hawker', 'Walker',
+    'Zombie', 'Sarge', 'Capt', 'Captain', 'Punch', 'One', 'Two', 'Uno', 'Slice',
+    'Slash', 'Melt', 'Melted', 'Melting', 'Fell', 'Wolf', 'Hound',
+    'Legacy', 'Sharp', 'Dead', 'Mew', 'Chuckle', 'Bubba', 'Bubble', 'Sandwich', 'Smasher', 'Extreme', 'Multi', 'Universe', 'Ultimate', 'Death', 'Ready', 'Monkey', 'Elevator', 'Wrench', 'Grease', 'Head', 'Theme', 'Grand', 'Cool', 'Kid', 'Boy', 'Girl', 'Vortex', 'Paradox'
+  ];
   if (window.location.href != "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
     window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
-    if (getCookie("Name") == null) {
+    if (getCookie("Name") == null || getCookie("Name") == "" || getCookie("Name") == undefined) {
       var Name = generate()
       setCookie("Name",Name,756)
     }
-    var nameList = [
-      'Time', 'Past', 'Future', 'Dev',
-      'Fly', 'Flying', 'Soar', 'Soaring', 'Power', 'Falling',
-      'Fall', 'Jump', 'Cliff', 'Mountain', 'Rend', 'Red', 'Blue',
-      'Green', 'Yellow', 'Gold', 'Demon', 'Demonic', 'Panda', 'Cat',
-      'Kitty', 'Kitten', 'Zero', 'Memory', 'Trooper', 'XX', 'Bandit',
-      'Fear', 'Light', 'Glow', 'Tread', 'Deep', 'Deeper', 'Deepest',
-      'Mine', 'Your', 'Worst', 'Enemy', 'Hostile', 'Force', 'Video',
-      'Game', 'Donkey', 'Mule', 'Colt', 'Cult', 'Cultist', 'Magnum',
-      'Gun', 'Assault', 'Recon', 'Trap', 'Trapper', 'Redeem', 'Code',
-      'Script', 'Writer', 'Near', 'Close', 'Open', 'Cube', 'Circle',
-      'Geo', 'Genome', 'Germ', 'Spaz', 'Shot', 'Echo', 'Beta', 'Alpha',
-      'Gamma', 'Omega', 'Seal', 'Squid', 'Money', 'Cash', 'Lord', 'King',
-      'Duke', 'Rest', 'Fire', 'Flame', 'Morrow', 'Break', 'Breaker', 'Numb',
-      'Ice', 'Cold', 'Rotten', 'Sick', 'Sickly', 'Janitor', 'Camel', 'Rooster',
-      'Sand', 'Desert', 'Dessert', 'Hurdle', 'Racer', 'Eraser', 'Erase', 'Big',
-      'Small', 'Short', 'Tall', 'Sith', 'Bounty', 'Hunter', 'Cracked', 'Broken',
-      'Sad', 'Happy', 'Joy', 'Joyful', 'Crimson', 'Destiny', 'Deceit', 'Lies',
-      'Lie', 'Honest', 'Destined', 'Bloxxer', 'Hawk', 'Eagle', 'Hawker', 'Walker',
-      'Zombie', 'Sarge', 'Capt', 'Captain', 'Punch', 'One', 'Two', 'Uno', 'Slice',
-      'Slash', 'Melt', 'Melted', 'Melting', 'Fell', 'Wolf', 'Hound',
-      'Legacy', 'Sharp', 'Dead', 'Mew', 'Chuckle', 'Bubba', 'Bubble', 'Sandwich', 'Smasher', 'Extreme', 'Multi', 'Universe', 'Ultimate', 'Death', 'Ready', 'Monkey', 'Elevator', 'Wrench', 'Grease', 'Head', 'Theme', 'Grand', 'Cool', 'Kid', 'Boy', 'Girl', 'Vortex', 'Paradox'
-    ];
+    
     function generate() {
       var finalName = nameList[Math.floor(Math.random() * nameList.length)]+nameList[Math.floor(Math.random() * nameList.length)]+nameList[Math.floor(Math.random() * nameList.length)];
       return finalName
@@ -97,7 +98,7 @@ window.onload = function() {
   const herf = document.getElementById("herf to next builder");
   herf.setAttribute("href", `${baseURL_}/levelmaker.html`);
   const herfLB = document.getElementById("herf to next board");
-  herfLB.setAttribute("href", `${baseURL_}/leaderboard.html`);
+  herfLB.setAttribute("href", `${baseURL_}/leaderboard.html?${getCookie("Name")}`);
   const swingbutton = document.getElementById("_swing_button_");
   const start__button_ = document.getElementById("start__button_");
   const LeveL_ = getCookie("Userlevel");

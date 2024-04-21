@@ -2,9 +2,33 @@
 
 const flaskURL = "https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080";
 
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+
+function getKeyFromUrl() {
+  let urlString = window.location.href;
+  let url = new URL(urlString);
+  let key = url.searchParams.get("key");
+  return key;
+}
 
 window.onload = function() {
   const Name = getCookie("Name")
+  document.getElementById("playerid").innerText = "You are "+Name;
   const MONEYCOIN = getCookie("Moneyscore");
   var xhr = new XMLHttpRequest();
   xhr.open('GET', `${flaskURL}/ADDplayer/${MONEYCOIN}/${Name}`, true);
@@ -17,6 +41,7 @@ window.onload = function() {
     }
   };
   xhr.send()
+  
   var xhr = new XMLHttpRequest();
   xhr.open('GET', `${flaskURL}/GetleaderBoard/`, true);
 
@@ -25,6 +50,10 @@ window.onload = function() {
       // Parse the response as JSON
       var response = JSON.parse(xhr.responseText);
       var users = response
+      console.log(response);
+      for (var i = 0;i < users.length;i++) {
+        users[i].shift()
+      }
       var LB = document.getElementById("leader board")
       var tr = document.createElement('tr');
       var th = document.createElement('th');

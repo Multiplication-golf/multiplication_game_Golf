@@ -805,7 +805,7 @@ async function submitLevel(name, levelData, key) {
   var rawdata = JSON.stringify(levelData); // Serialize levelData to JSON
   return new Promise((resolve, reject) => {
     const encodedData = encodeURIComponent(rawdata);
-    const url = `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/levelSubmit/${encodedData}/${name}/${key}`;
+    const url = `${flaskURL}/levelSubmit/${encodedData}/${name}/${key}`;
     const xhr = new XMLHttpRequest();
     xhr.open('POST', url, true);
 
