@@ -399,10 +399,10 @@ class Level_Builder {
     this.divbar.innerHTML = '';
     for (let i = 1; i < 17; i++) {
       var item = document.createElement("img");
-      if (i == 11) {
-        item.src = `golfpngs/${i}.gif`;
+      if (i == 11 || i == 13) {
+        item.src = `golfpngs2/${i}.gif`;
       } else {
-        item.src = `golfpngs/${i}.png`;
+        item.src = `golfpngs2/${i}.png`;
       }
       item.className = "itemimg";
       item.addEventListener("click", function() {
@@ -435,9 +435,11 @@ class Level_Builder {
           gridItem_.className = '_grid-item_';
           // Set the background image based on the image number
           if (baselist[a][d] == 11) {
-            gridItem_.style.backgroundImage = `url('golfpngs/${baselist[a][d]}.gif')`;
+            gridItem_.style.backgroundImage = `url('golfpngs2/${baselist[a][d]}.gif')`;
+            gridItem_.style.backgroundSize = '100% 100%'
           } else {
-            gridItem_.style.backgroundImage = `url('golfpngs/${baselist[a][d]}.png')`;
+            gridItem_.style.backgroundImage = `url('golfpngs2/${baselist[a][d]}.png')`;
+            gridItem_.style.backgroundSize = '100% 100%'
           }
           // Add text element to the grid item
           var textElement_ = document.createElement('p');
@@ -460,9 +462,11 @@ class Level_Builder {
             if (!_isPointCorrectCreationMode_ && !__isPointCorrectCreationMode_) {
               var slected_item_ = Number(document.getElementById("noneSlect").innerText);
               if (slected_item_ == 11) {
-                gridItem_.style.backgroundImage = `url('golfpngs/${slected_item_}.gif')`;
+                gridItem_.style.backgroundImage = `url('golfpngs2/${slected_item_}.gif')`;
+                gridItem_.style.backgroundSize = '100% 100%'
               } else {
-                gridItem_.style.backgroundImage = `url('golfpngs/${slected_item_}.png')`;
+                gridItem_.style.backgroundImage = `url('golfpngs2/${slected_item_}.png')`;
+                gridItem_.style.backgroundSize = '100% 100%'
               }
               baselist[a][d] = slected_item_;
             }

@@ -561,7 +561,7 @@ function next() {
   newround();
 }
 async function loadlevelandsetUpGame(LEVEL) {
-
+  
   document.getElementById('_(level)_').style.display = 'block';
   document.getElementById('_(login)_').style.display = 'none';
   document.getElementById('_(intoP)_').style.display = 'none';
@@ -590,6 +590,8 @@ async function loadlevelandsetUpGame(LEVEL) {
   var positions = [];
   let imageIndex = 0;
 
+  document.getElementById('input-box').focus();
+
   for (let i = 0; i < 12; i++) {
     for (let j = 0; j < 12; j++) {
       // Create a grid item element
@@ -600,8 +602,10 @@ async function loadlevelandsetUpGame(LEVEL) {
         var img = document.createElement('img');
 
         gridItem.style.backgroundImage = `url('golfpngs2/${imageNumbers[i][j]}.gif')`;
+        gridItem.style.backgroundSize = '100% 100%'
       } else {
         gridItem.style.backgroundImage = `url('golfpngs2/${imageNumbers[i][j]}.png')`;
+        gridItem.style.backgroundSize = '100% 100%'
       }
       // Add text element to the grid item
       if (imageNumbers[i][j] === 2) {
@@ -629,7 +633,6 @@ async function loadlevelandsetUpGame(LEVEL) {
         var top = topgridItem - topgolf;
         var left = leftgridItem - leftgolf;
         textElement.innerText = `${i}X${j}`;
-        console.log(gridItem.getBoundingClientRect());
         textElement.setAttribute("id", `${i}X${j}`);
       }
     }
@@ -920,6 +923,7 @@ async function newround() {
     console.log("done")
     return ""
   }
+  document.getElementById('input-box').focus();
 
   var gridContainer = document.getElementById('myGrid');
 
@@ -944,8 +948,10 @@ async function newround() {
       try {
         if (imageNumbers[c][z] == 11 || imageNumbers[c][z] == 13) {
           gridItem_.style.backgroundImage = `url('golfpngs2/${imageNumbers[c][z]}.gif')`;
+          gridItem_.style.backgroundSize = '100% 100%';
         } else {
           gridItem_.style.backgroundImage = `url('golfpngs2/${imageNumbers[c][z]}.png')`;
+          gridItem_.style.backgroundSize = '100% 100%';
         }
       } catch (error) {
         console.log(error)
@@ -980,7 +986,6 @@ async function newround() {
         var top = topgridItem - topgolf;
         var left = leftgridItem - leftgolf;
         textElement_.innerText = `${c}X${z}`;
-        console.log(gridItem_.getBoundingClientRect());
         textElement_.setAttribute("id", `${c}X${z}`);
       }
     }
@@ -1341,6 +1346,19 @@ async function swing__() {
           moveBall("9X6", 10, 10, 0.3);
           setTimeout(() => {
             moveBall("11X5", 10, 10, 0.4);
+          }, 301);
+        }
+      }
+      if (_LEVEL__ == 5) {
+        golfBall.style.transition = "transform 0.1s linear";
+        var random_boolean = Math.random() < 0.5;
+        if (random_boolean) {
+          moveBall("3X3", 10, 10, 0.3);
+        }
+        else {
+          moveBall("6X5", 10, 10, 0.3);
+          setTimeout(() => {
+            moveBall("5X3", 10, 10, 0.4);
           }, 301);
         }
       }

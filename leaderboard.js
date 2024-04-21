@@ -1,5 +1,9 @@
 // author: OrsoGames
 
+var script = document.createElement('script');
+script.src = 'https://code.jquery.com/jquery-3.6.3.min.js'; // Check https://jquery.com/ for the current version
+document.getElementsByTagName('head')[0].appendChild(script);
+
 const flaskURL = "https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080";
 
 function getCookie(cname) {
@@ -54,7 +58,7 @@ window.onload = function() {
       for (var i = 0;i < users.length;i++) {
         users[i].shift()
       }
-      var LB = document.getElementById("leader board")
+      var LB = document.getElementById("leader-board")
       var tr = document.createElement('tr');
       var th = document.createElement('th');
       th.innerText = 'user';
@@ -67,6 +71,7 @@ window.onload = function() {
       tr.appendChild(th3);
       LB.appendChild(tr);
       var i = 0
+
       users.forEach(user => {
         var tr = document.createElement('tr')
         var th = document.createElement('td');
@@ -87,5 +92,6 @@ window.onload = function() {
     }
   };
   xhr.send()
+  
 }
 

@@ -6,16 +6,30 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="leaderboard.css" rel="stylesheet" type="text/css" />
-  
+  <script src='https://code.jquery.com/jquery-3.6.3.min.js'></script>
 </head>
 
 <body>
   <p class='p-jf83iw'>leader board</p>
-  <div style='text-align: center; align-content: center; width: 100% margin:400px;'>
-    <table id='leader board'></table>
+  <p id='playerid' class='p-dkji392'>You are</p>
+  <br>
+  <div style='text-align: center; width: 100%; margin: auto;'>
+    <input type="text" id="search" placeholder="Type to search"><br><br><br>
+    <table id='leader-board'></table>
   </div>
-  <p id='playerid'>You are</p>
+  
   <script src="leaderboard.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('#search').on('keyup', function(){
+            var value = $(this).val().toLowerCase();
+            $('#leader-board tr:not(:first-child)').filter(function(){
+                $(this).toggle($(this).children(':first-child').text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+  </script>
+
 </body>
 
 </html>
