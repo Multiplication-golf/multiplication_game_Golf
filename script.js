@@ -219,6 +219,7 @@ function transtonextpage() {
   document.getElementById('_(intoP)_').style.display = 'block';
   document.getElementById('_(courseDone)_').style.display = 'none';
 }
+//disableScroll()
 function openDIS(__time_____) {
   transtonextpage();
   getJavaSRCX();
@@ -310,6 +311,7 @@ function done() {
 function loadLevelData(___level_) {
   var course_ = document.getElementById("NoneCourse").innerText;
   console.log("course_", course_);
+  
   if (course_ == "classic") {
     var imageNumbers;
     if (___level_ == 1) {
@@ -615,10 +617,10 @@ async function loadlevelandsetUpGame(LEVEL) {
       }
       if (imageNumbers[i][j] === 3) {
         var textElement = document.createElement('p');
-        answer = i * j;
+        answer = (i+1) * (j+1);
         console.log(answer)
         document.getElementById("noneANWSER").innerText = answer;
-        document.getElementById("what is").innerText = `What is ${i} X ${j}?`
+        document.getElementById("what is").innerText = `What is ${i + 1}X${j + 1}?`
         textElement.innerText = `${i + 1}X${j + 1}`;
         gridItem.appendChild(textElement);
       }
@@ -632,35 +634,26 @@ async function loadlevelandsetUpGame(LEVEL) {
         var leftgolf = golf.getBoundingClientRect().left + window.screenX;
         var top = topgridItem - topgolf;
         var left = leftgridItem - leftgolf;
-        textElement.innerText = `${i}X${j}`;
+        textElement.innerText = `${i + 1}X${j + 1}`;
         textElement.setAttribute("id", `${i}X${j}`);
       }
     }
   }
-  const ball = document.getElementById("golfHolder");
-  const ballX = ball.getBoundingClientRect().left;
-  const ballY = ball.getBoundingClientRect().top;
-  function moveBallToSquare(x, y, speed) {
-    ball.style.transition = `transform ${speed}s linear`;
-    ball.style.transform = `translate(${x - ballX}px, ${y - ballY}px)`;
-    setTimeout(() => {
-      var offsets = document.getElementById('golfHolder').getBoundingClientRect();
-      var restet = document.getElementById('golfHolder')
-      console.log("top", offsets.top);
-      console.log("left", offsets.left);
-      restet.style.top = offsets.top;
-      restet.style.left = offsets.left;
-    }, 200)
-  };
-  function moveBall(id, offsetx, offsety, speed_) {
-    var square = document.getElementById(id);
-    let squareCoords = square.getBoundingClientRect();
-    let x = Number(squareCoords.left);
-    let y = Number(squareCoords.top);
-    moveBallToSquare(x - offsetx, y - offsety, speed_);
-  }
+  
+  
 
-  //moveBall("11X5",0,0,0.00001)
+
+  const X115 = document.getElementById("X115");
+
+
+  var X115Y = ball.getBoundingClientRect().left;
+  var X115X = ball.getBoundingClientRect().top;
+
+  const ball = document.getElementById("golfHolder");
+
+  ball.style.top = X115Y
+  ball.style.left = X115X
+  
 
   var wrong_gessus = 0;
   console.log(positions)
@@ -670,6 +663,11 @@ async function loadlevelandsetUpGame(LEVEL) {
   }
 
 }
+
+
+
+
+
 function timerINIT() {
   function formatTimeLeft(time) {
     // The largest round integer less than or equal to the result of time divided being by 60.
@@ -1011,6 +1009,24 @@ function Direction(toX, toY, initialX, initialY) {
   rotated.style.transform = `rotate(${normalizedAngle}deg)`;
   return normalizedAngle; // Return true or any other value if needed
 }
+function moveBall_(id, offsetx, offsety, speed_) {
+  var square = document.getElementById(id);
+  let squareCoords = square.getBoundingClientRect();
+  let x = Number(squareCoords.left);
+  let y = Number(squareCoords.top);
+  moveBallToSquare_(x - offsetx, y - offsety, speed_);
+}
+var ballX = 0;
+var ballY = 0;
+function moveBallToSquare_(x, y, speed) {
+  const ballXnow = ball.getBoundingClientRect().left;
+  const ballYnow = ball.getBoundingClientRect().top;
+  ball.style.transition = `transform ${speed}s linear`;
+  Direction(x, y, ballXnow, ballYnow);
+  ball.style.transform = `translate(${x - ballX}px, ${y - ballY}px)`;
+  console.log("moveBallToSquare",ballX,y);
+  console.log("moveBallToSquare",ballY,x);
+};
 async function swing__() {
   var __course_ = document.getElementById("NoneCourse").innerText;
   console.log("__course_", __course_);
@@ -1028,8 +1044,11 @@ async function swing__() {
   console.log((myanswer == awnser__))
   const ball = document.getElementById("golfHolder");
 
-  var ballX = ball.getBoundingClientRect().left;
-  var ballY = ball.getBoundingClientRect().top;
+  if (ballX == 0) {
+    ballX = ball.getBoundingClientRect().left;
+    ballY = ball.getBoundingClientRect().top;
+  }
+  
 
 
   function moveBallToSquare(x, y, speed) {
@@ -1038,7 +1057,9 @@ async function swing__() {
     ball.style.transition = `transform ${speed}s linear`;
     Direction(x, y, ballXnow, ballYnow);
     ball.style.transform = `translate(${x - ballX}px, ${y - ballY}px)`;
-  };
+    console.log("moveBallToSquare",ballX,y);
+    console.log("moveBallToSquare",ballY,x);
+  }
   function moveBall(id, offsetx, offsety, speed_) {
     var square = document.getElementById(id);
     let squareCoords = square.getBoundingClientRect();
@@ -1054,6 +1075,7 @@ async function swing__() {
       holder.style.display = "none";
       holder.style.transform = "translate(0px, 0px) rotate(0deg)";
       holder.style.display = "block";
+      golfBall.style.animation = '';
       openDIS(_timeleft);
     }, 400);
   }
@@ -1298,27 +1320,26 @@ async function swing__() {
           console.log('ran', random_boolean);
 
           if (random_boolean == 1) {
-            moveBall('6X4', 10, 10, 0.5);
+            moveBall('6X4', 0, 0, 0.5);
             setTimeout(() => {
-              moveBall('7X6', 10, 10, 0.8);
+              moveBall('7X6', 0, 0, 0.8);
             }, 501);
           }
           else if (random_boolean == 2) {
-            moveBall('4X4', 10, 10, 0.4);
+            moveBall('4X4', 0, 0, 0.4);
             setTimeout(() => {
-              moveBall('7X6', 10, 10, 0.7);
+              moveBall('7X6', 0, 0, 0.7);
             }, 401);
           }
           else if (random_boolean == 3) {
-            moveBall('3X4', 10, 10, 0.5);
+            moveBall('3X4', 0, 0, 0.5);
             setTimeout(() => {
-              moveBall('7X6', 10, 10, 0.6);
+              moveBall('7X6', 0, 0, 0.6);
             }, 501);
           }
         }
       }
       if (_LEVEL__ == 3) {
-        golfBall.style.transition = "transform 0.1s linear";
         var random_boolean = Math.random() < 0.5;
         if (random_boolean) {
           moveBall("9X4", 10, 10, 0.3);
@@ -1334,7 +1355,6 @@ async function swing__() {
         }
       }
       if (_LEVEL__ == 4) {
-        golfBall.style.transition = "transform 0.1s linear";
         var random_boolean = Math.random() < 0.5;
         if (random_boolean) {
           moveBall("9X4", 10, 10, 0.3);
@@ -1350,20 +1370,38 @@ async function swing__() {
         }
       }
       if (_LEVEL__ == 5) {
-        golfBall.style.transition = "transform 0.1s linear";
         var random_boolean = Math.random() < 0.5;
         if (random_boolean) {
-          moveBall("3X3", 10, 10, 0.3);
+          moveBall("4X4", 10, 10, 0.3);
         }
         else {
-          moveBall("6X5", 10, 10, 0.3);
+          moveBall("7X6", 10, 10, 0.3);
           setTimeout(() => {
-            moveBall("5X3", 10, 10, 0.4);
+            moveBall("6X4", 10, 10, 0.4);
           }, 301);
         }
       }
-      ballX = ball.getBoundingClientRect().left;
-      ballY = ball.getBoundingClientRect().top;
+      if (_LEVEL__ == 6) {
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        
+        var random_boolean = getRandomInt(1, 2);
+        console.log(random_boolean)
+        if (random_boolean == 1) {
+          moveBall("5X1", 0, 0, 0.3);
+          setTimeout(() => {
+            moveBall("6X3", 0, 0, 0.4);
+          }, 301);
+        }
+        if (random_boolean == 2) {
+          moveBall("8X6", 0, 0, 0.3);
+          setTimeout(() => {
+            moveBall("9X1", 0, 0, 0.4);
+          }, 301);
+        }
+      }
+      
     } else {
       var course_ = document.getElementById("NoneCourse").innerText;
       var _timeleft = document.getElementById('base-timer-label').innerHTML;

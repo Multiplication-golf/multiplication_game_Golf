@@ -66,12 +66,14 @@
   <style>
     .grid {
       display: grid;
+      position: absolute;
+      top: 0px;
+      left: 0px;
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 0px;
       width: 9vw;
       height: 9vw;
 
-      border: 4px solid white;
       z-index: 9000;
       /* Add border around the grid */
     }
@@ -156,8 +158,8 @@
 
     .xxx {
       position: absolute;
-      top: 92.5vh;
-      left: 24.2vw;
+      top: 92vh;
+      left: 24.5vw;
       z-index: 1000000000000;
     }
 
@@ -427,12 +429,26 @@
       top: 120px;
       left: 50px;
       text-align: center;
-      width: 225px;
-      height: 400px;
+      width: 23.2198142415vw;
+      height: 69.2041522491%;
       overflow-x: hidden;
       background-color: white;
       border: 2px black solid;
       border-radius: 15px;
+    }
+    @media screen and (max-height: 400px) {
+      .XsidebarX {
+        position: absolute;
+        top: 120px;
+        left: 50px;
+        text-align: center;
+        width: 23.2198142415vw;
+        height: 49.2041522491vh;
+        overflow-x: hidden;
+        background-color: white;
+        border: 2px black solid;
+        border-radius: 15px;
+      }
     }
 
     .golfbutton_t {
@@ -655,7 +671,7 @@
       height: 100vh;
       background-color: white;
       left: 60vw;
-      top: 10px;
+      top: 0px;
       z-index: 500;
       text-align: center;
     }
@@ -671,7 +687,7 @@
 <body>
   <script type="text/javascript">
     if (window.location.href != "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
-        window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
+        window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/" || window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev") {
       (function (window, document, dataLayerName, id) {
         window[dataLayerName] = window[dataLayerName] || [], window[dataLayerName].push({start: (new Date).getTime(), event: "stg.start"}); var scripts = document.getElementsByTagName('script')[0], tags = document.createElement('script');
         function stgCreateCookie(a, b, c) {var d = ""; if (c) {var e = new Date; e.setTime(e.getTime() + 24 * c * 60 * 60 * 1e3), d = "; expires=" + e.toUTCString(); f = "; SameSite=Strict"} document.cookie = a + "=" + b + d + f + "; path=/"}
@@ -748,7 +764,7 @@
     </div>
     <div>
       <div class='center'>
-        <div style="margin-top: 1.25%;">
+        <div style="margin-top: 0px;">
           <div class="grid" id="myGrid"></div>
         </div>
 
