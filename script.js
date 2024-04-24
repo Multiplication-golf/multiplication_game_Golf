@@ -26,31 +26,31 @@ function init() {
     'Green', 'Yellow', 'Gold', 'Demon', 'Demonic', 'Panda', 'Cat',
     'Kitty', 'Kitten', 'Zero', 'Memory', 'Trooper', 'XX', 'Bandit',
     'Fear', 'Light', 'Glow', 'Tread', 'Deep', 'Deeper', 'Deepest',
-    'Mine', 'Your', 'Worst', 'Enemy', 'Hostile', 'Force', 'Video',
-    'Game', 'Donkey', 'Mule', 'Colt', 'Cult', 'Cultist', 'Magnum',
+    'Mine', 'Your', 'Worst', 'Enemy', 'Hostile', 'Force', 'Video', 'Walking', 'Purple', 'Wolf',
+    'Game', 'Donkey', 'Mule', 'Colt', 'Cult', 'Cultist', 'Magnum', 'Sus',
     'Gun', 'Assault', 'Recon', 'Trap', 'Trapper', 'Redeem', 'Code',
-    'Script', 'Writer', 'Near', 'Close', 'Open', 'Cube', 'Circle',
+    'Script', 'Writer', 'Near', 'Close', 'Open', 'Cube', 'Circle', 'Bye', 'GreatDane',
     'Geo', 'Genome', 'Germ', 'Spaz', 'Shot', 'Echo', 'Beta', 'Alpha',
     'Gamma', 'Omega', 'Seal', 'Squid', 'Money', 'Cash', 'Lord', 'King',
     'Duke', 'Rest', 'Fire', 'Flame', 'Morrow', 'Break', 'Breaker', 'Numb',
     'Ice', 'Cold', 'Rotten', 'Sick', 'Sickly', 'Janitor', 'Camel', 'Rooster',
     'Sand', 'Desert', 'Dessert', 'Hurdle', 'Racer', 'Eraser', 'Erase', 'Big',
     'Small', 'Short', 'Tall', 'Sith', 'Bounty', 'Hunter', 'Cracked', 'Broken',
-    'Sad', 'Happy', 'Joy', 'Joyful', 'Crimson', 'Destiny', 'Deceit', 'Lies',
+    'Sad', 'Happy', 'Joy', 'Joyful', 'Crimson', 'Destiny', 'Deceit', 'Lies', 'List', 'Hit',
     'Lie', 'Honest', 'Destined', 'Bloxxer', 'Hawk', 'Eagle', 'Hawker', 'Walker',
     'Zombie', 'Sarge', 'Capt', 'Captain', 'Punch', 'One', 'Two', 'Uno', 'Slice',
-    'Slash', 'Melt', 'Melted', 'Melting', 'Fell', 'Wolf', 'Hound',
+    'Slash', 'Melt', 'Melted', 'Melting', 'Fell', 'Wolf', 'Hound', 'Bob', 'Mr',
     'Legacy', 'Sharp', 'Dead', 'Mew', 'Chuckle', 'Bubba', 'Bubble', 'Sandwich', 'Smasher', 'Extreme', 'Multi', 'Universe', 'Ultimate', 'Death', 'Ready', 'Monkey', 'Elevator', 'Wrench', 'Grease', 'Head', 'Theme', 'Grand', 'Cool', 'Kid', 'Boy', 'Girl', 'Vortex', 'Paradox'
   ];
   if (window.location.href != "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
     window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
     if (getCookie("Name") == null || getCookie("Name") == "" || getCookie("Name") == undefined) {
       var Name = generate()
-      setCookie("Name",Name,756)
+      setCookie("Name", Name, 756)
     }
-    
+
     function generate() {
-      var finalName = nameList[Math.floor(Math.random() * nameList.length)]+nameList[Math.floor(Math.random() * nameList.length)]+nameList[Math.floor(Math.random() * nameList.length)];
+      var finalName = nameList[Math.floor(Math.random() * nameList.length)] + nameList[Math.floor(Math.random() * nameList.length)] + nameList[Math.floor(Math.random() * nameList.length)];
       return finalName
     };
   }
@@ -105,7 +105,7 @@ window.onload = function() {
   console.log("LeveL_", LeveL_);
   const MONEYCOIN = getCookie("Moneyscore");
 
-  var eliflevel = 0;
+  var eliflevel = 1;
   if (LeveL_ !== "") {
     var course_ = document.getElementById("NoneCourse").innerText;
     console.log("level is not null");
@@ -311,7 +311,7 @@ function done() {
 function loadLevelData(___level_) {
   var course_ = document.getElementById("NoneCourse").innerText;
   console.log("course_", course_);
-  
+
   if (course_ == "classic") {
     var imageNumbers;
     if (___level_ == 1) {
@@ -563,7 +563,7 @@ function next() {
   newround();
 }
 async function loadlevelandsetUpGame(LEVEL) {
-  
+
   document.getElementById('_(level)_').style.display = 'block';
   document.getElementById('_(login)_').style.display = 'none';
   document.getElementById('_(intoP)_').style.display = 'none';
@@ -601,7 +601,6 @@ async function loadlevelandsetUpGame(LEVEL) {
       gridItem.className = 'grid-item';
       // Set the background image based on the image number
       if (imageNumbers[i][j] == 11 || imageNumbers[i][j] == 13) {
-        var img = document.createElement('img');
 
         gridItem.style.backgroundImage = `url('golfpngs2/${imageNumbers[i][j]}.gif')`;
         gridItem.style.backgroundSize = '100% 100%'
@@ -610,14 +609,18 @@ async function loadlevelandsetUpGame(LEVEL) {
         gridItem.style.backgroundSize = '100% 100%'
       }
       // Add text element to the grid item
-      if (imageNumbers[i][j] === 2) {
+      const validNumbers = [2, 3, 12, 11, 13, 14];
+      if ((imageNumbers[i][j] === 2) ||
+            (imageNumbers[i][j] === 3) ||
+            (imageNumbers[i][j] === 12) ||
+            (imageNumbers[i][j] === 14)) {
         var textElement = document.createElement('p');
         textElement.innerText = `${i + 1}X${j + 1}`;
         gridItem.appendChild(textElement);
       }
       if (imageNumbers[i][j] === 3) {
         var textElement = document.createElement('p');
-        answer = (i+1) * (j+1);
+        answer = (i + 1) * (j + 1);
         console.log(answer)
         document.getElementById("noneANWSER").innerText = answer;
         document.getElementById("what is").innerText = `What is ${i + 1}X${j + 1}?`
@@ -626,7 +629,11 @@ async function loadlevelandsetUpGame(LEVEL) {
       }
       // Append the grid item to the grid container
       gridContainer.appendChild(gridItem);
-      if ((imageNumbers[i][j] === 2) || (imageNumbers[i][j] === 3) || (imageNumbers[i][j] === 12)) {
+      if ((imageNumbers[i][j] === 2) ||
+          (imageNumbers[i][j] === 3) ||
+          (imageNumbers[i][j] === 12) ||
+          (imageNumbers[i][j] === 14)) {
+
         var golf = document.getElementById("golfHolder");
         var topgridItem = gridItem.getBoundingClientRect().top + window.screenY;
         var leftgridItem = gridItem.getBoundingClientRect().left + window.screenX;
@@ -639,21 +646,31 @@ async function loadlevelandsetUpGame(LEVEL) {
       }
     }
   }
-  
-  
 
 
-  const X115 = document.getElementById("X115");
+  var height = window.innerHeight;
+  var width = window.innerWidth;
+
+  if (height < width) {
+    //document.querySelector('.grid-item').style.width = '3vh';
+    //document.querySelector('.grid-item').style.height = '3vh';
+  }
+
+  const X115 = document.getElementById("11X5");
 
 
-  var X115Y = ball.getBoundingClientRect().left;
-  var X115X = ball.getBoundingClientRect().top;
+  var X115Y = X115.getBoundingClientRect().left;
+  var X115X = X115.getBoundingClientRect().top;
 
-  const ball = document.getElementById("golfHolder");
+  setTimeout(() => {
+    const ball = document.getElementById("golfHolder");
 
-  ball.style.top = X115Y
-  ball.style.left = X115X
-  
+    ball.style.top = X115Y
+    ball.style.left = X115X
+    console.log(X115Y, X115X)
+  }, 50)
+
+
 
   var wrong_gessus = 0;
   console.log(positions)
@@ -663,11 +680,6 @@ async function loadlevelandsetUpGame(LEVEL) {
   }
 
 }
-
-
-
-
-
 function timerINIT() {
   function formatTimeLeft(time) {
     // The largest round integer less than or equal to the result of time divided being by 60.
@@ -958,9 +970,12 @@ async function newround() {
         return ""
       }
       // Add text element to the grid item
-      if (imageNumbers[c][z] === 2) {
+      if ((imageNumbers[c][z] === 2) || 
+            (imageNumbers[c][z] === 3) || 
+            (imageNumbers[c][z] === 12) || 
+            (imageNumbers[c][z] === 14)) {
         var textElement_ = document.createElement('p');
-        textElement_.innerText = `${c + 1}X${z + 1}`;
+        textElement_.innerText = `${c}X${z}`;
         gridItem_.appendChild(textElement_);
       }
       if (imageNumbers[c][z] === 3) {
@@ -975,7 +990,10 @@ async function newround() {
       }
       // Append the grid item to the grid container
       gridContainer.appendChild(gridItem_);
-      if ((imageNumbers[c][z] === 2) || (imageNumbers[c][z] === 3) || (imageNumbers[c][z] === 12)) {
+      if ((imageNumbers[c][z] === 2) || 
+          (imageNumbers[c][z] === 3) || 
+          (imageNumbers[c][z] === 12) || 
+          (imageNumbers[c][z] === 14)) {
         var golf = document.getElementById("golfHolder")
         var topgridItem = gridItem_.getBoundingClientRect().top + window.screenY;
         var leftgridItem = gridItem_.getBoundingClientRect().left + window.screenX;
@@ -1024,8 +1042,8 @@ function moveBallToSquare_(x, y, speed) {
   ball.style.transition = `transform ${speed}s linear`;
   Direction(x, y, ballXnow, ballYnow);
   ball.style.transform = `translate(${x - ballX}px, ${y - ballY}px)`;
-  console.log("moveBallToSquare",ballX,y);
-  console.log("moveBallToSquare",ballY,x);
+  console.log("moveBallToSquare", ballX, y);
+  console.log("moveBallToSquare", ballY, x);
 };
 async function swing__() {
   var __course_ = document.getElementById("NoneCourse").innerText;
@@ -1043,12 +1061,13 @@ async function swing__() {
   console.log("swing")
   console.log((myanswer == awnser__))
   const ball = document.getElementById("golfHolder");
+  const holder = document.getElementById("golfHolder");
 
   if (ballX == 0) {
     ballX = ball.getBoundingClientRect().left;
     ballY = ball.getBoundingClientRect().top;
   }
-  
+
 
 
   function moveBallToSquare(x, y, speed) {
@@ -1057,15 +1076,20 @@ async function swing__() {
     ball.style.transition = `transform ${speed}s linear`;
     Direction(x, y, ballXnow, ballYnow);
     ball.style.transform = `translate(${x - ballX}px, ${y - ballY}px)`;
-    console.log("moveBallToSquare",ballX,y);
-    console.log("moveBallToSquare",ballY,x);
+    console.log("moveBallToSquare", ballX, y);
+    console.log("moveBallToSquare", ballY, x);
   }
   function moveBall(id, offsetx, offsety, speed_) {
-    var square = document.getElementById(id);
-    let squareCoords = square.getBoundingClientRect();
-    let x = Number(squareCoords.left);
-    let y = Number(squareCoords.top);
-    moveBallToSquare(x - offsetx, y - offsety, speed_);
+    try {
+      var square = document.getElementById(id);
+      let squareCoords = square.getBoundingClientRect();
+
+      let x = Number(squareCoords.left);
+      let y = Number(squareCoords.top);
+      moveBallToSquare(x - offsetx, y - offsety, speed_);
+    } catch {
+      console.log(id)
+    }
   }
   function restball(_timeleft) {
     const golfBall = document.getElementById("fly_ball");
@@ -1385,7 +1409,7 @@ async function swing__() {
         function getRandomInt(min, max) {
           return Math.floor(Math.random() * (max - min + 1) + min);
         }
-        
+
         var random_boolean = getRandomInt(1, 2);
         console.log(random_boolean)
         if (random_boolean == 1) {
@@ -1401,7 +1425,94 @@ async function swing__() {
           }, 301);
         }
       }
-      
+      if (_LEVEL__ == 7) {
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        var random_boolean = getRandomInt(1, 2);
+        console.log(random_boolean)
+        if (random_boolean == 1) {
+          moveBall("8X4", 0, 0, 0.3);
+          setTimeout(() => {
+            moveBall("11X5", 0, 0, 0.4);
+          }, 301);
+        }
+        if (random_boolean == 2) {
+          moveBall("8X6", 0, 0, 0.3);
+          setTimeout(() => {
+            moveBall("11X5", 0, 0, 0.4);
+          }, 301);
+        }
+      }
+      if (_LEVEL__ == 8) {
+        moveBall("4X5", 0, 50, 0.3);
+        setTimeout(() => {
+          moveBall("11X5", 0, 0, 0.4);
+        }, 301);
+      }
+      if (_LEVEL__ == 9) {
+        if (wrong_gessus == 1) {
+          moveBall("3X5", 0, 50, 0.3);
+          setTimeout(() => {
+            moveBall("5X4", 0, 0, 0.4);
+          }, 301);
+        }
+        if (wrong_gessus == 2) {
+          moveBall("2X3", 0, 50, 0.3);
+          setTimeout(() => {
+            moveBall("1X2", 0, 0, 0.4);
+            setTimeout(() => {
+              moveBall("1X8", 0, 0, 0.4);
+            }, 401);
+          }, 301);
+        }
+        else if (wrong_gessus > 2) {
+          moveBall("4X7", 0, 0, 0.4);
+          setTimeout(() => {
+            moveBall("1X8", 0, 0, 0.4);
+          }, 401);
+        }
+
+      }
+      if (_LEVEL__ == 10) {
+        
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        if (wrong_gessus == 1) {
+          moveBall("3X5", 0, 50, 0.3);
+          setTimeout(() => {
+            moveBall("4X4", 0, 0, 0.4);
+          }, 301);
+        }
+        if (wrong_gessus == 2) {
+          moveBall("2X2", 0, 50, 0.3);
+        }
+        if (wrong_gessus > 2) {
+          var random_boolean = getRandomInt(1, 2);
+          console.log(random_boolean)
+          if (random_boolean == 1) {
+            moveBall("3X5", 0, 0, 0.3);
+            setTimeout(() => {
+              moveBall("4X4", 0, 0, 0.4);
+            }, 301);
+          }
+          if (random_boolean == 2) {
+            moveBall("2X2", 0, 0, 0.3);
+            setTimeout(() => {
+              moveBall("4X4", 0, 0, 0.4);
+            }, 301);
+          }
+        }
+      }
+      if (_LEVEL__ == 11) {
+        moveBall("8X5", 15, 35, 0.3);
+        setTimeout(() => {
+          moveBall("11X5", 0, 0, 0.4);
+        }, 301);
+      }
+
     } else {
       var course_ = document.getElementById("NoneCourse").innerText;
       var _timeleft = document.getElementById('base-timer-label').innerHTML;
