@@ -105,7 +105,7 @@ window.onload = function() {
   console.log("LeveL_", LeveL_);
   const MONEYCOIN = getCookie("Moneyscore");
 
-  var eliflevel = 1;
+  var eliflevel = 13;
   if (LeveL_ !== "") {
     var course_ = document.getElementById("NoneCourse").innerText;
     console.log("level is not null");
@@ -497,18 +497,50 @@ function loadLevelData(___level_) {
     if (___level_ == 13) {
       imageNumbers =
         [[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-        [4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 4, 4],
-        [4, 4, 4, 4, 3, 2, 2, 2, 2, 2, 4, 4],
+        [4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 4, 4],
+        [4, 4, 4, 4, 4, 2, 2, 3, 2, 2, 4, 4],
         [4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 4, 4],
-        [4, 4, 4, 1, 1, 1, 1, 2, 2, 2, 4, 4],
-        [4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 4, 4],
-        [4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 4, 4],
-        [4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 4, 4],
+        [4, 4, 4, 4, 4, 4, 1, 2, 2, 2, 4, 4],
+        [4, 4, 4, 4, 4, 1, 2, 2, 2, 2, 4, 4],
+        [4, 4, 4, 4, 1, 2, 2, 2, 2, 2, 4, 4],
+        [4, 4, 4, 1, 2, 2, 2, 2, 2, 2, 4, 4],
         [4, 4, 4, 2, 2, 2, 2, 2, 4, 4, 4, 4],
         [4, 4, 4, 2, 2, 2, 2, 2, 4, 4, 4, 4],
         [4, 4, 4, 1, 2, 2, 2, 1, 4, 4, 4, 4],
         [4, 4, 4, 2, 2, 2, 2, 2, 4, 4, 4, 4]];
     }
+    if (___level_ == 14) {
+      imageNumbers =
+        [[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 4, 4],
+        [4, 4, 4, 4, 4, 4, 1, 2, 2, 2, 4, 4],
+        [4, 4, 4, 4, 4, 1, 2, 2, 2, 2, 4, 4],
+        [4, 4, 4, 4, 1, 2, 2, 2, 2, 3, 4, 4],
+        [4, 4, 4, 1, 2, 2, 2, 2, 2, 4, 4, 4],
+        [4, 4, 4, 2, 2, 2, 2, 2, 4, 4, 4, 4],
+        [4, 4, 4, 13, 14, 12, 12, 11, 4, 4, 4, 4],
+        [4, 4, 4, 1, 2, 2, 2, 1, 4, 4, 4, 4],
+        [4, 4, 4, 2, 2, 2, 2, 2, 4, 4, 4, 4]];
+    }
+    if (___level_ == 15) {
+      imageNumbers =
+        [[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 4, 4],
+        [4, 4, 3, 2, 4, 4, 1, 2, 2, 2, 4, 4],
+        [4, 4, 2, 2, 4, 1, 2, 2, 2, 2, 4, 4],
+        [4, 4, 2, 10, 1, 2, 2, 2, 2, 2, 4, 4],
+        [4, 4, 4, 2, 2, 2, 2, 2, 2, 4, 4, 4],
+        [4, 4, 4, 1, 2, 2, 2, 2, 4, 4, 4, 4],
+        [4, 4, 4, 2, 2, 2, 2, 2, 4, 4, 4, 4],
+        [4, 4, 4, 1, 2, 2, 2, 1, 4, 4, 4, 4],
+        [4, 4, 4, 2, 2, 2, 2, 2, 4, 4, 4, 4]];
+    }
+    
+
     console.log("imageNumbers", imageNumbers)
     return imageNumbers
   }
@@ -611,7 +643,6 @@ async function loadlevelandsetUpGame(LEVEL) {
       // Add text element to the grid item
       const validNumbers = [2, 3, 12, 11, 13, 14];
       if ((imageNumbers[i][j] === 2) ||
-            (imageNumbers[i][j] === 3) ||
             (imageNumbers[i][j] === 12) ||
             (imageNumbers[i][j] === 14)) {
         var textElement = document.createElement('p');
@@ -971,7 +1002,6 @@ async function newround() {
       }
       // Add text element to the grid item
       if ((imageNumbers[c][z] === 2) || 
-            (imageNumbers[c][z] === 3) || 
             (imageNumbers[c][z] === 12) || 
             (imageNumbers[c][z] === 14)) {
         var textElement_ = document.createElement('p');
@@ -1249,6 +1279,24 @@ async function swing__() {
             }, 401);
           }, 301);
           moveBall("8X5", 20, 20, 0.3);
+        }
+        if (_LEVEL__ == 13) {
+          setTimeout(() => {
+            moveBall("2X7", 10, 10, 0.4);
+            setTimeout(() => {
+              restball(_timeleft);
+            }, 401);
+          }, 301);
+          moveBall("3X9", 20, 20, 0.3);
+        }
+        if (_LEVEL__ == 14) {
+          setTimeout(() => {
+            moveBall("6X9", 10, 10, 0.4);
+            setTimeout(() => {
+              restball(_timeleft);
+            }, 401);
+          }, 301);
+          moveBall("5X6", 0, 0, 0.3);
         }
       }
       classicswing();
