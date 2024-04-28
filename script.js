@@ -6,7 +6,7 @@ const start__button_ = document.getElementById("start__button_");
 const LeveL_ = getCookie("Userlevel");
 console.log("LeveL_", LeveL_);
 const MONEYCOIN = getCookie("Moneyscore");
-const flaskURL = "https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080";
+const flaskURL = "https://coderyoucantknow.pythonanywhere.com";
 // { vars == === == === == === == ===}
 
 function init() {
@@ -105,7 +105,7 @@ window.onload = function() {
   console.log("LeveL_", LeveL_);
   const MONEYCOIN = getCookie("Moneyscore");
 
-  var eliflevel = 13;
+  var eliflevel = 1;
   if (LeveL_ !== "") {
     var course_ = document.getElementById("NoneCourse").innerText;
     console.log("level is not null");
@@ -300,7 +300,7 @@ function done() {
   }
   if (course_____ == 'classic') {
 
-    var reward_ = (response * 10) + 100;
+    var reward_ = (16 * 10) + 100;
     document.getElementById("reward").innerHTML = reward_ + "<img src='---.gif' class='coin-gif--lb0owlqodkewkd' />";
     var money_now = document.getElementById("money_-__-").innerText;
     var total_money = Number(reward_) + Number(money_now);
@@ -532,14 +532,43 @@ function loadLevelData(___level_) {
         [4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 4, 4],
         [4, 4, 3, 2, 4, 4, 1, 2, 2, 2, 4, 4],
         [4, 4, 2, 2, 4, 1, 2, 2, 2, 2, 4, 4],
-        [4, 4, 2, 10, 1, 2, 2, 2, 2, 2, 4, 4],
+        [4, 4, 4, 10, 1, 2, 2, 2, 2, 2, 4, 4],
         [4, 4, 4, 2, 2, 2, 2, 2, 2, 4, 4, 4],
         [4, 4, 4, 1, 2, 2, 2, 2, 4, 4, 4, 4],
         [4, 4, 4, 2, 2, 2, 2, 2, 4, 4, 4, 4],
         [4, 4, 4, 1, 2, 2, 2, 1, 4, 4, 4, 4],
         [4, 4, 4, 2, 2, 2, 2, 2, 4, 4, 4, 4]];
     }
-    
+    if (___level_ == 16) {
+      imageNumbers =
+        [[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 13, 11, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [4, 2, 2, 4, 2, 2, 4, 4, 4, 4, 4, 4],
+        [4, 2, 3, 4, 2, 2, 4, 4, 4, 4, 4, 4],
+        [4, 2, 2, 4, 2, 2, 4, 4, 4, 4, 4, 4],
+        [4, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 4],
+        [4, 4, 2, 2, 2, 2, 4, 4, 4, 4, 4, 4],
+        [4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 4]];
+    }
+    if (___level_ == 17) {
+      imageNumbers =
+        [[4, 4, 4, 4, 4, 1, 1, 1, 1, 4, 4, 4],
+        [4, 4, 4, 4, 4, 2, 2, 2, 2, 1, 4, 4],
+        [4, 4, 4, 4, 1, 2, 2, 2, 2, 2, 1, 4],
+        [4, 4, 4, 4, 2, 2, 2, 4, 3, 2, 2, 4],
+        [4, 4, 4, 4, 2, 2, 2, 4, 2, 2, 2, 4],
+        [4, 4, 4, 4, 2, 2, 4, 4, 4, 2, 2, 4],
+        [4, 4, 4, 4, 2, 2, 4, 4, 4, 2, 2, 4],
+        [4, 4, 4, 4, 2, 2, 4, 4, 4, 2, 2, 4],
+        [4, 4, 4, 1, 2, 2, 1, 1, 1, 2, 2, 4],
+        [4, 4, 4, 2, 2, 2, 2, 2, 2, 2, 2, 4],
+        [4, 4, 4, 2, 2, 2, 2, 2, 2, 2, 2, 4],
+        [4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 4]];
+    }
 
     console.log("imageNumbers", imageNumbers)
     return imageNumbers
@@ -1297,6 +1326,39 @@ async function swing__() {
             }, 401);
           }, 301);
           moveBall("5X6", 0, 0, 0.3);
+        }
+        if (_LEVEL__ == 15) {
+          setTimeout(() => {
+            restball(_timeleft);
+          }, 501);
+          moveBall("4X2", 0, 0, 0.5);
+        }
+        if (_LEVEL__ == 16) {
+          setTimeout(() => {
+            moveBall("9X1", 0, 0, 0.2);
+            setTimeout(() => {
+              moveBall("7X2", 0, 10, 0.2);
+              setTimeout(() => {
+                restball(_timeleft);
+              }, 201);
+            }, 201);
+          }, 201);
+          moveBall("9X3", 0, 0, 0.2);
+        }
+        if (_LEVEL__ == 17) {
+          setTimeout(() => {
+            moveBall("10X8", 0, 0, 0.2);
+            setTimeout(() => {
+              moveBall("8X10", 0, 0, 0.2);
+              setTimeout(() => {
+                moveBall("3X8", 0, 0, 0.2);
+                setTimeout(() => {
+                  restball(_timeleft);
+                }, 200);
+              }, 200);
+            }, 200);
+          }, 200);
+          moveBall("9X6", 0, 0, 0.2);
         }
       }
       classicswing();
