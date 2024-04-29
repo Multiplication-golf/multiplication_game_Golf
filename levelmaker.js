@@ -1,3 +1,5 @@
+var FlaskURL = 'https://coderyoucantknow.pythonanywhere.com';
+
 function restball() {
   moveBall('11X5', 0, 0, 0.001);
   console.log()
@@ -809,7 +811,7 @@ async function submitLevel(name, levelData, key) {
   var rawdata = JSON.stringify(levelData); // Serialize levelData to JSON
   return new Promise((resolve, reject) => {
     const encodedData = encodeURIComponent(rawdata);
-    const url = `${flaskURL}/levelSubmit/${encodedData}/${name}/${key}`;
+    const url = `${FlaskURL}/levelSubmit/${encodedData}/${name}/${key}`;
     const xhr = new XMLHttpRequest();
     xhr.open('POST', url, true);
 
@@ -856,7 +858,7 @@ var Levels___ = {}
 async function abc(parm__) {
   if (getKeyFromUrl() != null) {
     return new Promise((resolve, reject) => {
-      const url = `https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080/loadFromKey/${parm__}`;
+      const url = `${FlaskURL}/loadFromKey/${parm__}`;
       const xhr = new XMLHttpRequest();
       xhr.open('GET', url, true);
       xhr.onreadystatechange = function() {
