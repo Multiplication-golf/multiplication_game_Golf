@@ -6,15 +6,27 @@ html {
   text-align: center;
   font-size: 50px;
 }
-table, td {
+
+table {
   border:1px solid black;
   margin: auto;
+  border-radius: 5px;
+  padding: 7px;
+}
+
+td {
+  border:1px solid black;
+  border-radius: 5px;
+  padding: 7px;
+  margin: 5px;
 }
 th {
   border:1px solid black;
-  margin: 1px;
+  margin: 5px;
   font-size: 30px;
-  padding: 5px;
+  padding: 7px;
+  border-radius: 5px;
+  
 }
 .p-dkji392 {
   text-align: center;

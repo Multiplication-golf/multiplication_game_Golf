@@ -105,7 +105,7 @@ window.onload = function() {
   console.log("LeveL_", LeveL_);
   const MONEYCOIN = getCookie("Moneyscore");
 
-  var eliflevel = 18;
+  var eliflevel = 1;
   if (LeveL_ !== "") {
     var course_ = document.getElementById("NoneCourse").innerText;
     console.log("level is not null");
@@ -305,7 +305,9 @@ function done() {
     var money_now = document.getElementById("money_-__-").innerText;
     var total_money = Number(reward_) + Number(money_now);
     setCookie("Moneyscore", Number(total_money), 765);
-
+    var _X = document.getElementById("XBUTTON_");
+    const __path__ = window.location.href
+    _X.setAttribute('href', __path__)
   }
 }
 function loadLevelData(___level_) {
@@ -601,7 +603,7 @@ function loadLevelData(___level_) {
     }
     if (___level_ == 20) {
       imageNumbers =
-       [[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        [[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
         [4, 4, 1, 1, 4, 1, 1, 4, 4, 4, 4, 4],
         [4, 4, 2, 2, 1, 2, 2, 1, 4, 4, 4, 4],
         [4, 4, 2, 2, 2, 2, 2, 2, 1, 4, 4, 4],
@@ -717,8 +719,8 @@ async function loadlevelandsetUpGame(LEVEL) {
       // Add text element to the grid item
       const validNumbers = [2, 3, 12, 11, 13, 14];
       if ((imageNumbers[i][j] === 2) ||
-            (imageNumbers[i][j] === 12) ||
-            (imageNumbers[i][j] === 14)) {
+        (imageNumbers[i][j] === 12) ||
+        (imageNumbers[i][j] === 14)) {
         var textElement = document.createElement('p');
         textElement.innerText = `${i + 1}X${j + 1}`;
         gridItem.appendChild(textElement);
@@ -735,9 +737,9 @@ async function loadlevelandsetUpGame(LEVEL) {
       // Append the grid item to the grid container
       gridContainer.appendChild(gridItem);
       if ((imageNumbers[i][j] === 2) ||
-          (imageNumbers[i][j] === 3) ||
-          (imageNumbers[i][j] === 12) ||
-          (imageNumbers[i][j] === 14)) {
+        (imageNumbers[i][j] === 3) ||
+        (imageNumbers[i][j] === 12) ||
+        (imageNumbers[i][j] === 14)) {
 
         var golf = document.getElementById("golfHolder");
         var topgridItem = gridItem.getBoundingClientRect().top + window.screenY;
@@ -1075,9 +1077,9 @@ async function newround() {
         return ""
       }
       // Add text element to the grid item
-      if ((imageNumbers[c][z] === 2) || 
-            (imageNumbers[c][z] === 12) || 
-            (imageNumbers[c][z] === 14)) {
+      if ((imageNumbers[c][z] === 2) ||
+        (imageNumbers[c][z] === 12) ||
+        (imageNumbers[c][z] === 14)) {
         var textElement_ = document.createElement('p');
         textElement_.innerText = `${c}X${z}`;
         gridItem_.appendChild(textElement_);
@@ -1094,10 +1096,10 @@ async function newround() {
       }
       // Append the grid item to the grid container
       gridContainer.appendChild(gridItem_);
-      if ((imageNumbers[c][z] === 2) || 
-          (imageNumbers[c][z] === 3) || 
-          (imageNumbers[c][z] === 12) || 
-          (imageNumbers[c][z] === 14)) {
+      if ((imageNumbers[c][z] === 2) ||
+        (imageNumbers[c][z] === 3) ||
+        (imageNumbers[c][z] === 12) ||
+        (imageNumbers[c][z] === 14)) {
         var golf = document.getElementById("golfHolder")
         var topgridItem = gridItem_.getBoundingClientRect().top + window.screenY;
         var leftgridItem = gridItem_.getBoundingClientRect().left + window.screenX;
@@ -1156,6 +1158,7 @@ async function swing__() {
     await o();
   }
   var myanswer = document.getElementById("input-box").value;
+  const inputbox = document.getElementById("input-box");
   document.getElementById("noneANWSER").style.display = 'block';
   console.log(document.getElementById("noneANWSER").innerText, "awnser")
   var awnser__ = document.getElementById("noneANWSER").innerText;
@@ -1475,6 +1478,13 @@ async function swing__() {
     function randomNumber(min, max) {
       return Math.floor(Math.random() * (max - min) + min);
     }
+    inputbox.classList.add("error");
+    inputbox.style.border = '4px solid red';
+    setInterval(() => {
+      inputbox.style.border = '4px solid black';
+      inputbox.classList.remove("error");
+    }, 500);
+
 
     document.getElementById("wrong_gessus__").innerText = wrong_gessus;
     var course_ = document.getElementById("NoneCourse").innerText;
@@ -1661,7 +1671,7 @@ async function swing__() {
 
       }
       if (_LEVEL__ == 10) {
-        
+
         function getRandomInt(min, max) {
           return Math.floor(Math.random() * (max - min + 1) + min);
         }

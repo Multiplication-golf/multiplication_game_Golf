@@ -4,7 +4,7 @@ var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.6.3.min.js'; // Check https://jquery.com/ for the current version
 document.getElementsByTagName('head')[0].appendChild(script);
 
-const flaskURL = "https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080";
+const flaskURL = "https://coderyoucantknow.pythonanywhere.com";
 
 function getCookie(cname) {
   let name = cname + "=";

@@ -1,16 +1,15 @@
 # Security Policy
 
+Please tell me before you point out the Vulnerability
+
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Versions Supported with Security updates
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+|  Version    | Supported          |
+|-------------| ------------------ |
+|  1.0.x      | :white_check_mark: |
+| < 1.0 (bata)| :x:                |
 
 ## Reporting a Vulnerability
 
