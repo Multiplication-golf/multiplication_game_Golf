@@ -105,7 +105,7 @@ window.onload = function() {
   console.log("LeveL_", LeveL_);
   const MONEYCOIN = getCookie("Moneyscore");
 
-  var eliflevel = 1;
+  var eliflevel = 0;
   if (LeveL_ !== "") {
     var course_ = document.getElementById("NoneCourse").innerText;
     console.log("level is not null");
@@ -660,7 +660,7 @@ function next() {
   const _LEVEL___ = document.getElementById("swinglevel").innerText;
   console.log('_LEVEL__ is : ', Number(_LEVEL___) + 1)
   var course_ = document.getElementById("NoneCourse").innerText;
-  if (course_ == "") {
+  if (course_ == "classic") {
     setCookie("Userlevel", Number(_LEVEL___), 765);
   }
   document.getElementById('_(level)_').style.display = 'block';
