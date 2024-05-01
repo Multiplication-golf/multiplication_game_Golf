@@ -870,6 +870,15 @@
       <img class='coin-r8jfwieofheoaiol' src='coin.gif' />
     </div>
     <p id='money_-__-' class="moneytext">130</p>
+    <div style='
+      position: absolute;
+      top: 21.5px;
+      text-align: center;
+      width: 100vw;'>
+    <p style="z-index:500000;
+              font-size: 50px;
+      ">level 1</p>
+    </div>
     <button id='nextbutton___' class='_nextbutton___' onclick="next()">next</button>
     <div class="_timdis_div">
       <p id='timedis' class="_timdis_"></p>
@@ -922,6 +931,10 @@
           <button class='golfbutton_t' onclick="ii()"><img class='imggolf_' id='iX' src="displaypngs/25.png" /></button>
         </div>
         <div class='XIDboxX'>
+          <p>unlocks at level 30 or 510<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
+          <button class='golfbutton_t' onclick="ll()"><img class='imggolf_' id='lX' src="displaypngs/29.png" /></button>
+        </div>
+        <div class='XIDboxX'>
           <p>unlocks at level 50 or 900<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
           <button class='golfbutton_t' onclick="jj()"><img class='imggolf_' id='jX' src="displaypngs/26.png" /></button>
         </div>
@@ -956,6 +969,7 @@
         var jjjX = document.getElementById('jX');
         var kkkX = document.getElementById('kX');
         var gggX = document.getElementById('gX');
+        var lllX = document.getElementById('lX');
         var __baseURL = window.location.href;
         function getJavaSRCX() {
           var LEveL = document.getElementById('noneLevel').innerText;
@@ -970,6 +984,7 @@
           var jX = document.getElementById('jX');
           var kX = document.getElementById('kX');
           var gX = document.getElementById('gX');
+          var lX = document.getElementById('lX');
           console.log("image LEVEL", LEveL);
           console.log(money______)
           console.log(money______ >= 50)
@@ -1003,9 +1018,11 @@
           }
           if (LEveL >= 30 || _money______ >= 510) {
             iX.src = 'displaypngs/25.png';
+            lX.src = 'displaypngs/29.png';
           }
           else if (LEveL < 30) {
             iX.src = 'locked/30.png';
+            lX.src = 'locked/34.png';
           }
           if (LEveL >= 50 || _money______ >= 900) {
             jX.src = 'displaypngs/26.png';
@@ -1026,7 +1043,7 @@
           var ball_img = ball.src; // Corrected attribute name
           setCookie('ballIMG', ball_img, 756);
           getCookie("ballIMG");
-          console.log("ball_img",ball_img,getCookie("ballIMG"));
+          console.log("ball_img", ball_img, getCookie("ballIMG"));
         }
         var baseURL = window.location.href;
         function aa() {
@@ -1128,6 +1145,15 @@
           }
           changeSRC();
         }
+        function ll() {
+          console.log(lllX.src)
+          console.log(`${baseURL}displaypngs/29.png`)
+          if (lllX.src == `${baseURL}displaypngs/29.png`) {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/dog.png';
+          }
+          changeSRC();
+        }
 
         function why_did_you_click_this() {
           var FlY_balL = document.getElementById('fly_ball');
@@ -1141,7 +1167,7 @@
           document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
         }
         const ball = document.getElementById("fly_ball");
-        
+
 
         getJavaSRCX();
       </script>
@@ -1189,7 +1215,7 @@
     <div style="position: absolute; top: 71%; left: 43.5%; white-space: nowrap;">
       <h3 id='reward' class='reward--339rkfj4iso'><img src="---.gif" class="coin-gif--lb0owlqodkewkd" />120</h3>
     </div>
-    <form action="https://multiplication-golf.github.io/multiplication_game_Golf/">
+    <form action="https://multiplication-golf.pages.dev/">
       <button class='XBUTTON' id='XBUTTON_'>X</button>
     </form>
 
