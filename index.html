@@ -14,11 +14,11 @@
     }
 
     .ButtonLink {
-      display: inline-block;
+      display: inline-flex;
       padding: 0px;
       background-color: None;
-      width: 11.6604477612vw;
-      height: 10.1088646967vh;
+      width: 13.6604477612vw;
+      height: 12.1088646967vh;
       color: white;
       text-align: center;
       text-decoration: none;
@@ -51,14 +51,13 @@
   <meta name="description" content="Multpaction Golf - A fun multiplayer golf game where math meets the fairway!">
   <meta name="keywords" content="Multpaction-Golf, golf game, multiplayer, math game, online game">
   <meta name="author" content="Your Name or Studio Name">
-  
+
   <meta property="og:title" content="Multpaction Golf">
   <meta property="og:site_name" content="https://multiplication-game-golf.pages.dev">
   <meta property="og:description" content="A fun multiplayer golf game where math meets the fairway!">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://multiplication-game-golf.pages.dev/">
-  <meta property="og:image"
-    content="https://multiplication-game-golf.pages.dev/mult golf logo.png">
+  <meta property="og:image" content="https://multiplication-game-golf.pages.dev/mult golf logo.png">
   <meta property="og:image:width" content="40">
   <meta property="og:image:height" content="40">
 
@@ -188,7 +187,7 @@
     .base-timer {
       height: 27vw;
       width: 27vw;
-      left: 50%
+      left: 50%;
     }
 
     /* Removes SVG styling that would hide the time label */
@@ -214,11 +213,12 @@
 
     .base-timer__label {
       position: absolute;
+
       top: 50%;
 
       /* Size should match the parent container */
-      width: 300px;
-      height: 300px;
+      width: 27vw;
+      height: 27vw;
 
       /* Keep the label aligned to the top */
 
@@ -442,7 +442,7 @@
       border: 2px black solid;
       border-radius: 15px;
     }
-    
+
     @media screen and (max-height: 400px) {
       .XsidebarX {
         position: absolute;
@@ -626,7 +626,9 @@
     .startdiv {
       position: absolute;
       top: 48%;
-      left: 42%;
+      left: 0%;
+      width: 100%;
+      text-aling: center;
     }
 
     .fullimg-jej3di3jf933jaasmczp {
@@ -682,6 +684,7 @@
       z-index: 500;
       text-align: center;
     }
+
     .coin-r8jfwieofheoaiol {
       width: 55px;
       height: 55px;
@@ -694,7 +697,7 @@
 <body style='background-color: black;'>
   <script type="text/javascript">
     if (window.location.href != "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
-        window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/" || window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev") {
+      window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/" || window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev") {
       (function (window, document, dataLayerName, id) {
         window[dataLayerName] = window[dataLayerName] || [], window[dataLayerName].push({start: (new Date).getTime(), event: "stg.start"}); var scripts = document.getElementsByTagName('script')[0], tags = document.createElement('script');
         function stgCreateCookie(a, b, c) {var d = ""; if (c) {var e = new Date; e.setTime(e.getTime() + 24 * c * 60 * 60 * 1e3), d = "; expires=" + e.toUTCString(); f = "; SameSite=Strict"} document.cookie = a + "=" + b + d + f + "; path=/"}
@@ -707,7 +710,8 @@
   </script>
   <div id='_(login)_'>
     <div style='z-index:1000000000; position: absolute; top: -95px; right: 110px;'>
-      <p id='money_-__---' class="moneytext-fi9w8j983j"><img class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif' alt='coin gif'>0</p>
+      <p id='money_-__---' class="moneytext-fi9w8j983j"><img alt='coin-gif' class='coin-ejjeji83jjiejuUUUE'
+          src='coinFORfrontpage.gif' />0</p>
     </div>
     <div class="center_DIV">
 
@@ -738,13 +742,15 @@
 
         <button id='start__button_' class="start__button__">START</button>
         <br>
-        <div class='center'>
-          <a class='ButtonLink' id='herf to next builder'>
-            <img alt='Level builder' class="img-738djcnd84jfcjbjjgdjad3jdi48k"
-              src='Level BUILDER_.png'></img></a><br
-          <a class='ButtonLink' id='herf to next board'>
-            <img alt='Leaderboard' class="img-738djcnd84jfcjbjjgdjad3jdi48k"
-              src='leader board.png'></img></a>
+        <div style='text-aling: center;'>
+          <div style='text-aling: center; position: reltive; top: auto; display:inline-flex;'>
+            <a class='ButtonLink' id='herf to next builder'>
+              <img alt='Level builder' class="img-738djcnd84jfcjbjjgdjad3jdi48k" src='Level BUILDER_.png' /></a>
+            <a class='ButtonLink' id='herf to next board'>
+              <img alt='Leader board' class="img-738djcnd84jfcjbjjgdjad3jdi48k" src='leader board.png' /></a>
+            <a class='ButtonLink' id='profile href'>
+              <img alt='profile' class="img-738djcnd84jfcjbjjgdjad3jdi48k" src='profile.png' /></a>
+          </div>
         </div>
         <div>
           <br><br><br><br><br><br>
@@ -754,7 +760,7 @@
             <br>
             <a href='https://replit.com/@anderson065599699595940303' class='white'>REPLIT</a>
             <br><br>
-            
+
           </div>
         </div>
       </div>
@@ -768,24 +774,26 @@
         <p id='NoneCourse' style="display: none;"></p>
       </div>
       <div style="height: 150px;"></div>
-      <p style='color: white;' >Multiplication Golf is a fun and educational<br> game designed to help students practice their multiplication skills in a playful way.
+      <p style='color: white;'>Multiplication Golf is a fun and educational<br> game designed to help students practice
+        their multiplication skills in a playful way.
 
-        
-      
-        1. Objective: The objective of the game is to solve multiplication problems correctly to advance through the golf course.<br>
+
+
+        1. Objective: The objective of the game is to solve multiplication problems correctly to advance through the
+        golf course.<br>
         <br>
         2. Gameplay:<br>
-           - Each hole on the golf course represents a multiplication problem.<br>
-           - The player is presented with a multiplication equation (e.g., 3 x 4).<br>
-           - The player must correctly solve the equation and input the answer.<br>
-           - If the answer is correct, the player advances to the next hole.<br>
-           - If the answer is incorrect, the player receives a penalty stroke.<br>
-           - The player's score is based on the number of strokes taken to complete the course.<br>
+        - Each hole on the golf course represents a multiplication problem.<br>
+        - The player is presented with a multiplication equation (e.g., 3 x 4).<br>
+        - The player must correctly solve the equation and input the answer.<br>
+        - If the answer is correct, the player advances to the next hole.<br>
+        - If the answer is incorrect, the player receives a penalty stroke.<br>
+        - The player's score is based on the number of strokes taken to complete the course.<br>
         <br>
         3. Scoring:<br>
-           - The less time taken to complete the course, the better the score.<br>
-           - Players can aim to achieve a hole-in-one by answering all question correctly<br>
-           - (awnsers incorret).<br>
+        - The less time taken to complete the course, the better the score.<br>
+        - Players can aim to achieve a hole-in-one by answering all question correctly<br>
+        - (awnsers incorret).<br>
         <br>
         Features:<br>
         <br>
@@ -793,9 +801,9 @@
         - Leaderboards to track high scores and encourage friendly competition among students.<br>
       </p>
 
-      
+
     </div>
-    
+
   </div>
   <div id='_(level)_' style="display: none;">
     <div
@@ -831,7 +839,7 @@
                   </g>
                 </svg>
                 <span id="base-timer-label" class="base-timer__label">
-                  0:20
+                  <p style='flex: 0 0 120px;'>0:20</p>
                 </span>
                 <script>
                   function getJavaSRC() { }
@@ -1014,6 +1022,12 @@
             gX.src = 'locked/33.png';
           }
         }
+        function changeSRC() {
+          var ball_img = ball.src; // Corrected attribute name
+          setCookie('ballIMG', ball_img, 756);
+          getCookie("ballIMG");
+          console.log("ball_img",ball_img,getCookie("ballIMG"));
+        }
         var baseURL = window.location.href;
         function aa() {
           console.log(aaaX.src)
@@ -1022,6 +1036,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/blue.png';
           }
+          changeSRC();
         }
         function bb() {
           console.log(bbbX.src)
@@ -1030,6 +1045,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/red.png';
           }
+          changeSRC();
         }
         function cc() {
           console.log(cccX.src)
@@ -1038,6 +1054,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/green.png';
           }
+          changeSRC();
         }
         function dd() {
           console.log(dddX.src)
@@ -1046,6 +1063,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/blue yellow.png';
           }
+          changeSRC();
         }
         function ee() {
           console.log(eeeX.src)
@@ -1054,6 +1072,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/rainbow_.png';
           }
+          changeSRC();
         }
         function ff() {
           console.log(fffX.src)
@@ -1062,6 +1081,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/blue red.png';
           }
+          changeSRC();
         }
         function hh() {
           console.log(hhhX.src)
@@ -1070,6 +1090,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/firegolf.png';
           }
+          changeSRC();
         }
         function jj() {
           console.log(jjjX.src)
@@ -1078,6 +1099,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/ocean.png';
           }
+          changeSRC();
         }
         function ii() {
           console.log(iiiX.src)
@@ -1086,6 +1108,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/gold.png';
           }
+          changeSRC();
         }
         function kk() {
           console.log(kkkX.src)
@@ -1094,6 +1117,7 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/pixel.png';
           }
+          changeSRC();
         }
         function gg() {
           console.log(gggX.src)
@@ -1102,20 +1126,30 @@
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/black hole.png';
           }
+          changeSRC();
         }
 
         function why_did_you_click_this() {
           var FlY_balL = document.getElementById('fly_ball');
           FlY_balL.src = 'golf balls/plain.png';
         }
-        getJavaSRC();
+
+        function setCookie(cname, cvalue, exdays) {
+          const d = new Date();
+          d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+          let expires = "expires=" + d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        const ball = document.getElementById("fly_ball");
+        
+
+        getJavaSRCX();
       </script>
     </div>
   </div>
   <div id='_(courseDone)_'>
     <style>
-      <style>
-      .fullimg-jej3di3jf933jaasmczp {
+      <style>.fullimg-jej3di3jf933jaasmczp {
         width: 100vw;
         height: 100vh;
         margin: 0px 0px 0px 0px;

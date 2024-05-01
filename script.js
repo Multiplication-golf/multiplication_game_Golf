@@ -55,6 +55,7 @@ function init() {
     };
   }
 
+
   // Create an AJAX request
   var xhr = new XMLHttpRequest();
   xhr.open('GET', `${flaskURL}/returnjson`, true);
@@ -98,7 +99,18 @@ window.onload = function() {
   const herf = document.getElementById("herf to next builder");
   herf.setAttribute("href", `${baseURL_}/levelmaker.html`);
   const herfLB = document.getElementById("herf to next board");
-  herfLB.setAttribute("href", `${baseURL_}/leaderboard.html?${getCookie("Name")}`);
+  if (getCookie("Name") != '') {
+    herfLB.setAttribute("href", `${baseURL_}/leaderboard.html?${getCookie("Name")}`);
+  }
+  else {
+    herfLB.setAttribute("href", `${baseURL_}/leaderboard.html`);
+  }
+  if (getCookie('ballIMG') != '') {
+    var baLL_ = document.getElementById("fly_ball");
+    baLL_.src = getCookie('ballIMG');
+    console.log(getCookie('ballIMG'));
+  }
+  console.log("--ballIMG--", getCookie('ballIMG'));
   const swingbutton = document.getElementById("_swing_button_");
   const start__button_ = document.getElementById("start__button_");
   const LeveL_ = getCookie("Userlevel");
@@ -765,17 +777,31 @@ async function loadlevelandsetUpGame(LEVEL) {
 
   const X115 = document.getElementById("11X5");
 
-
-  var X115Y = X115.getBoundingClientRect().left;
-  var X115X = X115.getBoundingClientRect().top;
+  var X115Y = X115.getBoundingClientRect().top; // Corrected assignment
+  var X115X = X115.getBoundingClientRect().left; // Corrected assignment
 
   setTimeout(() => {
     const ball = document.getElementById("golfHolder");
 
-    ball.style.top = X115Y
-    ball.style.left = X115X
-    console.log(X115Y, X115X)
-  }, 50)
+    ball.style.top = X115Y + "px";
+    ball.style.left = X115X + "px";
+    console.log(X115Y, X115X);
+  }, 150);
+
+  window.addEventListener('resize', () => {
+    const X115 = document.getElementById("11X5");
+
+    var X115Y = X115.getBoundingClientRect().top; // Corrected assignment
+    var X115X = X115.getBoundingClientRect().left; // Corrected assignment
+
+    const ball = document.getElementById("golfHolder");
+
+    ball.style.top = X115Y + "px";
+    ball.style.left = X115X + "px";
+    console.log(X115Y, X115X);
+
+    console.log("resize");
+  });
 
 
 
@@ -1737,3 +1763,11 @@ async function swing__() {
     }
   }
 }
+
+onvisibilitychange = (event) => {
+  if (document.visibilityState === "hidden") {
+    const ball = document.getElementById("fly_ball");
+    var ball_img = ball.getAttribute('data-original-src'); // Corrected attribute name
+    setCookie('ballIMG', ball_img, 756);
+  }
+};
