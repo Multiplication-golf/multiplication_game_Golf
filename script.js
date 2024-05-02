@@ -290,6 +290,7 @@ function done() {
   document.getElementById('_(login)_').style.display = 'none';
   document.getElementById('_(intoP)_').style.display = 'none';
   disableScroll();
+  setCookie("Userlevel",1,756);
   var course_____ = document.getElementById('NoneCourse').innerText;
   document.getElementById('coures--___---_--').innerText = course_____;
   console.log(course_____)
@@ -631,6 +632,9 @@ function loadLevelData(___level_) {
         [4, 4, 13, 12, 12, 11, 4, 4, 4, 4, 4, 4],
         [4, 4, 4, 2, 2, 2, 4, 4, 4, 4, 4, 4],
         [4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 4]];
+    }
+    else {
+      setCookie("Userlevel",1,756);
     }
 
     console.log("imageNumbers", imageNumbers)

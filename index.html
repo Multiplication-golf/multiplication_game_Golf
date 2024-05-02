@@ -925,9 +925,11 @@
         <div class='XIDboxX'>
           <p>unlocks at level 20 or 250<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
           <button class='golfbutton_t' onclick="hh()"><img class='imggolf_' id='hX' src="displaypngs/24.png" /></button>
+        </div>
         <div class='XIDboxX'>
           <p>unlocks at level 25 or 390<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
-          <button class='golfbutton_t' onclick="hhb()"><img class='imggolf_' id='iX' src="displaypngs/34.png" /></button>
+          <button class='golfbutton_t' onclick="hhb()"><img class='imggolf_' id='hhb'
+              src="displaypngs/34.png" /></button>
         </div>
         <div class='XIDboxX'>
           <p>unlocks at level 30 or 510<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
@@ -944,9 +946,11 @@
         <div class='XIDboxX'>
           <p>unlocks at level 50 or 900<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
           <button class='golfbutton_t' onclick="kk()"><img class='imggolf_' id='kX' src="displaypngs/27.png" /></button>
-          <div class='XIDboxX'>
-          <p>unlocks at level 60 or 1200<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
-          <button class='golfbutton_t' onclick="kk()"><img class='imggolf_' id='kX' src="displaypngs/27.png" /></button>
+        </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 60 or 1100<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
+          <button class='golfbutton_t' onclick="kkkX()"><img class='imggolf_' id='KKKX'
+              src="displaypngs/32.png" /></button>
         </div>
         <div class='center'>
           <div class='XIDboxX____'>
@@ -976,6 +980,8 @@
         var kkkX = document.getElementById('kX');
         var gggX = document.getElementById('gX');
         var lllX = document.getElementById('lX');
+        var hhhb = document.getElementById('hhb');
+        var KKKKX = document.getElementById('KKKX');
         var __baseURL = window.location.href;
         function getJavaSRCX() {
           var LEveL = document.getElementById('noneLevel').innerText;
@@ -991,6 +997,8 @@
           var kX = document.getElementById('kX');
           var gX = document.getElementById('gX');
           var lX = document.getElementById('lX');
+          var hbX = document.getElementById('hhb');
+          var kkX = document.getElementById('KKKX');
           console.log("image LEVEL", LEveL);
           console.log(money______)
           console.log(money______ >= 50)
@@ -1022,6 +1030,12 @@
           else if (LEveL < 20) {
             hX.src = 'locked/29.png';
           }
+          if (LEveL >= 25 || _money______ >= 390) {
+            hbX.src = 'displaypngs/34.png';
+          }
+          else if (LEveL < 25) {
+            hbX.src = 'locked/35.png';
+          }
           if (LEveL >= 30 || _money______ >= 510) {
             iX.src = 'displaypngs/25.png';
             lX.src = 'displaypngs/29.png';
@@ -1037,6 +1051,12 @@
           else if (LEveL < 50) {
             jX.src = 'locked/31.png';
             kX.src = 'locked/32.png';
+          }
+          if (LEveL >= 60 || _money______ >= 1100) {
+            kkX.src = 'displaypngs/32.png';
+          }
+          else if (LEveL < 60) {
+            kkX.src = 'locked/37.png';
           }
           if (LEveL >= 100 || _money______ >= 1500) {
             gX.src = 'displaypngs/28.png';
@@ -1116,9 +1136,9 @@
           changeSRC();
         }
         function hhb() {
-          console.log(hhhX.src)
-          console.log(`${baseURL}displaypngs/24.png`)
-          if (hhhX.src == `${baseURL}displaypngs/24.png`) {
+          console.log(hhhb.src)
+          console.log(`${baseURL}displaypngs/34.png`)
+          if (hhhb.src == `${baseURL}displaypngs/34.png`) {
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/firegolf.png';
           }
@@ -1143,6 +1163,15 @@
           changeSRC();
         }
         function kk() {
+          console.log(kkkX.src)
+          console.log(`${baseURL}displaypngs/27.png`)
+          if (gggX.src == `${baseURL}displaypngs/27.png`) {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/pixel.png';
+          }
+          changeSRC();
+        }
+        function kkk() {
           console.log(kkkX.src)
           console.log(`${baseURL}displaypngs/27.png`)
           if (gggX.src == `${baseURL}displaypngs/27.png`) {
@@ -1226,7 +1255,7 @@
       }
     </style>
     <img src="you completed the course.gif" class="fullimg-jej3di3jf933jaasmczp" />
-    <h3 id='coures--___---_--' class='course_-_'>shoo be do</h3>
+    <h3 id='coures--___---_--' class='course_-_'></h3>
     <div style="position: absolute; top: 71%; left: 43.5%; white-space: nowrap;">
       <h3 id='reward' class='reward--339rkfj4iso'><img src="---.gif" class="coin-gif--lb0owlqodkewkd" />120</h3>
     </div>
