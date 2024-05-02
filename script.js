@@ -7,6 +7,8 @@ const LeveL_ = getCookie("Userlevel");
 console.log("LeveL_", LeveL_);
 const MONEYCOIN = getCookie("Moneyscore");
 const flaskURL = "https://coderyoucantknow.pythonanywhere.com";
+//https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080
+//https://coderyoucantknow.pythonanywhere.com
 // { vars == === == === == === == ===}
 
 function init() {
@@ -105,6 +107,8 @@ window.onload = function() {
   else {
     herfLB.setAttribute("href", `${baseURL_}/leaderboard.html`);
   }
+  const herfP = document.getElementById("profile href");
+  herfP.setAttribute("href", `${baseURL_}/profile.html`);
   if (getCookie('ballIMG') != '') {
     var baLL_ = document.getElementById("fly_ball");
     baLL_.src = getCookie('ballIMG');
@@ -641,9 +645,10 @@ async function loadasyncData(___level_) {
     let obj;
     const res = await fetch(`${flaskURL}/returnLevel/${course_}`);
     obj = await res.json();
-    console.log(obj);
     console.log(___level_, obj[Number(___level_) - 1], obj[0], "response.length", obj.length);
+    console.log('OJB',obj);
     return obj;
+    
   }
   async function returndata() {
     const response = await foo_();
@@ -651,20 +656,14 @@ async function loadasyncData(___level_) {
       console.log("i", i);
       const levelsData = response;
       console.log("___level_", ___level_)
-      if (Number(___level_) === i + 1) {  // Adjust index to match level number
+      if (Number(___level_) == i+1) {  // Adjust index to match level number
         var data__ = levelsData[i];
         console.log(data__);
         return data__;
       }
     }
   }
-  async function processData_() {
-    const _data__ = await returndata();
-    console.log("array", _data__);
-    //console.log("nums:", stringTo2DArray(_data_));
-    return _data__;
-  }
-  const processedData = await processData_();
+  const processedData = await returndata();
   console.log(processedData)
   return processedData;
 }
@@ -696,11 +695,12 @@ async function loadlevelandsetUpGame(LEVEL) {
 
   // List of image numbers
   var course_ = document.getElementById("NoneCourse").innerText;
-  console.log("____level___ :", ____level___);
-  if (course_ == "classic") {
+  console.log(course_ == "classic");
+  if (course_ === "classic") {
     var imageNumbers = loadLevelData(____level___);
     await o();
   } else {
+    console.log("loadasyncData")
     var imageNumbers = await loadasyncData(____level___);
   }
 
@@ -1183,6 +1183,7 @@ async function swing__() {
   if (__course_ == "classic") {
     await o();
   }
+  var leveltext = document.getElementById("levelText");
   var myanswer = document.getElementById("input-box").value;
   const inputbox = document.getElementById("input-box");
   document.getElementById("noneANWSER").style.display = 'block';
@@ -1201,6 +1202,7 @@ async function swing__() {
     ballY = ball.getBoundingClientRect().top;
   }
 
+  leveltext.innerText = "level"+(Number((leveltext.innerText).replace("level",''))+1);
 
 
   function moveBallToSquare(x, y, speed) {

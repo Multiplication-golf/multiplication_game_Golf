@@ -1,12 +1,52 @@
+
+<!DOCTYPE html>
 <html>
-  <head>
-    
-  </head>
-  <body>
-    
-    <nav style="background-color: white; border: 1px solid black;">
-    </nav>
-    <p class='p-jf83iw'>leader board</p>
-    <p id='playerid' class='p-dkji392'>You are</p>
-  </body>
+<head>
+    <title>Random image color</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #divID {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            mix-blend-mode: hue;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        img {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+  <nav style="background-color: white; border: 1px solid black;">
+
+  </nav>
+  <p class='p-jf83iw'>leader board</p>
+  <p id='playerid' class='p-dkji392'>You are</p>
+    <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20220803165300/geeksimage-200x145.png">
+    <div id="divID"></div>
+    <script>
+        const divElem = document.getElementById("divID");
+        function randomcolor() {
+            return Math.floor(Math.random() * 255);
+        }
+        divElem.addEventListener('click', () => {
+            divElem.style.backgroundColor = 'rgba('
+                + randomcolor() + ',' + randomcolor()
+                + ',' + randomcolor() + '\)'
+        })
+    </script>
+</body>
 </html>
