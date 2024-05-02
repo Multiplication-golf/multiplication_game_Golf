@@ -183,9 +183,9 @@ window.onload = function() {
     document.getElementById("money_-__-").innerText = 0;
   }
   if (MONEYCOIN !== "") {
-    document.getElementById("money_-__---").innerHTML = "<img class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + MONEYCOIN;
+    document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + MONEYCOIN;
   } else {
-    document.getElementById("money_-__---").innerHTML = "<img class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + 0;
+    document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + 0;
   }
   function preventSubmission(event) {
     // Prevent the default form submission behavior

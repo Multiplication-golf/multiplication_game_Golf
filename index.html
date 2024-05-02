@@ -925,6 +925,9 @@
         <div class='XIDboxX'>
           <p>unlocks at level 20 or 250<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
           <button class='golfbutton_t' onclick="hh()"><img class='imggolf_' id='hX' src="displaypngs/24.png" /></button>
+        <div class='XIDboxX'>
+          <p>unlocks at level 25 or 390<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
+          <button class='golfbutton_t' onclick="hhb()"><img class='imggolf_' id='iX' src="displaypngs/34.png" /></button>
         </div>
         <div class='XIDboxX'>
           <p>unlocks at level 30 or 510<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
@@ -940,6 +943,9 @@
         </div>
         <div class='XIDboxX'>
           <p>unlocks at level 50 or 900<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
+          <button class='golfbutton_t' onclick="kk()"><img class='imggolf_' id='kX' src="displaypngs/27.png" /></button>
+          <div class='XIDboxX'>
+          <p>unlocks at level 60 or 1200<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
           <button class='golfbutton_t' onclick="kk()"><img class='imggolf_' id='kX' src="displaypngs/27.png" /></button>
         </div>
         <div class='center'>
@@ -1101,6 +1107,15 @@
           changeSRC();
         }
         function hh() {
+          console.log(hhhX.src)
+          console.log(`${baseURL}displaypngs/24.png`)
+          if (hhhX.src == `${baseURL}displaypngs/24.png`) {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/firegolf.png';
+          }
+          changeSRC();
+        }
+        function hhb() {
           console.log(hhhX.src)
           console.log(`${baseURL}displaypngs/24.png`)
           if (hhhX.src == `${baseURL}displaypngs/24.png`) {
