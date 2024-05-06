@@ -685,6 +685,18 @@ function next() {
   document.getElementById("input-box").innerText = '';
   newround();
 }
+function isAddressBarOpen() {
+  // Get the height of the window and the height of the screen
+  var windowHeight = window.innerHeight;
+  var screenHeight = screen.height;
+
+  // Compare the heights to determine if the address bar is open
+  if (windowHeight < screenHeight) {
+    return true; // Address bar is likely open
+  } else {
+    return false; // Address bar is likely closed
+  }
+}
 async function loadlevelandsetUpGame(LEVEL) {
 
   document.getElementById('_(level)_').style.display = 'block';
@@ -731,6 +743,12 @@ async function loadlevelandsetUpGame(LEVEL) {
       } else {
         gridItem.style.backgroundImage = `url('golfpngs2/${imageNumbers[i][j]}.png')`;
         gridItem.style.backgroundSize = '100% 100%'
+      }
+      if (isAddressBarOpen()) {
+        gridItem.style.width = '2.5vw';
+        gridItem.style.height = '2.5vw';
+      } else {
+          console.log('Browser bar is closed');
       }
       // Add text element to the grid item
       const validNumbers = [2, 3, 12, 11, 13, 14];

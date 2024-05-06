@@ -19,6 +19,8 @@
       background-color: None;
       width: 13.6604477612vw;
       height: 12.1088646967vh;
+      min-height: 50px;
+      min-width: 100px;
       color: white;
       text-align: center;
       text-decoration: none;
@@ -558,6 +560,7 @@
     .start__button__ {
       width: 15vw;
       height: 12vh;
+      min-width:120px;
       font-size: 38px;
       text-align: center;
       font-family: 'Brush Script MT', brushe, cursive;
@@ -760,7 +763,6 @@
             <br>
             <a href='https://replit.com/@anderson065599699595940303' class='white'>REPLIT</a>
             <br><br>
-
           </div>
         </div>
       </div>
@@ -957,6 +959,11 @@
           <button class='golfbutton_t' onclick="ppp()"><img class='imggolf_' id='ppppX'
               src="displaypngs/31.png" /></button>
         </div>
+        <div class='XIDboxX'>
+          <p>unlocks at level 75 or 1250<img src='coingif_1.gif' class='img-css-jf483kdkoqaanajsjpqlsm' /></p>
+          <button class='golfbutton_t' onclick="qq()"><img class='imggolf_' id='qX'
+              src="displaypngs/30.png" /></button>
+        </div>
         <div class='center'>
           <div class='XIDboxX____'>
             <br>
@@ -988,6 +995,7 @@
         var hhhb = document.getElementById('hhb');
         var KKKKX = document.getElementById('KKKX');
         var pppX = document.getElementById('ppppX');
+        var qqqX = document.getElementById('qX');
         var __baseURL = window.location.href;
         function getJavaSRCX() {
           var LEveL = document.getElementById('noneLevel').innerText;
@@ -1006,6 +1014,7 @@
           var hbX = document.getElementById('hhb');
           var kkX = document.getElementById('KKKX');
           var pX = document.getElementById('ppppX');
+          var qX = document.getElementById('qX');
           console.log("image LEVEL", LEveL);
           console.log(money______)
           console.log(money______ >= 50)
@@ -1067,9 +1076,11 @@
           }
           if (LEveL >= 75 || _money______ >= 1250) {
             pX.src = 'displaypngs/31.png';
+            qX.src = 'displaypngs/30.png';
           }
           else if (LEveL < 75) {
             pX.src = 'locked/38.png';
+            qX.src = 'locked/39.png';
           }
           if (LEveL >= 100 || _money______ >= 1500) {
             gX.src = 'displaypngs/28.png';
@@ -1159,19 +1170,19 @@
         }
         function jj() {
           console.log(jjjX.src)
-          console.log(`${baseURL}displaypngs/25.png`)
-          if (jjjX.src == `${baseURL}displaypngs/25.png`) {
+          console.log(`${baseURL}displaypngs/26.png`)
+          if (jjjX.src == `${baseURL}displaypngs/26.png`) {
             var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/ocean.png';
+            FlY_balL.src = 'golf balls/gold.png';
           }
           changeSRC();
         }
         function ii() {
           console.log(iiiX.src)
-          console.log(`${baseURL}displaypngs/26.png`)
-          if (iiiX.src == `${baseURL}displaypngs/26.png`) {
+          console.log(`${baseURL}displaypngs/25.png`)
+          if (iiiX.src == `${baseURL}displaypngs/25.png`) {
             var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/gold.png';
+            FlY_balL.src = 'golf balls/ocean.png';
           }
           changeSRC();
         }
@@ -1217,6 +1228,15 @@
           if (lllX.src == `${baseURL}displaypngs/29.png`) {
             var FlY_balL = document.getElementById('fly_ball');
             FlY_balL.src = 'golf balls/dog.png';
+          }
+          changeSRC();
+        }
+        function qq() {
+          console.log(qqqX.src)
+          console.log(`${baseURL}displaypngs/30.png`)
+          if (qqqX.src == `${baseURL}displaypngs/30.png`) {
+            var FlY_balL = document.getElementById('fly_ball');
+            FlY_balL.src = 'golf balls/blueyellowred.png';
           }
           changeSRC();
         }
