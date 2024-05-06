@@ -1,52 +1,454 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Random image color</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+  <title>Random image color</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .pointer {
+      margin: 10px;
+      z-index: 12;
+    }
 
-        #divID {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            mix-blend-mode: hue;
-        }
+    .pointer:hover {
+      background-color: lightgray;
+    }
 
-        body {
-            overflow: hidden;
-        }
+    .golf-img {
+      position: absolute;
+      top: 150px;
+      left: 38.7085889571vw;
+      width: 17.7914110429vw;
+      height: 17.7914110429vw;
+      z-index: 1;
+    }
 
-        img {
-            height: 100vh;
-            width: 100%;
-        }
-    </style>
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: white;
+      width: calc(100vw - 36px);
+      height: 10%;
+      padding: 15px;
+      border: 3px solid black;
+      text-align: left;
+    }
+
+    .colordiv {
+      height: 50px;
+      width: 50px;
+      border: 3px solid black;
+      border-radius: 25%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .red {
+      background-color: rgb(255, 0, 0);
+    }
+
+    .blue {
+      background-color: rgb(0, 0, 255);
+    }
+
+    .green {
+      background-color: rgb(0, 128, 0);
+    }
+
+    .yellow {
+      background-color: rgb(255, 255, 0);
+    }
+
+    .orange {
+      background-color: rgb(255, 145, 0);
+    }
+
+    .purple {
+      background-color: rgb(128, 0, 128);
+    }
+
+    .pink {
+      background-color: rgb(238, 130, 238);
+    }
+
+    .colordiv:hover {
+      filter: brightness(75%);
+    }
+
+    .custom-dropdown {
+      position: relative;
+      top: -29px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .dropdown-toggle {
+      background-color: #f1f1f1;
+      color: #333;
+      padding: 5px;
+      width: 8vw;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .dropdown-menu {
+      display: none;
+      background-color: #fff;
+      width: 8vw;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .vcenter {
+      top: 50%;
+      -ms-transform: translateY(-60%);
+      transform: translateY(-60%);
+    }
+
+    .submit-button {
+      background-color: black;
+      border: none;
+      color: white;
+      padding: 8px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      /* Display as inline-block */
+      font-size: 24px;
+      /* Font size */
+      margin: 2px 1px;
+      /* Margin */
+      cursor: pointer;
+      /* Cursor on hover */
+      border-radius: 10px;
+      /* Rounded corners */
+      transition-duration: 0.4s;
+      /* Smooth transition */
+    }
+    .imgload {
+      width: 300px;
+      height: 300px; 
+      position: absolute; 
+      top: 50%;
+      left: 50%;
+      margin-top: -150px;
+      margin-left: -150px;
+      z-index: 1000;
+    }
+  </style>
 </head>
 
-<body>
-  <nav style="background-color: white; border: 1px solid black;">
+<body style='background-color: black'>
+  <div style='text-align: left; background-color: black;'>
+    <nav>
+      <div class="custom-dropdown" id='meun1'>
+        <button class="dropdown-toggle1" id='open' name='open'>
+          Club
+          <div class='colordiv red'>
+            <p class='vcenter'>red</p>
+          </div>
+        </button>
+        <div id='maindrop' class="dropdown-menu">
+        </div>
+        <script>
+          var width_ = document.getElementById('open').clientWidth + 2.5;
+          document.getElementById('maindrop').style.width = width_ + "px";
+        </script>
+      </div>
+      <div class="custom-dropdown" id='meun2'>
+        <button class="dropdown-toggle2" id='open2'>
+          Handle
+          <div class='colordiv red'>
+            <p class='vcenter'>red</p>
+          </div>
+        </button>
+        <div id='maindrop2' class="dropdown-menu">
+        </div>
+        <script>
+          var width_ = document.getElementById('open2').clientWidth + 2.5;
+          document.getElementById('maindrop2').style.width = width_ + "px";
+        </script>
+      </div>
+      <div class="custom-dropdown" id='meun3'>
+        <button class="dropdown-toggle3" id='open3'>
+          Cross piece
+          <div class='colordiv red'>
+            <p class='vcenter'>red</p>
+          </div>
+        </button>
+        <div id='maindrop3' class="dropdown-menu">
+        </div>
+        <script>
+          var width_ = document.getElementById('open3').clientWidth + 2.5;
+          document.getElementById('maindrop3').style.width = width_ + "px";
+        </script>
+      </div>
+      <div class="custom-dropdown" id='meun4'>
+        <button class="dropdown-toggle4" id='open4'>
+          Bar
+          <div class='colordiv red'>
+            <p class='vcenter'>red</p>
+          </div>
+        </button>
+        <div id='maindrop4' class="dropdown-menu">
+        </div>
+        <script>
+          var width_ = document.getElementById('open4').clientWidth + 2.5;
+          document.getElementById('maindrop4').style.width = width_ + "px";
+        </script>
+      </div>
+      <div style='text-align: right; display: inline-block; top: -50%;'>
+        <button class='submit-button' id='save'>save</button>
+      </div>
+    </nav>
+  </div>
+  <div style=' text-align: center;'>
+    <div>
+      <img src='golf-club/4.png' id='bar' class='golf-img' />
+    </div>
+    <div>
+      <img src="golf-club/1.png" id='club' class='golf-img' />
+    </div>
+    <div>
+      <img src='golf-club/2.png' id='handle' class='golf-img' />
+    </div>
+    <div>
+      <img src='golf-club/3.png' id='crosspeice' class='golf-img' />
+    </div>
+    <div>
+      <img src='frame.png' class='golf-img' />
+    </div>
+    <div id='darkness' style='width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; display: none; z-index: 10;'></div>
 
-  </nav>
-  <p class='p-jf83iw'>leader board</p>
-  <p id='playerid' class='p-dkji392'>You are</p>
-    <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20220803165300/geeksimage-200x145.png">
-    <div id="divID"></div>
-    <script>
-        const divElem = document.getElementById("divID");
-        function randomcolor() {
-            return Math.floor(Math.random() * 255);
+  </div>
+  <div id="divID"></div>
+  <script>
+    const open = document.getElementById("open");
+    const colors = document.getElementsByClassName("colordiv");
+    const savebutton = document.getElementById("save");
+    savebutton.addEventListener('click', () => {
+      const loading = document.createElement("img")
+      loading.src = 'loading.gif';
+      loading.style.display = 'block';
+      loading.classList.add("imgload");
+      console.log("clicked");
+      document.body.appendChild(loading);
+      document.getElementById('darkness').style.display = 'block';
+      setTimeout(() => {
+        loading.remove()
+        document.getElementById('darkness').style.display = 'none';
+      }, 3500);
+    });
+    var value;
+    var value2;
+    var value3;
+    var value4;
+    var rgbs = {'red': [255, 0, 0], 'orange': [255, 146, 0], 'yellow': [255, 255, 0], 'green': [0, 128, 0], 'blue': [0, 0, 255], 'purple': [75, 0, 130], 'pink': [238, 130, 238]};
+
+
+
+    $(document).ready(function () {
+      $('#open').click(function (e) {
+        e.stopPropagation();
+        $('#maindrop').toggle();
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('#meun1').length) {
+          $('#maindrop').hide();
         }
-        divElem.addEventListener('click', () => {
-            divElem.style.backgroundColor = 'rgba('
-                + randomcolor() + ',' + randomcolor()
-                + ',' + randomcolor() + '\)'
-        })
-    </script>
+      });
+    });
+    $(document).ready(function () {
+      $('#open2').click(function (e) {
+        e.stopPropagation();
+        $('#maindrop2').toggle();
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('#meun2').length) {
+          $('#maindrop2').hide();
+        }
+      });
+    });
+    $(document).ready(function () {
+      $('#open3').click(function (e) {
+        e.stopPropagation();
+        $('#maindrop3').toggle();
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('#meun3').length) {
+          $('#maindrop3').hide();
+        }
+      });
+    });
+    $(document).ready(function () {
+      $('#open4').click(function (e) {
+        e.stopPropagation();
+        $('#maindrop4').toggle();
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('#meun4').length) {
+          $('#maindrop4').hide();
+        }
+      });
+    });
+
+    var main = document.getElementById("maindrop")
+
+    var rgbsKEYS = Object.keys(rgbs)
+    for (let i = 0; i < 7; i++) {
+      const wapper = document.createElement('div');
+      const coloredDiv = document.createElement('div');
+      coloredDiv.classList.add('colordiv');
+      coloredDiv.classList.add(rgbsKEYS[i]);
+
+      const centeredText = document.createElement('p');
+      centeredText.className = 'vcenter';
+      centeredText.textContent = rgbsKEYS[i];
+
+      coloredDiv.appendChild(centeredText);
+      coloredDiv.addEventListener('click', () => {
+        changeImageColor(clubElem1, rgbs[rgbsKEYS[i]]);
+
+        value = wapper.innerHTML; // Update to get the color text correctly
+        open.innerHTML = "Club<br>" + value;  // Update the main button text
+        $('#maindrop').hide();  // Close the dropdown menu after selection
+
+      });
+      wapper.appendChild(coloredDiv);
+      main.appendChild(wapper);
+    }
+    var main2 = document.getElementById("maindrop2")
+
+    var rgbsKEYS = Object.keys(rgbs)
+    for (let i = 0; i < 7; i++) {
+      const wapper = document.createElement('div');
+      const coloredDiv = document.createElement('div');
+      coloredDiv.classList.add('colordiv');
+      coloredDiv.classList.add(rgbsKEYS[i]);
+
+      const centeredText = document.createElement('p');
+      centeredText.className = 'vcenter';
+      centeredText.textContent = rgbsKEYS[i];
+
+      coloredDiv.appendChild(centeredText);
+      coloredDiv.addEventListener('click', () => {
+        changeImageColor(clubElem2, rgbs[rgbsKEYS[i]]);
+
+        value2 = wapper.innerHTML; // Update to get the color text correctly
+        open2.innerHTML = "Handle<br>" + value2; // Update the main button text
+        $('#maindrop2').hide();  // Close the dropdown menu after selection
+
+      });
+      wapper.appendChild(coloredDiv);
+      main2.appendChild(wapper);
+    }
+    var main3 = document.getElementById("maindrop3")
+
+    var rgbsKEYS = Object.keys(rgbs)
+    for (let i = 0; i < 7; i++) {
+      const wapper = document.createElement('div');
+      const coloredDiv = document.createElement('div');
+      coloredDiv.classList.add('colordiv');
+      coloredDiv.classList.add(rgbsKEYS[i]);
+
+      const centeredText = document.createElement('p');
+      centeredText.className = 'vcenter';
+      centeredText.textContent = rgbsKEYS[i];
+
+      coloredDiv.appendChild(centeredText);
+      coloredDiv.addEventListener('click', () => {
+        changeImageColor(clubElem3, rgbs[rgbsKEYS[i]]);
+
+        value3 = wapper.innerHTML; // Update to get the color text correctly
+        open3.innerHTML = "Cross piece<br>" + value3; // Update the main button text
+        $('#maindrop3').hide();  // Close the dropdown menu after selection
+
+      });
+      wapper.appendChild(coloredDiv);
+      main3.appendChild(wapper);
+    }
+    var main4 = document.getElementById("maindrop4")
+
+    var rgbsKEYS = Object.keys(rgbs)
+    for (let i = 0; i < 7; i++) {
+      const wapper = document.createElement('div');
+      const coloredDiv = document.createElement('div');
+      coloredDiv.classList.add('colordiv');
+      coloredDiv.classList.add(rgbsKEYS[i]);
+
+      const centeredText = document.createElement('p');
+      centeredText.className = 'vcenter';
+      centeredText.textContent = rgbsKEYS[i];
+
+      coloredDiv.appendChild(centeredText);
+      coloredDiv.addEventListener('click', () => {
+        changeImageColor(clubElem4, rgbs[rgbsKEYS[i]]);
+
+        value = wapper.innerHTML; // Update to get the color text correctly
+        open4.innerHTML = "bar<br>" + value; // Update the main button text
+        $('#maindrop4').hide(); // Close the dropdown menu after selection
+
+      });
+      wapper.appendChild(coloredDiv);
+      main4.appendChild(wapper);
+    }
+
+    const clubElem1 = document.getElementById("club");
+    const clubElem2 = document.getElementById("bar");
+    const clubElem3 = document.getElementById("handle");
+    const clubElem4 = document.getElementById("crosspeice");
+
+
+    function getRandomColor() {
+      return Math.floor(Math.random() * 7);
+    }
+
+
+    function changeImageColor(imageElement, color) {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = imageElement.width;
+      canvas.height = imageElement.height;
+      ctx.drawImage(imageElement, 0, 0, canvas.width, canvas.height);
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      for (let i = 0; i < data.length; i += 4) {
+        // Skip transparent pixels
+        if (data[i + 3] === 0) continue;
+
+
+
+        // Change color of non-transparent pixels
+        data[i] = color[0];     // Red
+        data[i + 1] = color[1]; // Green
+        data[i + 2] = color[2]; // Blue
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+      imageElement.src = canvas.toDataURL();
+    }
+    // Usage
+
+
+
+
+
+  </script>
 </body>
+
 </html>
