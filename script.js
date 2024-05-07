@@ -1051,9 +1051,6 @@ function setCookie(cname, cvalue, exdays) {
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-function cooookies() {
-  setCookie("userlevel", level, 10000000000000)
-}
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -1787,7 +1784,6 @@ async function swing__() {
     }
   }
 }
-
 onvisibilitychange = (event) => {
   if (document.visibilityState === "hidden") {
     const ball = document.getElementById("fly_ball");
