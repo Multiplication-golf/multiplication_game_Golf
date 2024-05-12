@@ -46,8 +46,13 @@ function init() {
   ];
   if (window.location.href != "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
     window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
-    if (getCookie("Name") == null || getCookie("Name") == "" || getCookie("Name") == undefined) {
+    if (getCookie("Name") == null || getCookie("Name") == "" || getCookie("Name") == undefined || getCookie("Name") == "undefined") {
       var Name = generate()
+      setglobalCookie("Name", Name, 756)
+      setCookie("Name", Name, 756)
+    } else {
+      var Name = getCookie("Name")
+      setglobalCookie("Name", Name, 756)
       setCookie("Name", Name, 756)
     }
 
@@ -1050,6 +1055,12 @@ function setCookie(cname, cvalue, exdays) {
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function setglobalCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"+";domain=.janeway.replit.dev";
 }
 function getCookie(cname) {
   let name = cname + "=";

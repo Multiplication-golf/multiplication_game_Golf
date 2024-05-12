@@ -2,34 +2,55 @@ html {
   height: 100%;
   width: 100%;
 }
+
 .p-jf83iw {
   text-align: center;
   font-size: 50px;
 }
 
 table {
-  border:1px solid black;
+  border: 1px solid black;
   margin: auto;
   border-radius: 5px;
   padding: 7px;
 }
 
 td {
-  border:1px solid black;
+  border: 1px solid black;
   border-radius: 5px;
   padding: 7px;
   margin: 5px;
 }
+
 th {
-  border:1px solid black;
+  border: 1px solid black;
   margin: 5px;
   font-size: 30px;
   padding: 7px;
   border-radius: 5px;
-  
+
 }
+
 .p-dkji392 {
   text-align: center;
   font-size: 50px;
   margin-bottom: 20px;
+}
+
+.container {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.index5 {
+  z-index: 5;
 }

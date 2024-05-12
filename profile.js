@@ -1,13 +1,18 @@
+
+
+const flaskURL = "https://coderyoucantknow.pythonanywhere.com";
+
 window.onload = function() {
   const clubElem1 = document.getElementById("club");
   const clubElem2 = document.getElementById("bar");
   const clubElem3 = document.getElementById("handle");
   const clubElem4 = document.getElementById("crosspeice");
+  console.log(getCookie('Moneyscore'));
   var value;
   var value2;
   var value3;
   var value4;
-  
+
   var rgbs = { 'red': [255, 0, 0], 'orange': [255, 146, 0], 'yellow': [255, 255, 0], 'green': [0, 128, 0], 'blue': [0, 0, 255], 'purple': [75, 0, 130], 'pink': [238, 130, 238] };
 
   function getCookie(cname) {
@@ -32,23 +37,36 @@ window.onload = function() {
   const colors = document.getElementsByClassName("colordiv");
   const savebutton = document.getElementById("save");
   savebutton.addEventListener('click', () => {
-    const loading = document.createElement("img")
-    loading.src = 'loading.gif';
-    loading.style.display = 'block';
-    loading.classList.add("imgload");
-    console.log("clicked");
-    document.body.appendChild(loading);
-    document.getElementById('darkness').style.display = 'block';
-
-    var value = open.innerHTML.replace('Club','').replace('<br>','');
-    var value2 = open2.innerHTML.replace('Handle','').replace('<br>','');
-    var value3 = open3.innerHTML.replace('Cross piece','').replace('<br>','');
-    var value4 = open4.innerHTML.replace('Bar','').replace('<br>','');
-    console.log(value,value2,value3,value4)
+    var value = open.innerHTML.replace('Club', '').replace('<br>', '');
+    var value2 = open2.innerHTML.replace('Handle', '').replace('<br>', '');
+    var value3 = open3.innerHTML.replace('Cross piece', '').replace('<br>', '');
+    var value4 = open4.innerHTML.replace('Bar', '').replace('<br>', '');
+    console.log(value, value2, value3, value4)
     setCookie("club", value, 756);
     setCookie("handle", value2, 756);
     setCookie("cross piece", value3, 756);
     setCookie("bar", value4, 756);
+    var value1_ = value.match(/<p[^>]*>([^<]+)<\/p>/)[1];
+    var value2_ = value2.match(/<p[^>]*>([^<]+)<\/p>/)[1];
+    var value3_ = value3.match(/<p[^>]*>([^<]+)<\/p>/)[1];
+    var value4_ = value4.match(/<p[^>]*>([^<]+)<\/p>/)[1];
+    console.log(value1_,value2_,value3_,value4_,)
+    var xhr = new XMLHttpRequest();
+    var name = getCookie("Name");
+    alert(name)
+    xhr.open('GET', `${flaskURL}/UpdateCARD/${name}/${value1_}/${value2_}/${value3_}/${value4_}`, true);
+
+    xhr.onload = function() {
+      if (xhr.status == 200) {
+        var response = JSON.parse(xhr.responseText);
+      } else {
+        console.log('Request failed');
+      }
+    };
+    xhr.send()
+
+
+
 
     setTimeout(() => {
       loading.remove()
@@ -63,7 +81,7 @@ window.onload = function() {
     // Extract text content using regular expressions
     const matchResult = club.match(/<p[^>]*>([^<]+)<\/p>/);
     const textContent = matchResult ? matchResult[1] : '';
-    
+
     changeImageColor(clubElem1, rgbs[textContent]);
   }
   if (getCookie('handle') != '' && getCookie('handle') != undefined && getCookie('handle') != null) {
@@ -259,6 +277,7 @@ window.onload = function() {
 
 
   function changeImageColor(imageElement, color) {
+    console.log(imageElement)
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = imageElement.width;
@@ -267,21 +286,21 @@ window.onload = function() {
 
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const data = imageData.data;
+    console.log(imageElement, color)
 
     for (let i = 0; i < data.length; i += 4) {
       // Skip transparent pixels
-      if (data[i + 3] === 0) continue;
-
-
-
+      if (data[i + 3] === 0) { continue };
       // Change color of non-transparent pixels
       data[i] = color[0];     // Red
       data[i + 1] = color[1]; // Green
       data[i + 2] = color[2]; // Blue
     }
-
     ctx.putImageData(imageData, 0, 0);
     imageElement.src = canvas.toDataURL();
+
+
+
   }
   // Usage
 
