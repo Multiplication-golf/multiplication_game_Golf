@@ -13,7 +13,7 @@ window.onload = function() {
   var value3;
   var value4;
 
-  var rgbs = { 'red': [255, 0, 0], 'orange': [255, 146, 0], 'yellow': [255, 255, 0], 'green': [0, 128, 0], 'blue': [0, 0, 255], 'purple': [75, 0, 130], 'pink': [238, 130, 238] };
+  var rgbs = { 'red': [255, 0, 0], 'orange': [255, 146, 0], 'yellow': [255, 255, 0], 'green': [0, 128, 0], 'blue': [0, 0, 255], 'crayon':[0, 243, 247], 'purple': [75, 0, 130], 'pink': [238, 130, 238]};
 
   function getCookie(cname) {
     let name = cname + "=";
@@ -37,6 +37,13 @@ window.onload = function() {
   const colors = document.getElementsByClassName("colordiv");
   const savebutton = document.getElementById("save");
   savebutton.addEventListener('click', () => {
+    const loading = document.createElement("img")
+    loading.src = 'loading.gif';
+    loading.style.display = 'block';
+    loading.classList.add("imgload");
+    console.log("clicked");
+    document.body.appendChild(loading);
+    document.getElementById('darkness').style.display = 'block';
     var value = open.innerHTML.replace('Club', '').replace('<br>', '');
     var value2 = open2.innerHTML.replace('Handle', '').replace('<br>', '');
     var value3 = open3.innerHTML.replace('Cross piece', '').replace('<br>', '');
@@ -60,7 +67,7 @@ window.onload = function() {
       if (xhr.status == 200) {
         var response = JSON.parse(xhr.responseText);
       } else {
-        console.log('Request failed');
+        console.error('Request failed');
       }
     };
     xhr.send()
@@ -169,7 +176,7 @@ window.onload = function() {
   var main = document.getElementById("maindrop")
 
   var rgbsKEYS = Object.keys(rgbs)
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 8; i++) {
     const wapper = document.createElement('div');
     const coloredDiv = document.createElement('div');
     coloredDiv.classList.add('colordiv');
@@ -196,7 +203,7 @@ window.onload = function() {
   var main2 = document.getElementById("maindrop2")
 
   var rgbsKEYS = Object.keys(rgbs)
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 8; i++) {
     const wapper = document.createElement('div');
     const coloredDiv = document.createElement('div');
     coloredDiv.classList.add('colordiv');
@@ -221,7 +228,7 @@ window.onload = function() {
   var main3 = document.getElementById("maindrop3")
 
   var rgbsKEYS = Object.keys(rgbs)
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 8; i++) {
     const wapper = document.createElement('div');
     const coloredDiv = document.createElement('div');
     coloredDiv.classList.add('colordiv');
@@ -246,7 +253,7 @@ window.onload = function() {
   var main4 = document.getElementById("maindrop4")
 
   var rgbsKEYS = Object.keys(rgbs)
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 8; i++) {
     const wapper = document.createElement('div');
     const coloredDiv = document.createElement('div');
     coloredDiv.classList.add('colordiv');

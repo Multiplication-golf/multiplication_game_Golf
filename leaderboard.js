@@ -7,7 +7,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
 
 const flaskURL = "https://coderyoucantknow.pythonanywhere.com";
 
-var rgbs = { 'red': [255, 0, 0], 'orange': [255, 146, 0], 'yellow': [255, 255, 0], 'green': [0, 128, 0], 'blue': [0, 0, 255], 'purple': [75, 0, 130], 'pink': [238, 130, 238] };
+var rgbs = { 'red': [255, 0, 0], 'orange': [255, 146, 0], 'yellow': [255, 255, 0], 'green': [0, 128, 0], 'blue': [0, 0, 255], 'crayon':[0, 243, 247], 'purple': [75, 0, 130], 'pink': [238, 130, 238]};
 
 function changeImageColor(imageElement, color) {
   if (typeof imageElement == 'undefined' || typeof color == 'undefined') {
