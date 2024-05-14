@@ -29,7 +29,7 @@
       left: 0;
       background-color: white;
       width: calc(100vw - 36px);
-      height: 10%;
+      height: 12%;
       padding: 15px;
       border: 3px solid black;
       text-align: left;
@@ -89,7 +89,26 @@
       text-align: center;
     }
 
+    .custom-dropdownfix {
+      position: relative;
+      top: -29px;
+      display: inline-block;
+      text-align: center;
+      max-width: 75px;
+      max-height: 75px;
+    }
+
     .dropdown-toggle {
+      background-color: #f1f1f1;
+      color: #333;
+      padding: 5px;
+      width: 9vw;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .fixdropdown-toggle {
       background-color: #f1f1f1;
       color: #333;
       padding: 5px;
@@ -98,6 +117,8 @@
       border-radius: 5px;
       cursor: pointer;
       text-align: center;
+      max-width: 90px;
+      max-height: 90px;
     }
 
     .dropdown-menu {
@@ -149,6 +170,10 @@
       margin-left: -150px;
       z-index: 1000;
     }
+    .smallimg {
+      width: 50px;
+      height: 50px; 
+    }
   </style>
 </head>
 
@@ -156,7 +181,7 @@
   <div style='text-align: left; background-color: black;'>
     <nav>
       <div class="custom-dropdown" id='meun1'>
-        <button class="dropdown-toggle1" id='open' name='open'>
+        <button class="dropdown-toggle" id='open' name='open'>
           Club
           <div class='colordiv red'>
             <p class='vcenter'>red</p>
@@ -170,7 +195,7 @@
         </script>
       </div>
       <div class="custom-dropdown" id='meun2'>
-        <button class="dropdown-toggle2" id='open2'>
+        <button class="dropdown-toggle" id='open2'>
           Handle
           <div class='colordiv red'>
             <p class='vcenter'>red</p>
@@ -184,7 +209,7 @@
         </script>
       </div>
       <div class="custom-dropdown" id='meun3'>
-        <button class="dropdown-toggle3" id='open3'>
+        <button class="dropdown-toggle" id='open3'>
           Cross piece
           <div class='colordiv red'>
             <p class='vcenter'>red</p>
@@ -198,13 +223,57 @@
         </script>
       </div>
       <div class="custom-dropdown" id='meun4'>
-        <button class="dropdown-toggle4" id='open4'>
+        <button class="dropdown-toggle" id='open4'>
           Bar
           <div class='colordiv red'>
             <p class='vcenter'>red</p>
           </div>
         </button>
         <div id='maindrop4' class="dropdown-menu">
+        </div>
+        <script>
+          var width_ = document.getElementById('open4').clientWidth + 2.5;
+          document.getElementById('maindrop4').style.width = width_ + "px";
+        </script>
+      </div>
+      <div class="custom-dropdownfix" id='decmeun1'>
+        <button class="fixdropdown-toggle" id='decopen' name='decopen'>
+          Club decore
+        </button>
+        <div id='decmaindrop' class="dropdown-menu">
+        </div>
+        <script>
+          var width_ = document.getElementById('open').clientWidth + 2.5;
+          document.getElementById('maindrop').style.width = width_ + "px";
+        </script>
+      </div>
+      <div class="custom-dropdownfix" id='decmeun2'>
+        <button class="fixdropdown-toggle" id='decopen2'>
+          Handle decore
+        </button>
+        <div id='decmaindrop2' class="dropdown-menu">
+        </div>
+        <script>
+          var width_ = document.getElementById('open2').clientWidth + 2.5;
+          document.getElementById('maindrop2').style.width = width_ + "px";
+        </script>
+      </div>
+      <div class="custom-dropdownfix" id='decmeun3'>
+        <button class="fixdropdown-toggle" id='decopen3'>
+          Cross piece decore
+        </button>
+        <div id='decmaindrop3' class="dropdown-menu">
+        </div>
+        <script>
+          var width_ = document.getElementById('open3').clientWidth + 2.5;
+          document.getElementById('maindrop3').style.width = width_ + "px";
+        </script>
+      </div>
+      <div class="custom-dropdownfix" id='decmeun4'>
+        <button class="fixdropdown-toggle" id='decopen4'>
+          Bar decore
+        </button>
+        <div id='decmaindrop4' class="dropdown-menu">
         </div>
         <script>
           var width_ = document.getElementById('open4').clientWidth + 2.5;

@@ -34,6 +34,10 @@ window.onload = function() {
   const open2 = document.getElementById("open2");
   const open3 = document.getElementById("open3");
   const open4 = document.getElementById("open4");
+  const decopen = document.getElementById("decopen");
+  const decopen2 = document.getElementById("decopen2");
+  const decopen3 = document.getElementById("decopen3");
+  const decopen4 = document.getElementById("decopen4");
   const colors = document.getElementsByClassName("colordiv");
   const savebutton = document.getElementById("save");
   savebutton.addEventListener('click', () => {
@@ -171,6 +175,54 @@ window.onload = function() {
       }
     });
   });
+  $(document).ready(function() {
+    $('#decopen').click(function(e) {
+      e.stopPropagation();
+      $('#decmaindrop').toggle();
+    });
+
+    $(document).click(function(e) {
+      if (!$(e.target).closest('#decmeun1').length) {
+        $('#decmaindrop').hide();
+      }
+    });
+  });
+  $(document).ready(function() {
+    $('#decopen2').click(function(e) {
+      e.stopPropagation();
+      $('#decmaindrop2').toggle();
+    });
+
+    $(document).click(function(e) {
+      if (!$(e.target).closest('#decmeun2').length) {
+        $('#decmaindrop2').hide();
+      }
+    });
+  });
+  $(document).ready(function() {
+    $('#decopen3').click(function(e) {
+      e.stopPropagation();
+      $('#decmaindrop3').toggle();
+    });
+
+    $(document).click(function(e) {
+      if (!$(e.target).closest('#decmeun3').length) {
+        $('#decmaindrop3').hide();
+      }
+    });
+  });
+  $(document).ready(function() {
+    $('#decopen4').click(function(e) {
+      e.stopPropagation();
+      $('#decmaindrop4').toggle();
+    });
+
+    $(document).click(function(e) {
+      if (!$(e.target).closest('#decmeun4').length) {
+        $('#decmaindrop4').hide();
+      }
+    });
+  });
 
 
   var main = document.getElementById("maindrop")
@@ -274,6 +326,105 @@ window.onload = function() {
     });
     wapper.appendChild(coloredDiv);
     main4.appendChild(wapper);
+  }
+  function addDec(PNGid) {
+    var decor = document.createElement("img");
+    decor.src = PNGid;
+    decor.classList = 'golf-img';
+    document.body.appendChild(decor)
+  }
+
+  var imgvalue1;
+  var decmain = document.getElementById("decmaindrop")
+  for (let i = 0; i < 2; i = i+2) {
+    const wapper = document.createElement('div');
+    const imgDiv = document.createElement('img');
+    console.log(`dec/club/${i+2}.png`)
+    imgDiv.src = `dec/club/croped/${i+2}.png`;
+    imgDiv.className = 'smallimg';
+
+    
+    imgDiv.addEventListener('click', () => {
+      console.log("Click")
+      addDec(`dec/club/${i+2}.png`);
+
+      imgvalue1 = wapper.innerHTML;
+      imgvalue1.className = 'smallimg';
+      // Update to get the color text correctly
+      decopen.innerHTML = "Club decore<br>" + imgvalue1; // Update the main button text
+      $('#decmaindrop').hide(); // Close the dropdown menu after selection
+    });
+    wapper.appendChild(imgDiv);
+    decmain.appendChild(wapper);
+  }
+  var imgvalue2;
+  var decmain = document.getElementById("decmaindrop2")
+  for (let i = 0; i < 2; i = i+2) {
+    const wapper = document.createElement('div');
+    const imgDiv = document.createElement('img');
+    console.log(`dec/handle/${i+8}.png`)
+    imgDiv.src = `dec/handle/croped/${i+8}.png`;
+    imgDiv.className = 'smallimg';
+
+
+    imgDiv.addEventListener('click', () => {
+      console.log("Click")
+      addDec(`dec/handle/${i+8}.png`);
+
+      imgvalue2 = wapper.innerHTML;
+      imgvalue2.className = 'smallimg';
+      // Update to get the color text correctly
+      decopen2.innerHTML = "Handle decore<br>" + imgvalue2; // Update the main button text
+      $('#decmaindrop2').hide(); // Close the dropdown menu after selection
+    });
+    wapper.appendChild(imgDiv);
+    decmain.appendChild(wapper);
+  }
+  var imgvalue3;
+  var decmain = document.getElementById("decmaindrop3")
+  for (let i = 0; i < 2; i = i+2) {
+    const wapper = document.createElement('div');
+    const imgDiv = document.createElement('img');
+    console.log(`dec/crosspiece/${i+4}.png`)
+    imgDiv.src = `dec/crosspiece/croped/${i+4}.png`;
+    imgDiv.className = 'smallimg';
+
+
+    imgDiv.addEventListener('click', () => {
+      console.log("Click")
+      addDec(`dec/crosspiece/${i+4}.png`);
+
+      imgvalue3 = wapper.innerHTML;
+      imgvalue3.className = 'smallimg';
+      // Update to get the color text correctly
+      decopen3.innerHTML = "crosspiece decore<br>" + imgvalue3; // Update the main button text
+      $('#decmaindrop3').hide(); // Close the dropdown menu after selection
+    });
+    wapper.appendChild(imgDiv);
+    decmain.appendChild(wapper);
+  }
+  var imgvalue4;
+  var decmain = document.getElementById("decmaindrop4")
+  for (let i = 0; i < 2; i = i+2) {
+    const wapper = document.createElement('div');
+    const imgDiv = document.createElement('img');
+    console.log(`dec/bar/${i+6}.png`)
+    imgDiv.src = `dec/bar/croped/${i+6}.png`;
+    imgDiv.className = 'smallimg';
+
+
+    imgDiv.addEventListener('click', () => {
+      console.log("Click")
+      addDec(`dec/bar/${i+6}.png`);
+
+      imgvalue4 = wapper.innerHTML;
+      imgvalue4.className = 'smallimg';
+      // Update to get the color text correctly
+      decopen4.innerHTML = "Bar decore<br>" + imgvalue4; // Update the main button text
+      $('#decmaindrop4').hide(); // Close the dropdown menu after selection
+    });
+    wapper.appendChild(imgDiv);
+    decmain.appendChild(wapper);
   }
 
 

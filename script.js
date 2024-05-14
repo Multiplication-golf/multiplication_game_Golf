@@ -44,6 +44,7 @@ function init() {
     'Slash', 'Melt', 'Melted', 'Melting', 'Fell', 'Wolf', 'Hound', 'Bob', 'Mr',
     'Legacy', 'Sharp', 'Dead', 'Mew', 'Chuckle', 'Bubba', 'Bubble', 'Sandwich', 'Smasher', 'Extreme', 'Multi', 'Universe', 'Ultimate', 'Death', 'Ready', 'Monkey', 'Elevator', 'Wrench', 'Grease', 'Head', 'Theme', 'Grand', 'Cool', 'Kid', 'Boy', 'Girl', 'Vortex', 'Paradox'
   ];
+  console.log(window.location.href)
   if (window.location.href != "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
     window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
     if (getCookie("Name") == null || getCookie("Name") == "" || getCookie("Name") == undefined || getCookie("Name") == "undefined") {

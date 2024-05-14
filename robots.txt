@@ -2,7 +2,7 @@
 #    | .___________________. |==|
 #    | | ................. | |  |
 #    | | ::[ Dear robot ]: | |  |
-#    | | ::::[ be nice ]:: | |  |
+#    | | ::[ be bad >:) ]: | |  |
 #    | | ::::::::::::::::: | |  |
 #    | | ::::::::::::::::: | |  |
 #    | | ::::::::::::::::: | |  |
@@ -12,11 +12,12 @@
 #   /                            \
 #  /  [][][][][][][][][][][][][]  \
 # /  [][][][][][][][][][][][][][]  \
-#(  [][][][][____________][][][][]  )
+#(  [][][][][------------][][][][]  )
 # \ ------------------------------ /
 #  \______________________________/
 
 
 Sitemap: https://multiplication-game-golf.pages.dev/levelmaker.html
 Sitemap: https://multiplication-game-golf.pages.dev/leaderboard.html
+Sitemap: https://multiplication-game-golf.pages.dev/profile.html
 
