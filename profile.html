@@ -84,14 +84,14 @@
 
     .custom-dropdown {
       position: relative;
-      top: -29px;
+      top: -28%;
       display: inline-block;
       text-align: center;
     }
 
     .custom-dropdownfix {
       position: relative;
-      top: -29px;
+      top: -28%;
       display: inline-block;
       text-align: center;
       max-width: 75px;
@@ -102,23 +102,27 @@
       background-color: #f1f1f1;
       color: #333;
       padding: 5px;
+      margin: 5px;
       width: 9vw;
       border: 1px solid #ccc;
       border-radius: 5px;
       cursor: pointer;
       text-align: center;
+      max-width: 80px;
+      max-height: 80px;
     }
     .fixdropdown-toggle {
       background-color: #f1f1f1;
       color: #333;
       padding: 5px;
-      width: 8vw;
+      margin: 5px;
+      width: 9vw;
       border: 1px solid #ccc;
       border-radius: 5px;
       cursor: pointer;
       text-align: center;
-      max-width: 90px;
-      max-height: 90px;
+      max-width: 80px;
+      max-height: 80px;
     }
 
     .dropdown-menu {
@@ -126,7 +130,7 @@
       background-color: #fff;
       width: 8vw;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1;
+      z-index: 10;
       position: absolute;
       top: 100%;
       left: 0;
@@ -190,7 +194,7 @@
         <div id='maindrop' class="dropdown-menu">
         </div>
         <script>
-          var width_ = document.getElementById('open').clientWidth + 2.5;
+          var width_ = document.getElementById('open').clientWidth + 7.5;
           document.getElementById('maindrop').style.width = width_ + "px";
         </script>
       </div>
@@ -204,7 +208,7 @@
         <div id='maindrop2' class="dropdown-menu">
         </div>
         <script>
-          var width_ = document.getElementById('open2').clientWidth + 2.5;
+          var width_ = document.getElementById('open2').clientWidth + 7.5;
           document.getElementById('maindrop2').style.width = width_ + "px";
         </script>
       </div>
@@ -218,7 +222,7 @@
         <div id='maindrop3' class="dropdown-menu">
         </div>
         <script>
-          var width_ = document.getElementById('open3').clientWidth + 2.5;
+          var width_ = document.getElementById('open3').clientWidth + 7.5;
           document.getElementById('maindrop3').style.width = width_ + "px";
         </script>
       </div>
@@ -232,52 +236,52 @@
         <div id='maindrop4' class="dropdown-menu">
         </div>
         <script>
-          var width_ = document.getElementById('open4').clientWidth + 2.5;
+          var width_ = document.getElementById('open4').clientWidth + 7.5;
           document.getElementById('maindrop4').style.width = width_ + "px";
         </script>
       </div>
-      <div class="custom-dropdownfix" id='decmeun1'>
-        <button class="fixdropdown-toggle" id='decopen' name='decopen'>
+      <div class="custom-dropdown" id='decmeun1'>
+        <button class="dropdown-toggle" id='decopen' name='decopen'>
           Club decore
         </button>
         <div id='decmaindrop' class="dropdown-menu">
         </div>
         <script>
-          var width_ = document.getElementById('open').clientWidth + 2.5;
-          document.getElementById('maindrop').style.width = width_ + "px";
+          var width_ = document.getElementById('decopen').clientWidth + 7.5;
+          document.getElementById('decmaindrop').style.width = width_ + "px";
         </script>
       </div>
-      <div class="custom-dropdownfix" id='decmeun2'>
+      <div class="custom-dropdown" id='decmeun2'>
         <button class="fixdropdown-toggle" id='decopen2'>
           Handle decore
         </button>
         <div id='decmaindrop2' class="dropdown-menu">
         </div>
         <script>
-          var width_ = document.getElementById('open2').clientWidth + 2.5;
-          document.getElementById('maindrop2').style.width = width_ + "px";
+          var width_ = document.getElementById('decopen2').clientWidth + 7.5;
+          document.getElementById('decmaindrop2').style.width = width_ + "px";
         </script>
       </div>
-      <div class="custom-dropdownfix" id='decmeun3'>
+      <div class="custom-dropdown" id='decmeun3'>
         <button class="fixdropdown-toggle" id='decopen3'>
           Cross piece decore
         </button>
         <div id='decmaindrop3' class="dropdown-menu">
         </div>
         <script>
-          var width_ = document.getElementById('open3').clientWidth + 2.5;
-          document.getElementById('maindrop3').style.width = width_ + "px";
+          var width_ = document.getElementById('decopen3').clientWidth + 7.5;
+          document.getElementById('decmaindrop3').style.width = width_ + "px";
         </script>
       </div>
-      <div class="custom-dropdownfix" id='decmeun4'>
+      <div class="custom-dropdown" id='decmeun4'>
         <button class="fixdropdown-toggle" id='decopen4'>
           Bar decore
         </button>
         <div id='decmaindrop4' class="dropdown-menu">
         </div>
         <script>
-          var width_ = document.getElementById('open4').clientWidth + 2.5;
-          document.getElementById('maindrop4').style.width = width_ + "px";
+          var width_ = document.getElementById('decopen4').clientWidth + 7.5;
+          document.getElementById('decmaindrop4').style.width = width_ + "px";
         </script>
       </div>
       <div style='text-align: right; display: inline-block; top: -50%;'>

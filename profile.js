@@ -327,10 +327,16 @@ window.onload = function() {
     wapper.appendChild(coloredDiv);
     main4.appendChild(wapper);
   }
-  function addDec(PNGid) {
+  function addDec(PNGid,id) {
+    var ElementRemove = document.getElementById(id);
+    if (ElementRemove) {
+        ElementRemove.remove();
+    }
+    setTimeout(() => {},100);
     var decor = document.createElement("img");
     decor.src = PNGid;
     decor.classList = 'golf-img';
+    decor.id = id;
     document.body.appendChild(decor)
   }
 
@@ -346,7 +352,7 @@ window.onload = function() {
     
     imgDiv.addEventListener('click', () => {
       console.log("Click")
-      addDec(`dec/club/${i+2}.png`);
+      addDec(`dec/club/${i+2}.png`,'_club');
 
       imgvalue1 = wapper.innerHTML;
       imgvalue1.className = 'smallimg';
@@ -369,7 +375,7 @@ window.onload = function() {
 
     imgDiv.addEventListener('click', () => {
       console.log("Click")
-      addDec(`dec/handle/${i+8}.png`);
+      addDec(`dec/handle/${i+8}.png`,"_handle");
 
       imgvalue2 = wapper.innerHTML;
       imgvalue2.className = 'smallimg';
@@ -392,7 +398,7 @@ window.onload = function() {
 
     imgDiv.addEventListener('click', () => {
       console.log("Click")
-      addDec(`dec/crosspiece/${i+4}.png`);
+      addDec(`dec/crosspiece/${i+4}.png`,"_crosspiece");
 
       imgvalue3 = wapper.innerHTML;
       imgvalue3.className = 'smallimg';
@@ -404,7 +410,7 @@ window.onload = function() {
     decmain.appendChild(wapper);
   }
   var imgvalue4;
-  var decmain = document.getElementById("decmaindrop4")
+  var decmain = document.getElementById("decmaindrop4");
   for (let i = 0; i < 2; i = i+2) {
     const wapper = document.createElement('div');
     const imgDiv = document.createElement('img');
@@ -415,7 +421,7 @@ window.onload = function() {
 
     imgDiv.addEventListener('click', () => {
       console.log("Click")
-      addDec(`dec/bar/${i+6}.png`);
+      addDec(`dec/bar/${i+6}.png`,"_bar");
 
       imgvalue4 = wapper.innerHTML;
       imgvalue4.className = 'smallimg';
@@ -426,6 +432,63 @@ window.onload = function() {
     wapper.appendChild(imgDiv);
     decmain.appendChild(wapper);
   }
+  imgvalue4 = document.createElement("img");
+  imgvalue4.src = 'dec/none.png'
+  imgvalue4.className = 'smallimg';
+  // Update to get the color text correctly
+  decopen4.innerHTML = "Bar decore<br>" + imgvalue4.outerHTML;
+  imgvalue3 = document.createElement("img");
+  imgvalue3.src = 'dec/none.png'
+  imgvalue3.className = 'smallimg';
+  // Update to get the color text correctly
+  decopen3.innerHTML = "crosspiece decore<br>" + imgvalue3.outerHTML;
+  imgvalue2 = document.createElement("img");
+  imgvalue2.src = 'dec/none.png'
+  imgvalue2.className = 'smallimg';
+  // Update to get the color text correctly
+  decopen2.innerHTML = "Handle decore<br>" + imgvalue2.outerHTML;
+  imgvalue1 = document.createElement("img");
+  imgvalue1.src = 'dec/none.png';
+  imgvalue1.className = 'smallimg';
+  // Update to get the color text correctly
+  decopen.innerHTML = "Club decore<br>" + imgvalue1.outerHTML;
+  const wapper1 = document.createElement('div');
+  const imgDiv1 = document.createElement('img');
+  imgDiv1.src = `dec/none.png`;
+  imgDiv1.className = 'smallimg';
+
+
+  imgDiv1.addEventListener('click', () => {
+    console.log("Click")
+    addDec(`blank.png`,"_bar");
+
+    imgvalue4 = wapper1.innerHTML;
+    imgvalue4.className = 'smallimg';
+    // Update to get the color text correctly
+    decopen4.innerHTML = "Bar decore<br>" + imgvalue4; // Update the main button text
+    $('#decmaindrop1').hide(); // Close the dropdown menu after selection
+  });
+  wapper1.appendChild(imgDiv1);
+  decmain.appendChild(wapper1);
+  const wapper2 = document.createElement('div');
+  const imgDiv2 = document.createElement('img');
+  console.log(`dec/none.png`);
+  imgDiv2.src = `dec/none.png`;
+  imgDiv2.className = 'smallimg';
+
+  var decmain = document.getElementById("decmaindrop2")
+  imgDiv2.addEventListener('click', () => {
+    console.log("Click")
+    addDec(`blank.png`,"_crosspiece");
+
+    imgvalue2 = wapper2.innerHTML;
+    imgvalue2.className = 'smallimg';
+    // Update to get the color text correctly
+    decopen3.innerHTML = "crosspiece decore<br>" + imgvalue2; // Update the main button text
+    $('#decmaindrop2').hide(); // Close the dropdown menu after selection
+  });
+  wapper2.appendChild(imgDiv2);
+  decmain.appendChild(wapper2);
 
 
 
