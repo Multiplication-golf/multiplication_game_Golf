@@ -140,24 +140,20 @@ window.onload = function() {
 
 
 
-  setCookie("clubdec", src1, 756);
-  setCookie("handledec", src2, 756);
-  setCookie("cross piecedec", src3, 756);
-  setCookie("bardec", src4, 756);
   if (getCookie('clubdec') != '' && getCookie('clubdec') != undefined && getCookie('clubdec') != null && getCookie('clubdec') != 'undefined') {
 
     addDec(getCookie('clubdec'), '_club');
   }
   if (getCookie('handledec') != '' && getCookie('handledec') != undefined && getCookie('handledec') != null) {
-    addDec(getCookie('handledec'), '_handledec');
+    addDec(getCookie('handledec'), '_handle');
   }
   if (getCookie('cross piecedec') != '' && getCookie('cross piecedec') != undefined && getCookie('cross piecedec') != null && getCookie('cross piecedec') != 'undefined') {
 
-    addDec(getCookie('cross piecedec'), '_cross piecedec');
+    addDec(getCookie('cross piecedec'), '_cross piece');
   }
   if (getCookie('bardec') != '' && getCookie('bardec') != undefined && getCookie('bardec') != null && getCookie('bardec') != 'undefined') {
 
-    addDec(getCookie('bardec'), '_bardec');
+    addDec(getCookie('bardec'), '_bar');
   }
 
 
