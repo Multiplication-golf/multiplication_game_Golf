@@ -65,15 +65,23 @@ window.onload = function() {
     var value3_ = value3.match(/<p[^>]*>([^<]+)<\/p>/)[1];
     var value4_ = value4.match(/<p[^>]*>([^<]+)<\/p>/)[1];
 
-    console.log(src1,src2,src3,src4)
-    setCookie("clubdec", src1, 756);
-    setCookie("handledec", src2, 756);
-    setCookie("cross piecedec", src3, 756);
-    setCookie("bardec", src4, 756);
+    console.log(typeof src1, src2, src3, src4)
+
+    if (src1 != '') {
+      setCookie("clubdec", src1, 756);
+    }
+    if (src2 != '') {
+      setCookie("handledec", src2, 756);
+    }
+    if (src3 != '') {
+      setCookie("cross piecedec", src3, 756);
+    }
+    if (src4 != '') {
+      setCookie("bardec", src4, 756);
+    }
 
     var xhr = new XMLHttpRequest();
     var name = getCookie("Name");
-    alert(name)
     xhr.open('GET', `${flaskURL}/UpdateCARD/${name}/${value1_}/${value2_}/${value3_}/${value4_}`, true);
 
     xhr.onload = function() {
@@ -135,6 +143,26 @@ window.onload = function() {
     changeImageColor(clubElem4, rgbs[textContent]);
   }
 
+  imgvalue4 = document.createElement("img");
+  imgvalue4.src = 'dec/none.png'
+  imgvalue4.className = 'smallimg';
+  decopen4.innerHTML = "Bar decore<br>" + imgvalue4.outerHTML;
+
+  imgvalue3 = document.createElement("img");
+  imgvalue3.src = 'dec/none.png'
+  imgvalue3.className = 'smallimg';
+  decopen3.innerHTML = "crosspiece decore<br>" + imgvalue3.outerHTML;
+
+  imgvalue2 = document.createElement("img");
+  imgvalue2.src = 'dec/none.png'
+  imgvalue2.className = 'smallimg';
+  decopen2.innerHTML = "Handle decore<br>" + imgvalue2.outerHTML;
+
+  imgvalue1 = document.createElement("img");
+  imgvalue1.src = 'dec/none.png';
+  imgvalue1.className = 'smallimg';
+  decopen.innerHTML = "Club decore<br>" + imgvalue1.outerHTML;
+
 
 
 
@@ -143,17 +171,39 @@ window.onload = function() {
   if (getCookie('clubdec') != '' && getCookie('clubdec') != undefined && getCookie('clubdec') != null && getCookie('clubdec') != 'undefined') {
 
     addDec(getCookie('clubdec'), '_club');
+    imgvalue1 = document.createElement("img");
+    imgvalue1.src = 'dec/none.png';
+    imgvalue1.className = 'smallimg';
+    const transformString = (str) => str.replace(/(\/\w+\/)(\d+\.png)/, '$1croped/$2');
+    imgvalue1.src = transformString(getCookie('clubdec'));
+    decopen.innerHTML = "Club decore<br>" + imgvalue1.outerHTML;
   }
   if (getCookie('handledec') != '' && getCookie('handledec') != undefined && getCookie('handledec') != null) {
     addDec(getCookie('handledec'), '_handle');
+    imgvalue2 = document.createElement("img");
+    const transformString = (str) => str.replace(/(\/\w+\/)(\d+\.png)/, '$1croped/$2');
+    imgvalue2.src = transformString(getCookie('handledec'));
+    imgvalue2.className = 'smallimg';
+
+    decopen2.innerHTML = "Handle decore<br>" + imgvalue2.outerHTML;
   }
   if (getCookie('cross piecedec') != '' && getCookie('cross piecedec') != undefined && getCookie('cross piecedec') != null && getCookie('cross piecedec') != 'undefined') {
 
     addDec(getCookie('cross piecedec'), '_cross piece');
+    imgvalue3 = document.createElement("img");
+    const transformString = (str) => str.replace(/(\/\w+\/)(\d+\.png)/, '$1croped/$2');
+    imgvalue3.src = transformString(getCookie('cross piecedec'));
+    imgvalue3.className = 'smallimg';
+    decopen3.innerHTML = "crosspiece decore<br>" + imgvalue3.outerHTML;
   }
   if (getCookie('bardec') != '' && getCookie('bardec') != undefined && getCookie('bardec') != null && getCookie('bardec') != 'undefined') {
 
     addDec(getCookie('bardec'), '_bar');
+    imgvalue4 = document.createElement("img");
+    const transformString = (str) => str.replace(/(\/\w+\/)(\d+\.png)/, '$1croped/$2');
+    imgvalue4.src = transformString(getCookie('bardec'));
+    imgvalue4.className = 'smallimg';
+    decopen4.innerHTML = "Bar decore<br>" + imgvalue4.outerHTML;
   }
 
 
@@ -466,25 +516,6 @@ window.onload = function() {
     wapper.appendChild(imgDiv);
     decmain.appendChild(wapper);
   }
-  imgvalue4 = document.createElement("img");
-  imgvalue4.src = 'dec/none.png'
-  imgvalue4.className = 'smallimg';
-  decopen4.innerHTML = "Bar decore<br>" + imgvalue4.outerHTML;
-
-  imgvalue3 = document.createElement("img");
-  imgvalue3.src = 'dec/none.png'
-  imgvalue3.className = 'smallimg';
-  decopen3.innerHTML = "crosspiece decore<br>" + imgvalue3.outerHTML;
-
-  imgvalue2 = document.createElement("img");
-  imgvalue2.src = 'dec/none.png'
-  imgvalue2.className = 'smallimg';
-  decopen2.innerHTML = "Handle decore<br>" + imgvalue2.outerHTML;
-
-  imgvalue1 = document.createElement("img");
-  imgvalue1.src = 'dec/none.png';
-  imgvalue1.className = 'smallimg';
-  decopen.innerHTML = "Club decore<br>" + imgvalue1.outerHTML;
 
   const wapper1 = document.createElement('div');
   const imgDiv1 = document.createElement('img');
