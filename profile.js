@@ -87,6 +87,26 @@ window.onload = function() {
     xhr.onload = function() {
       if (xhr.status == 200) {
         var response = JSON.parse(xhr.responseText);
+        var xhr2 = new XMLHttpRequest();
+
+        let charToRemove = "/"; 
+        let regex = new RegExp(charToRemove, 'g'); 
+        
+        var src1_ = src1.replace(regex,'ST');
+        var src2_ = src2.replace(regex,'ST');
+        var src3_ = src3.replace(regex,'ST');
+        var src4_ = src4.replace(regex,'ST');
+        xhr2.open('GET', `${flaskURL}/UpdateDecCARD/${name}/${src1_}/${src2_}/${src3_}/${src4_}`, true);
+
+        xhr2.onload = function() {
+          alert(xhr2.status)
+          if (xhr2.status == 200) {
+            var response = JSON.parse(xhr.responseText);
+          } else {
+            console.error('Request failed');
+          }
+        };
+        xhr2.send()
       } else {
         console.error('Request failed');
       }
@@ -177,6 +197,7 @@ window.onload = function() {
     const transformString = (str) => str.replace(/(\/\w+\/)(\d+\.png)/, '$1croped/$2');
     imgvalue1.src = transformString(getCookie('clubdec'));
     decopen.innerHTML = "Club decore<br>" + imgvalue1.outerHTML;
+    var src1 = getCookie('clubdec');
   }
   if (getCookie('handledec') != '' && getCookie('handledec') != undefined && getCookie('handledec') != null) {
     addDec(getCookie('handledec'), '_handle');
@@ -186,6 +207,7 @@ window.onload = function() {
     imgvalue2.className = 'smallimg';
 
     decopen2.innerHTML = "Handle decore<br>" + imgvalue2.outerHTML;
+    var src2 = getCookie('handledec');
   }
   if (getCookie('cross piecedec') != '' && getCookie('cross piecedec') != undefined && getCookie('cross piecedec') != null && getCookie('cross piecedec') != 'undefined') {
 
@@ -195,6 +217,7 @@ window.onload = function() {
     imgvalue3.src = transformString(getCookie('cross piecedec'));
     imgvalue3.className = 'smallimg';
     decopen3.innerHTML = "crosspiece decore<br>" + imgvalue3.outerHTML;
+    var src3 = getCookie('cross piecedec');
   }
   if (getCookie('bardec') != '' && getCookie('bardec') != undefined && getCookie('bardec') != null && getCookie('bardec') != 'undefined') {
 
@@ -204,6 +227,7 @@ window.onload = function() {
     imgvalue4.src = transformString(getCookie('bardec'));
     imgvalue4.className = 'smallimg';
     decopen4.innerHTML = "Bar decore<br>" + imgvalue4.outerHTML;
+    var src4 = getCookie('bardec');
   }
 
 

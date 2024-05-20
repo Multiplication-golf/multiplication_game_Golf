@@ -45,22 +45,35 @@ function init() {
     'Legacy', 'Sharp', 'Dead', 'Mew', 'Chuckle', 'Bubba', 'Bubble', 'Sandwich', 'Smasher', 'Extreme', 'Multi', 'Universe', 'Ultimate', 'Death', 'Ready', 'Monkey', 'Elevator', 'Wrench', 'Grease', 'Head', 'Theme', 'Grand', 'Cool', 'Kid', 'Boy', 'Girl', 'Vortex', 'Paradox'
   ];
   console.log(window.location.href)
-  if (window.location.href != "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
-    window.location.href != "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
+  if (window.location.href != 
+      "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
+    window.location.href != 
+      "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
     if (getCookie("Name") == null || getCookie("Name") == "" || getCookie("Name") == undefined || getCookie("Name") == "undefined") {
       var Name = generate()
       setglobalCookie("Name", Name, 756)
       setCookie("Name", Name, 756)
+
+      var Welcome = document.getElementById('Welcome');
+      Welcome.innerText = 'Welcome ' + getCookie("Name");
+
     } else {
       var Name = getCookie("Name")
       setglobalCookie("Name", Name, 756)
       setCookie("Name", Name, 756)
+
+      var Welcome = document.getElementById('Welcome');
+      Welcome.innerText = 'Welcome ' + getCookie("Name");
+
     }
 
     function generate() {
       var finalName = nameList[Math.floor(Math.random() * nameList.length)] + nameList[Math.floor(Math.random() * nameList.length)] + nameList[Math.floor(Math.random() * nameList.length)];
       return finalName
     };
+    for (let g = 0; g < nameList.length; g++) {
+      console.log(generate());
+    }
   }
 
 
@@ -296,7 +309,7 @@ function done() {
   document.getElementById('_(login)_').style.display = 'none';
   document.getElementById('_(intoP)_').style.display = 'none';
   disableScroll();
-  setCookie("Userlevel",1,756);
+  setCookie("Userlevel", 1, 756);
   var course_____ = document.getElementById('NoneCourse').innerText;
   document.getElementById('coures--___---_--').innerText = course_____;
   console.log(course_____)
@@ -640,7 +653,7 @@ function loadLevelData(___level_) {
         [4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 4]];
     }
     else {
-      setCookie("Userlevel",1,756);
+      setCookie("Userlevel", 1, 756);
     }
 
     console.log("imageNumbers", imageNumbers)
@@ -656,9 +669,9 @@ async function loadasyncData(___level_) {
     const res = await fetch(`${flaskURL}/returnLevel/${course_}`);
     obj = await res.json();
     console.log(___level_, obj[Number(___level_) - 1], obj[0], "response.length", obj.length);
-    console.log('OJB',obj);
+    console.log('OJB', obj);
     return obj;
-    
+
   }
   async function returndata() {
     const response = await foo_();
@@ -666,7 +679,7 @@ async function loadasyncData(___level_) {
       console.log("i", i);
       const levelsData = response;
       console.log("___level_", ___level_)
-      if (Number(___level_) == i+1) {  // Adjust index to match level number
+      if (Number(___level_) == i + 1) {  // Adjust index to match level number
         var data__ = levelsData[i];
         console.log(data__);
         return data__;
@@ -754,7 +767,7 @@ async function loadlevelandsetUpGame(LEVEL) {
         gridItem.style.width = '2.5vw';
         gridItem.style.height = '2.5vw';
       } else {
-          console.log('Browser bar is closed');
+        console.log('Browser bar is closed');
       }
       // Add text element to the grid item
       const validNumbers = [2, 3, 12, 11, 13, 14];
@@ -1061,7 +1074,7 @@ function setglobalCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"+";domain=.janeway.replit.dev";
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/" + ";domain=.janeway.replit.dev";
 }
 function getCookie(cname) {
   let name = cname + "=";
@@ -1233,7 +1246,7 @@ async function swing__() {
     ballY = ball.getBoundingClientRect().top;
   }
 
-  leveltext.innerText = "level"+(Number((leveltext.innerText).replace("level",''))+1);
+  leveltext.innerText = "level" + (Number((leveltext.innerText).replace("level", '')) + 1);
 
 
   function moveBallToSquare(x, y, speed) {
