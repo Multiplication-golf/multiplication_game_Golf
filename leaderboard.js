@@ -113,7 +113,7 @@ window.onload = function() {
       var th3 = document.createElement('th');
       th3.innerText = 'rank';
       var th4 = document.createElement('th');
-      th4.innerText = 'profile picture';
+      th4.innerHTML = '<img src="golf-club-pr .png" style="width:50px;hieght:50px"/>';
       tr.appendChild(th3);
       tr.appendChild(th4);
       LB.appendChild(tr);
@@ -128,8 +128,10 @@ window.onload = function() {
         th2.innerText = users[i][1];
         tr.appendChild(th2);
         var th3 = document.createElement('td');
-        console.log(users[i][2], typeof typeof users[i][2])
-        if (typeof users[i][2] == "object") {
+        console.log("typeof users[i][3]")
+        if (typeof users[i][3] == "object") {
+          th3.innerText = users[i][4];
+        } else if (typeof users[i][2] == "object") {
           th3.innerText = users[i][3];
         } else {
           th3.innerText = users[i][2];
