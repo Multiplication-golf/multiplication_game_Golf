@@ -54,3 +54,31 @@ th {
 .index5 {
   z-index: 5;
 }
+.prConteiner {
+  width: clac(90vw - 2.5px);
+  height: clac(90vh - 2.5px);
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  background-color: white;
+  border: 5px solid black;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+  display: none;
+}
+
+.h1_ {
+  font-size: 35px;
+  font-family: Apple Chancery, cursive;
+}
+.h2_ {
+  font-size: 30px;
+  font-family: serif;
+}
+
+.img-jxmfj8381jd8d82 {
+  width: 425px;
+  height: 425px;
+}
