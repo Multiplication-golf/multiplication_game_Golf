@@ -4,7 +4,7 @@ var script = document.createElement('script');
 var bar = document.getElementById('bar');
 script.src = 'https://code.jquery.com/jquery-3.6.3.min.js'; // Check https://jquery.com/ for the current version
 document.getElementsByTagName('head')[0].appendChild(script);
-
+ 
 const flaskURL = "https://coderyoucantknow.pythonanywhere.com";
 
 var rgbs = { 'red': [255, 0, 0], 'orange': [255, 146, 0], 'yellow': [255, 255, 0], 'green': [0, 128, 0], 'blue': [0, 0, 255], 'crayon':[0, 243, 247], 'purple': [75, 0, 130], 'pink': [238, 130, 238]};
