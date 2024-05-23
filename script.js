@@ -830,18 +830,23 @@ async function loadlevelandsetUpGame(LEVEL) {
   }, 150);
 
   window.addEventListener('resize', () => {
-    const X115 = document.getElementById("11X5");
-
-    var X115Y = X115.getBoundingClientRect().top; // Corrected assignment
-    var X115X = X115.getBoundingClientRect().left; // Corrected assignment
-
-    const ball = document.getElementById("golfHolder");
-
-    ball.style.top = X115Y + "px";
-    ball.style.left = X115X + "px";
-    console.log(X115Y, X115X);
-
-    console.log("resize");
+    const gamingWIN = document.getElementById("_(level)_");
+    if (gamingWIN.style.display == 'block') {
+      const X115 = document.getElementById("11X5");
+  
+      var X115Y = X115.getBoundingClientRect().top; // Corrected assignment
+      var X115X = X115.getBoundingClientRect().left; // Corrected assignment
+  
+      const ball = document.getElementById("golfHolder");
+  
+      ball.style.top = X115Y + "px";
+      ball.style.left = X115X + "px";
+      console.log(X115Y, X115X);
+  
+      alert("resize");
+    } else {
+      
+    }
   });
 
 
