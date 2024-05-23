@@ -55,11 +55,13 @@ th {
   z-index: 5;
 }
 .prConteiner {
-  width: clac(90vw - 2.5px);
-  height: clac(90vh - 2.5px);
+  position: fixed;
+  top:0;
+  width: calc(90vw - 5px);
+  height: calc(90vh - 5px);
   margin-top: 5vh;
   margin-bottom: 5vh;
-  margin-left: 5vw;
+  margin-left: 2.5vw;
   margin-right: 5vw;
   background-color: white;
   border: 5px solid black;
@@ -67,6 +69,7 @@ th {
   text-align: center;
   border-radius: 10px;
   display: none;
+  z-index: 10;
 }
 
 .h1_ {
@@ -79,6 +82,9 @@ th {
 }
 
 .img-jxmfj8381jd8d82 {
-  width: 425px;
-  height: 425px;
+  position: fixed;
+  margin-top: 150px;
+  margin-left: -90px;
+  width: 23.7914110429vw;
+  height: 23.7914110429vw;
 }
