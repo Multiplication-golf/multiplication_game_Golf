@@ -91,7 +91,7 @@ function init() {
 
       // Get the <select> element
       var courseSelect = document.getElementById('course');
-      var courses = Object.keys(response);
+      var courses = response
       console.log(courses);
 
       console.log("len:", courses.length);
