@@ -108,6 +108,10 @@ function init() {
     }
   };
   xhr.send();
+  console.log(window.outerWidth)
+  if (window.outerWidth < 400) {
+    selectBoxLG.style.left = 'auto'
+  }
 }
 enableScroll();
 init();
