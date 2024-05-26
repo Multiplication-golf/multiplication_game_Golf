@@ -71,9 +71,6 @@ function init() {
       var finalName = nameList[Math.floor(Math.random() * nameList.length)] + nameList[Math.floor(Math.random() * nameList.length)] + nameList[Math.floor(Math.random() * nameList.length)];
       return finalName
     };
-    for (let g = 0; g < nameList.length; g++) {
-      console.log(generate());
-    }
   }
 
 
@@ -108,9 +105,8 @@ function init() {
     }
   };
   xhr.send();
-  console.log(window.outerWidth)
-  if (window.outerWidth < 400) {
-    selectBoxLG.style.left = 'auto'
+  if (window.innerWidth < 510) {
+    selectBoxLG.style.left = 'calc(50% - 115px)';
   }
 }
 enableScroll();

@@ -19,3 +19,670 @@ html {
     right: -5px;
   }
 }
+
+.grid {
+  display: grid;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 0px;
+  width: 9vw;
+  height: 9vw;
+
+  z-index: 9000;
+  /* Add border around the grid */
+}
+
+.center {
+  text-align: center;
+}
+
+.input_-box {
+  width: 23.87774594vm;
+  height: 50px;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  border: 4px solid black;
+  border-radius: 5px;
+}
+
+.grid-item {
+  background-color: #e0e0e0;
+  padding: 10px;
+  text-align: center;
+  width: 3vw;
+  height: 3vw;
+  font-size: 11px;
+  z-index: 9999;
+}
+
+.grid-item p {
+  /* text-align: center;*/
+  /* Center the text */
+  margin-top: 0px;
+  margin-right: 20px;
+  margin-left: -5px;
+  margin-bottom: 0px;
+  /* Remove any default margin */
+}
+
+.what_is {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.swing_button {
+  width: 170px;
+  height: 55px;
+  border: 1px solid black;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  z-index: 1000000;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+# swing_button:hover {
+  background-color: whitesmoke;
+}
+
+.x {
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.xx {
+  margin: 12.5px;
+}
+
+.xxx {
+  position: absolute;
+  top: 92vh;
+  left: 24.5vw;
+  z-index: 1000000000000;
+  width: 3vw;
+  height: 3vw;
+}
+
+.xxxh {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.xxxx {
+  top: 25%;
+  left: 36%;
+  position: absolute;
+  width: 420px;
+  height: 530px;
+  border: 4px solid black;
+
+}
+
+.base-timer {
+  height: 27vw;
+  width: 27vw;
+  left: 50%;
+}
+
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.container-side-by-side {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 5%;
+  left: 60%;
+}
+
+.base-timer__label {
+  position: absolute;
+
+  top: 50%;
+
+  /* Size should match the parent container */
+  width: 27vw;
+  height: 27vw;
+
+  /* Keep the label aligned to the top */
+
+  /* Create a flexible box that centers content vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Sort of an arbitrary number; adjust to your liking */
+  font-size: 48px;
+  color: black;
+  z-index: 10001;
+}
+
+.base-timer__path-remaining {
+  /* Just as thick as the original ring */
+  stroke-width: 7px;
+
+  /* Rounds the line endings to create a seamless circle */
+  stroke-linecap: round;
+
+  /* Makes sure the animation starts at the top of the circle */
+  transform: rotate(90deg);
+  transform-origin: center;
+
+  /* One second aligns with the speed of the countdown timer */
+  transition: 1s linear all;
+
+  /* Allows the ring to change color when the color value updates */
+  stroke: currentColor;
+  z-index: 10001;
+}
+
+.base-timer__svg {
+  /* Flips the svg and makes the animation to move left-to-right */
+  transform: scaleX(-1);
+  z-index: 10001;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: rgb(245, 125, 12);
+}
+
+.base-timer__path-remaining.red {
+  color: rgb(242, 35, 22);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0.00000001px;
+  background-color: #2E2E2E;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.imggolf {
+  /*padding: 8px 8px 8px 32px;*/
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  width: 50px;
+  width: 50px;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  color: black;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: ;
+}
+
+.open {
+  display: block;
+  color: white;
+  border: 2px solid black;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #2E2E2E;
+  position: absolute;
+  right: 0.0000001px;
+  top: 50%;
+
+  margin-top: -76px;
+  width: 50px;
+  height: 150px;
+  transition: 0.5s;
+}
+
+.golfbutton {
+  background-color: #2E2E2E;
+  color: white;
+  width: 70px;
+  height: 70px;
+  font-size: 16px;
+  border: 5px solid black;
+  cursor: pointer;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.IDbox {
+  background-color: #2E2E2E;
+  color: white;
+  width: 120px;
+  height: 150px;
+  font-size: 16px;
+  margin: 5px;
+  border: 5px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 1px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.gridgolf {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  border: 4px solid black;
+  /* Add border around the grid */
+}
+
+.grid-IDbox {
+  background-color: #e0e0e0;
+  padding: 10px;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+}
+
+._timdis_ {
+  font-size: 35px;
+  background-color: white;
+}
+
+._timdis_div {
+  position: absolute;
+  top: 5%;
+  left: 69%;
+  font-size: 35px;
+  text-align: center;
+  border: 2px black solid;
+  background-color: white;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 2px 5px 2px 5px;
+}
+
+.nextpageC {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+._nextbutton___ {
+  position: absolute;
+  top: 48%;
+  left: 42%;
+  width: 15%;
+  height: 12%;
+  font-size: 35px;
+  text-align: center;
+  border: 2px black solid;
+  background-color: white;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 2px 5px 2px 5px;
+}
+
+# _nextbutton___:hover {
+  background-color: lightgrey;
+}
+
+.XsidebarX {
+  position: absolute;
+  top: 120px;
+  left: 50px;
+  text-align: center;
+  width: 23.2198142415vw;
+  height: 69.2041522491%;
+  overflow-x: hidden;
+  background-color: white;
+  border: 2px black solid;
+  border-radius: 15px;
+}
+
+@media screen and (max-height: 400px) {
+  .XsidebarX {
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    text-align: center;
+    width: 23.2198142415vw;
+    height: 49.2041522491vh;
+    overflow-x: hidden;
+    background-color: white;
+    border: 2px black solid;
+    border-radius: 15px;
+  }
+}
+
+.golfbutton_t {
+  background-color: #2E2E2E;
+  color: white;
+  width: 70px;
+  height: 70px;
+  font-size: 16px;
+  border: 5px solid black;
+  cursor: pointer;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.XIDboxX {
+  margin: 10px;
+  background-color: #2E2E2E;
+  color: white;
+  width: 120px;
+  height: 150px;
+  font-size: 16px;
+  margin: 5px;
+  border: 5px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 1px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.XIDboxX____ {
+  margin: 10px;
+  background-color: #2E2E2E;
+  color: white;
+  width: 140px;
+  height: 170px;
+  font-size: 16px;
+  margin-left: -5px;
+  margin-top: 5px;
+  border: 5px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 1px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.selectBox {
+  position: absolute;
+  top: 120px;
+  left: 150px;
+  text-align: center;
+}
+
+.innerselect {
+  margin: 10px;
+  background-color: #2E2E2E;
+  color: white;
+  width: 220px;
+  height: 150px;
+  font-size: 16px;
+  margin: 5px;
+  border: 5px solid black;
+  border-radius: 15px;
+  padding: 1px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.selectBoxText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+
+}
+
+.rotate-up {
+  transform: rotate(0deg);
+}
+
+.rotate-down {
+  transform: rotate(180deg);
+}
+
+.rotate-left {
+  transform: rotate(-90deg);
+}
+
+.rotate-right {
+  transform: rotate(90deg);
+}
+
+.cover_ {
+  top: 0px;
+  z-index: -1;
+  width: 90vw;
+  height: 96vh;
+  border: 10px solid black;
+}
+
+.start__button__ {
+  width: 15vw;
+  height: 12vh;
+  min-width: 120px;
+  font-size: 38px;
+  text-align: center;
+  font-family: 'Brush Script MT', brushe, cursive;
+  border: 2px black solid;
+  background-color: white;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 2px 5px 2px 5px;
+}
+
+.soiUGDJDJ__S-HHPQO_K_golf_ball_ {
+  transform: rotate(-90deg);
+}
+
+.coin-ejjeji83jjiejuUUUE {
+  width: 55px;
+  height: 55px;
+
+}
+
+.moneytext {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+  top: -20px;
+  display: inline-block;
+  position: relative;
+  top: 21.5px;
+  left: 57px;
+  z-index: 1;
+}
+
+.moneytext-fi9w8j983j {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 87px;
+}
+
+.ei39--8rfakw3i_-2iek {
+  position: relative;
+  top: 40px;
+  left: 50px;
+  z-index: 1;
+}
+
+.d8983j9d8aj9012-3-f8sjd {
+  position: absolute;
+  top: 60px;
+  left: 70px;
+  z-index: 900000000;
+  /*display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;*/
+}
+
+.LinkToLevelBuilder {
+  font-size: 20px;
+  color: blue;
+}
+
+# LinkToLevelBuilder:hover {
+  color: lightblue;
+}
+
+.startdiv {
+  position: absolute;
+  top: 48%;
+  left: 0%;
+  width: 100%;
+  text-aling: center;
+}
+
+.fullimg-jej3di3jf933jaasmczp {
+  width: 100vw;
+  height: 100vh;
+}
+
+.center_DIV {
+  text-align: center;
+  background-color: black;
+  margin: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-button-dnjajj3ud {
+  position: absolute;
+  top: 15px;
+  right: 58.0000001px;
+  width: 11vw;
+  height: 9vh;
+  z-index: 10px;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 8px;
+  text-decoration: plain;
+  font-family: 'Brush Script MT', brushe, cursive;
+  border: 2px black solid;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.right_DIV {
+  text-align: right;
+}
+
+.white {
+  color: white;
+  font-size: 20px;
+}
+
+.offff {
+  position: absolute;
+  width: 40vw;
+  height: 100vh;
+  background-color: white;
+  left: 60vw;
+  top: 0px;
+  z-index: 500;
+  text-align: center;
+}
+
+.coin-r8jfwieofheoaiol {
+  width: 55px;
+  height: 55px;
+  display: inline-block;
+  float: left;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.ButtonLink {
+  display: inline-flex;
+  padding: 0px;
+  background-color: None;
+  width: 13.6604477612vw;
+  height: 12.1088646967vh;
+  min-height: 50px;
+  min-width: 100px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.img-738djcnd84jfcjbjjgdjad3jdi48k {
+
+  filter: brightness(1.3);
+  transition: .2s;
+  width: 100%;
+  height: 100%;
+  opacity: 100%
+}
+
+.ButtonLink:hover {
+  background-color: lightgray;
+  opacity: 75%;
+}
