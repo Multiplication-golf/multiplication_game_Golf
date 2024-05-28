@@ -107,6 +107,7 @@ function init() {
   xhr.send();
   if (window.innerWidth < 510) {
     selectBoxLG.style.left = 'calc(50% - 115px)';
+    
   }
 }
 enableScroll();
@@ -133,6 +134,7 @@ window.onload = function() {
     baLL_.src = getCookie('ballIMG');
     console.log(getCookie('ballIMG'));
   }
+  
   console.log("--ballIMG--", getCookie('ballIMG'));
   const swingbutton = document.getElementById("_swing_button_");
   const start__button_ = document.getElementById("start__button_");
@@ -205,6 +207,11 @@ window.onload = function() {
     document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + MONEYCOIN;
   } else {
     document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + 0;
+  }
+  var money________ = document.getElementById("money_-__---");
+  if (window.innerWidth < window.innerHeight) {
+    money________.style.position = 'relative';
+    money________.style.top = '50px';
   }
   function preventSubmission(event) {
     // Prevent the default form submission behavior
@@ -851,6 +858,14 @@ async function loadlevelandsetUpGame(LEVEL) {
     gridContainer.innerHTML = ""; // Clear the grid by removing all the child elements
   }
 
+}
+function resizeForMobil() {
+  var height = window.innerHeight;
+  var width = window.innerWidth;
+  console.log(height, width);
+  if (height > width) {
+    document.querySelector('.grid-item').style.padding = "2.1638330757341575vw";
+  }
 }
 function timerINIT() {
   function formatTimeLeft(time) {
