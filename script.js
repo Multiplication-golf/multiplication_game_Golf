@@ -841,7 +841,6 @@ async function loadlevelandsetUpGame(LEVEL) {
       
     }
   });
-  alert((14/window.innerHeight)*100)
 
 
 
