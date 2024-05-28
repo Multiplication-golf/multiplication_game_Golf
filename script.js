@@ -717,7 +717,6 @@ function isAddressBarOpen() {
   }
 }
 async function loadlevelandsetUpGame(LEVEL) {
-
   document.getElementById('_(level)_').style.display = 'block';
   document.getElementById('_(login)_').style.display = 'none';
   document.getElementById('_(intoP)_').style.display = 'none';
@@ -806,6 +805,8 @@ async function loadlevelandsetUpGame(LEVEL) {
       }
     }
   }
+
+  
 
 
   var height = window.innerHeight;
@@ -936,7 +937,7 @@ function timerINIT() {
     };
     remainingPathColor = COLOR_CODES.info.color;
     document.getElementById("timer").innerHTML = `
-    <div class="base-timer">
+    <div class="base-timer" id='baseTIMER_'>
     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <g class="base-timer__circle">
         <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
@@ -1009,7 +1010,7 @@ function timerINIT() {
   }
 
   document.getElementById("timer").innerHTML = `
-  <div class="base-timer">
+  <div class="base-timer" id='baseTIMER_'>
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
       <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>

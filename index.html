@@ -54,19 +54,10 @@
 
       <p id='NoneLeveldata' style='display: none;'></p>
       <script>
-        function getCookie(e){let t=e+"=",n=decodeURIComponent(document.cookie).split(";");for(let o=0;o<n.length;o++){let r=n[o];for(;" "==r.charAt(0);)r=r.substring(1);if(0==r.indexOf(t))return r.substring(t.length,r.length)}return""}const _LEVEL_=getCookie("Userlevel");
+        function getCookie(e) {let t = e + "=", n = decodeURIComponent(document.cookie).split(";"); for (let o = 0; o < n.length; o++) {let r = n[o]; for (; " " == r.charAt(0);)r = r.substring(1); if (0 == r.indexOf(t)) return r.substring(t.length, r.length)} return ""} const _LEVEL_ = getCookie("Userlevel");
       </script>
 
       <img src='cover page (1).webp' alt='coverpage' id='coverpage-' class="cover_" />
-      <style>
-        .basediv {
-          position: absolute;
-          top: 0%;
-          left: 0%;
-          width: 100%;
-          text-aling: center;
-        }
-      </style>
       <div class='basediv'>
         <h1 id='Welcome'>Welcome </h1>
       </div>
@@ -88,15 +79,19 @@
           <div class='center'>
             <a href='https://github.com/Multiplication-golf/multiplication_game_Golf/tree/main' class='white'>Github</a>
             <br><br>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://multiplication-game-golf.pages.dev/"
-              target="_blank" rel="noopener noreferrer">
-              Share on Facebook
-            </a>
 
-            <a href="https://www.x.com/share?url=https://multiplication-game-golf.pages.dev/" target="_blank"
-              rel="noopener noreferrer">
-              Share on X
-            </a>
+            <button class='socail-media-button' id='share-button'>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://multiplication-game-golf.pages.dev/"
+                target="_blank" rel="noopener noreferrer">
+                Share on <b>Facebook</b>
+              </a>
+            </button>
+            <button class='socail-media-button' id='share-button'>
+              <a href="https://www.x.com/share?url=https://multiplication-game-golf.pages.dev/" target="_blank"
+                rel="noopener noreferrer">
+                Share on <b>X</b>
+              </a>
+            </button>
           </div>
         </div>
       </div>
@@ -155,7 +150,7 @@
         <div style="margin-top: 0px;">
           <div class="grid" id="myGrid"></div>
         </div>
-        <div class='offff'>
+        <div class='offff' id='main_div__-__'>
           <p class='what_is' id='what is'></p>
           <form id='sudmit___'>
             <input type="text" id="input-box" class='input_-box' placeholder="Enter the answer">
@@ -170,21 +165,17 @@
           <br>
           <br>
           <br>
-          <div style='margin-left: 15%'>
-            <div id="timer" style='z-index: 10000;'>
-              <div class="base-timer">
-                <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <g class="base-timer__circle">
-                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
-                  </g>
-                </svg>
-                <span id="base-timer-label" class="base-timer__label">
-                  <p style='flex: 0 0 120px;'>0:20</p>
-                </span>
-                <script>
-                  function getJavaSRC() { }
-                </script>
-              </div>
+
+          <div id="timer" style="z-index: 10000; position: absolute; left: 50%; transform: translateX(-50%);">
+            <div class="base-timer" id="baseTIMER_">
+              <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g class="base-timer__circle">
+                  <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                  <path id="base-timer-path-remaining" stroke-dasharray="-14 283" class="base-timer__path-remaining red"
+                    d="M 50, 50 m -45, 0 a 45,45 0 1,0 90,0 a 45,45 0 1,0 -90,0"></path>
+                </g>
+              </svg>
+              <span id="base-timer-label" class="base-timer__label">0:00</span>
             </div>
           </div>
         </div>
@@ -316,283 +307,7 @@
       <br>
       <br>
       <script>
-        var money______ = document.getElementById("money_-__-");
-        var aaaX = document.getElementById('aX');
-        var bbbX = document.getElementById('bX');
-        var cccX = document.getElementById('cX');
-        var dddX = document.getElementById('dX');
-        var eeeX = document.getElementById('eX');
-        var fffX = document.getElementById('fX');
-        var hhhX = document.getElementById('hX');
-        var iiiX = document.getElementById('iX');
-        var jjjX = document.getElementById('jX');
-        var kkkX = document.getElementById('kX');
-        var gggX = document.getElementById('gX');
-        var lllX = document.getElementById('lX');
-        var hhhb = document.getElementById('hhb');
-        var KKKKX = document.getElementById('KKKX');
-        var pppX = document.getElementById('ppppX');
-        var qqqX = document.getElementById('qX');
-        var __baseURL = window.location.href;
-        function getJavaSRCX() {
-          var LEveL = document.getElementById('noneLevel').innerText;
-          var aX = document.getElementById('aX');
-          var bX = document.getElementById('bX');
-          var cX = document.getElementById('cX');
-          var dX = document.getElementById('dX');
-          var eX = document.getElementById('eX');
-          var fX = document.getElementById('fX');
-          var hX = document.getElementById('hX');
-          var iX = document.getElementById('iX');
-          var jX = document.getElementById('jX');
-          var kX = document.getElementById('kX');
-          var gX = document.getElementById('gX');
-          var lX = document.getElementById('lX');
-          var hbX = document.getElementById('hhb');
-          var kkX = document.getElementById('KKKX');
-          var pX = document.getElementById('ppppX');
-          var qX = document.getElementById('qX');
-          console.log("image LEVEL", LEveL);
-          console.log(money______)
-          console.log(money______ >= 50)
-          var _money______ = Number(money______.innerText);
-          LEveL++;
-          if (LEveL >= 3 || _money______ >= 50) {
-            aX.src = 'displaypngs/18.png';
-            bX.src = 'displaypngs/19.png';
-            cX.src = 'displaypngs/20.png';
-          }
-          else if (LEveL < 3) {
-            aX.src = 'locked/22.png';
-            bX.src = 'locked/23.png';
-            cX.src = 'locked/24.png';
-          }
-          if (LEveL >= 10 || _money______ >= 120) {
-            dX.src = 'displaypngs/21.png';
-            eX.src = 'displaypngs/22.png';
-            fX.src = 'displaypngs/23.png';
-          }
-          else if (LEveL < 10) {
-            dX.src = 'locked/25.png';
-            eX.src = 'locked/27.png';
-            fX.src = 'locked/28.png';
-          }
-          if (LEveL >= 20 || _money______ >= 250) {
-            hX.src = 'displaypngs/24.png';
-          }
-          else if (LEveL < 20) {
-            hX.src = 'locked/29.png';
-          }
-          if (LEveL >= 25 || _money______ >= 390) {
-            hbX.src = 'displaypngs/34.png';
-          }
-          else if (LEveL < 25) {
-            hbX.src = 'locked/35.png';
-          }
-          if (LEveL >= 30 || _money______ >= 510) {
-            iX.src = 'displaypngs/25.png';
-            lX.src = 'displaypngs/29.png';
-          }
-          else if (LEveL < 30) {
-            iX.src = 'locked/30.png';
-            lX.src = 'locked/34.png';
-          }
-          if (LEveL >= 50 || _money______ >= 900) {
-            jX.src = 'displaypngs/26.png';
-            gX.src = 'displaypngs/27.png';
-          }
-          else if (LEveL < 50) {
-            jX.src = 'locked/31.png';
-            kX.src = 'locked/32.png';
-          }
-          if (LEveL >= 60 || _money______ >= 1100) {
-            kkX.src = 'displaypngs/32.png';
-          }
-          else if (LEveL < 60) {
-            kkX.src = 'locked/37.png';
-          }
-          if (LEveL >= 75 || _money______ >= 1250) {
-            pX.src = 'displaypngs/31.png';
-            qX.src = 'displaypngs/30.png';
-          }
-          else if (LEveL < 75) {
-            pX.src = 'locked/38.png';
-            qX.src = 'locked/39.png';
-          }
-          if (LEveL >= 100 || _money______ >= 1500) {
-            gX.src = 'displaypngs/28.png';
-          }
-          else if (LEveL < 100) {
-            gX.src = 'locked/33.png';
-          }
-        }
-        function changeSRC() {
-          var ball_img = ball.src; // Corrected attribute name
-          setCookie('ballIMG', ball_img, 756);
-          getCookie("ballIMG");
-          console.log("ball_img", ball_img, getCookie("ballIMG"));
-        }
-        var baseURL = window.location.href;
-        function aa() {
-          console.log(aaaX.src)
-          console.log(`${baseURL}displaypngs/18.png`)
-          if (aaaX.src == `${baseURL}displaypngs/18.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/blue.png';
-          }
-          changeSRC();
-        }
-        function bb() {
-          console.log(bbbX.src)
-          console.log(`${baseURL}displaypngs/19.png`)
-          if (bbbX.src == `${baseURL}displaypngs/19.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/red.png';
-          }
-          changeSRC();
-        }
-        function cc() {
-          console.log(cccX.src)
-          console.log(`${baseURL}displaypngs/20.png`)
-          if (cccX.src == `${baseURL}displaypngs/20.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/green.png';
-          }
-          changeSRC();
-        }
-        function dd() {
-          console.log(dddX.src)
-          console.log(`${baseURL}displaypngs/21.png`)
-          if (dddX.src == `${baseURL}displaypngs/21.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/blue yellow.png';
-          }
-          changeSRC();
-        }
-        function ee() {
-          console.log(eeeX.src)
-          console.log(`${baseURL}displaypngs/22.png`)
-          if (eeeX.src == `${baseURL}displaypngs/22.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/rainbow_.png';
-          }
-          changeSRC();
-        }
-        function ff() {
-          console.log(fffX.src)
-          console.log(`${baseURL}displaypngs/23.png`)
-          if (fffX.src == `${baseURL}displaypngs/23.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/blue red.png';
-          }
-          changeSRC();
-        }
-        function hh() {
-          console.log(hhhX.src)
-          console.log(`${baseURL}displaypngs/24.png`)
-          if (hhhX.src == `${baseURL}displaypngs/24.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/firegolf.png';
-          }
-          changeSRC();
-        }
-        function hhb() {
-          console.log(hhhb.src)
-          console.log(`${baseURL}displaypngs/34.png`)
-          if (hhhb.src == `${baseURL}displaypngs/34.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/copper.png';
-          }
-          changeSRC();
-        }
-        function jj() {
-          console.log(jjjX.src)
-          console.log(`${baseURL}displaypngs/26.png`)
-          if (jjjX.src == `${baseURL}displaypngs/26.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/gold.png';
-          }
-          changeSRC();
-        }
-        function ii() {
-          console.log(iiiX.src)
-          console.log(`${baseURL}displaypngs/25.png`)
-          if (iiiX.src == `${baseURL}displaypngs/25.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/ocean.png';
-          }
-          changeSRC();
-        }
-        function kk() {
-          console.log(kkkX.src)
-          console.log(`${baseURL}displaypngs/27.png`)
-          if (gggX.src == `${baseURL}displaypngs/27.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/pixel.png';
-          }
-          changeSRC();
-        }
-        function kkk() {
-          console.log(KKKKX.src)
-          console.log(`${baseURL}displaypngs/32.png`)
-          if (KKKKX.src == `${baseURL}displaypngs/32.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/rainbow.png';
-          }
-          changeSRC();
-        }
-        function gg() {
-          console.log(gggX.src)
-          console.log(`${baseURL}displaypngs/28.png`)
-          if (kkkX.src == `${baseURL}displaypngs/28.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/black hole.png';
-          }
-          changeSRC();
-        }
-        function ppp() {
-          console.log(gggX.src)
-          console.log(`${baseURL}displaypngs/31.png`)
-          if (kkkX.src == `${baseURL}displaypngs/28.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/sun.png';
-          }
-          changeSRC();
-        }
-        function ll() {
-          console.log(lllX.src)
-          console.log(`${baseURL}displaypngs/29.png`)
-          if (lllX.src == `${baseURL}displaypngs/29.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/dog.png';
-          }
-          changeSRC();
-        }
-        function qq() {
-          console.log(qqqX.src)
-          console.log(`${baseURL}displaypngs/30.png`)
-          if (qqqX.src == `${baseURL}displaypngs/30.png`) {
-            var FlY_balL = document.getElementById('fly_ball');
-            FlY_balL.src = 'golf balls/blueyellowred.png';
-          }
-          changeSRC();
-        }
-
-        function why_did_you_click_this() {
-          var FlY_balL = document.getElementById('fly_ball');
-          FlY_balL.src = 'golf balls/plain.png';
-        }
-
-        function setCookie(cname, cvalue, exdays) {
-          const d = new Date();
-          d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-          let expires = "expires=" + d.toUTCString();
-          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
-        const ball = document.getElementById("fly_ball");
-
-
-        getJavaSRCX();
+        var money______ = document.getElementById("money_-__-"), aaaX = document.getElementById("aX"), bbbX = document.getElementById("bX"), cccX = document.getElementById("cX"), dddX = document.getElementById("dX"), eeeX = document.getElementById("eX"), fffX = document.getElementById("fX"), hhhX = document.getElementById("hX"), iiiX = document.getElementById("iX"), jjjX = document.getElementById("jX"), kkkX = document.getElementById("kX"), gggX = document.getElementById("gX"), lllX = document.getElementById("lX"), hhhb = document.getElementById("hhb"), KKKKX = document.getElementById("KKKX"), pppX = document.getElementById("ppppX"), qqqX = document.getElementById("qX"), __baseURL = window.location.href; function getJavaSRCX() {var l = document.getElementById("noneLevel").innerText, e = document.getElementById("aX"), g = document.getElementById("bX"), n = document.getElementById("cX"), s = document.getElementById("dX"), p = document.getElementById("eX"), a = document.getElementById("fX"), c = document.getElementById("hX"), t = document.getElementById("iX"), d = document.getElementById("jX"), y = document.getElementById("kX"), o = document.getElementById("gX"), i = document.getElementById("lX"), b = document.getElementById("hhb"), r = document.getElementById("KKKX"), X = document.getElementById("ppppX"), f = document.getElementById("qX"); console.log("image LEVEL", l), console.log(money______), console.log(money______ >= 50); var m = Number(money______.innerText); ++l >= 3 || m >= 50 ? (e.src = "displaypngs/18.png", g.src = "displaypngs/19.png", n.src = "displaypngs/20.png") : l < 3 && (e.src = "locked/22.png", g.src = "locked/23.png", n.src = "locked/24.png"), l >= 10 || m >= 120 ? (s.src = "displaypngs/21.png", p.src = "displaypngs/22.png", a.src = "displaypngs/23.png") : l < 10 && (s.src = "locked/25.png", p.src = "locked/27.png", a.src = "locked/28.png"), l >= 20 || m >= 250 ? c.src = "displaypngs/24.png" : l < 20 && (c.src = "locked/29.png"), l >= 25 || m >= 390 ? b.src = "displaypngs/34.png" : l < 25 && (b.src = "locked/35.png"), l >= 30 || m >= 510 ? (t.src = "displaypngs/25.png", i.src = "displaypngs/29.png") : l < 30 && (t.src = "locked/30.png", i.src = "locked/34.png"), l >= 50 || m >= 900 ? (d.src = "displaypngs/26.png", o.src = "displaypngs/27.png") : l < 50 && (d.src = "locked/31.png", y.src = "locked/32.png"), l >= 60 || m >= 1100 ? r.src = "displaypngs/32.png" : l < 60 && (r.src = "locked/37.png"), l >= 75 || m >= 1250 ? (X.src = "displaypngs/31.png", f.src = "displaypngs/30.png") : l < 75 && (X.src = "locked/38.png", f.src = "locked/39.png"), l >= 100 || m >= 1500 ? o.src = "displaypngs/28.png" : l < 100 && (o.src = "locked/33.png")} function changeSRC() {var l = ball.src; setCookie("ballIMG", l, 756), getCookie("ballIMG"), console.log("ball_img", l, getCookie("ballIMG"))} var baseURL = window.location.href; function aa() {console.log(aaaX.src), console.log(`${baseURL}displaypngs/18.png`), aaaX.src == `${baseURL}displaypngs/18.png` && (document.getElementById("fly_ball").src = "golf balls/blue.png"), changeSRC()} function bb() {console.log(bbbX.src), console.log(`${baseURL}displaypngs/19.png`), bbbX.src == `${baseURL}displaypngs/19.png` && (document.getElementById("fly_ball").src = "golf balls/red.png"), changeSRC()} function cc() {console.log(cccX.src), console.log(`${baseURL}displaypngs/20.png`), cccX.src == `${baseURL}displaypngs/20.png` && (document.getElementById("fly_ball").src = "golf balls/green.png"), changeSRC()} function dd() {console.log(dddX.src), console.log(`${baseURL}displaypngs/21.png`), dddX.src == `${baseURL}displaypngs/21.png` && (document.getElementById("fly_ball").src = "golf balls/blue yellow.png"), changeSRC()} function ee() {console.log(eeeX.src), console.log(`${baseURL}displaypngs/22.png`), eeeX.src == `${baseURL}displaypngs/22.png` && (document.getElementById("fly_ball").src = "golf balls/rainbow_.png"), changeSRC()} function ff() {console.log(fffX.src), console.log(`${baseURL}displaypngs/23.png`), fffX.src == `${baseURL}displaypngs/23.png` && (document.getElementById("fly_ball").src = "golf balls/blue red.png"), changeSRC()} function hh() {console.log(hhhX.src), console.log(`${baseURL}displaypngs/24.png`), hhhX.src == `${baseURL}displaypngs/24.png` && (document.getElementById("fly_ball").src = "golf balls/firegolf.png"), changeSRC()} function hhb() {console.log(hhhb.src), console.log(`${baseURL}displaypngs/34.png`), hhhb.src == `${baseURL}displaypngs/34.png` && (document.getElementById("fly_ball").src = "golf balls/copper.png"), changeSRC()} function jj() {console.log(jjjX.src), console.log(`${baseURL}displaypngs/26.png`), jjjX.src == `${baseURL}displaypngs/26.png` && (document.getElementById("fly_ball").src = "golf balls/gold.png"), changeSRC()} function ii() {console.log(iiiX.src), console.log(`${baseURL}displaypngs/25.png`), iiiX.src == `${baseURL}displaypngs/25.png` && (document.getElementById("fly_ball").src = "golf balls/ocean.png"), changeSRC()} function kk() {console.log(kkkX.src), console.log(`${baseURL}displaypngs/27.png`), gggX.src == `${baseURL}displaypngs/27.png` && (document.getElementById("fly_ball").src = "golf balls/pixel.png"), changeSRC()} function kkk() {console.log(KKKKX.src), console.log(`${baseURL}displaypngs/32.png`), KKKKX.src == `${baseURL}displaypngs/32.png` && (document.getElementById("fly_ball").src = "golf balls/rainbow.png"), changeSRC()} function gg() {console.log(gggX.src), console.log(`${baseURL}displaypngs/28.png`), kkkX.src == `${baseURL}displaypngs/28.png` && (document.getElementById("fly_ball").src = "golf balls/black hole.png"), changeSRC()} function ppp() {console.log(gggX.src), console.log(`${baseURL}displaypngs/31.png`), kkkX.src == `${baseURL}displaypngs/28.png` && (document.getElementById("fly_ball").src = "golf balls/sun.png"), changeSRC()} function ll() {console.log(lllX.src), console.log(`${baseURL}displaypngs/29.png`), lllX.src == `${baseURL}displaypngs/29.png` && (document.getElementById("fly_ball").src = "golf balls/dog.png"), changeSRC()} function qq() {console.log(qqqX.src), console.log(`${baseURL}displaypngs/30.png`), qqqX.src == `${baseURL}displaypngs/30.png` && (document.getElementById("fly_ball").src = "golf balls/blueyellowred.png"), changeSRC()} function why_did_you_click_this() {document.getElementById("fly_ball").src = "golf balls/plain.png"} function setCookie(l, e, g) {let n = new Date; n.setTime(n.getTime() + 864e5 * g); let s = "expires=" + n.toUTCString(); document.cookie = l + "=" + e + ";" + s + ";path=/"} const ball = document.getElementById("fly_ball"); getJavaSRCX();
       </script>
     </div>
   </div>
