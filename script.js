@@ -762,12 +762,6 @@ async function loadlevelandsetUpGame(LEVEL) {
         gridItem.style.backgroundImage = `url('golfpngs2/${imageNumbers[i][j]}.png')`;
         gridItem.style.backgroundSize = '100% 100%'
       }
-      if (isAddressBarOpen()) {
-        gridItem.style.width = '2.5vw';
-        gridItem.style.height = '2.5vw';
-      } else {
-        console.log('Browser bar is closed');
-      }
       // Add text element to the grid item
       const validNumbers = [2, 3, 12, 11, 13, 14];
       if ((imageNumbers[i][j] === 2) ||
@@ -843,12 +837,11 @@ async function loadlevelandsetUpGame(LEVEL) {
       ball.style.top = X115Y + "px";
       ball.style.left = X115X + "px";
       console.log(X115Y, X115X);
-  
-      alert("resize");
     } else {
       
     }
   });
+  alert((14/window.innerHeight)*100)
 
 
 
@@ -1130,6 +1123,7 @@ async function newround() {
   //golfBall.style.animation = '';
   // Create the grid dynamically
   positions = [];
+  
 
   imageIndex = 0;
   for (let c = 0; c < 12; c++) {

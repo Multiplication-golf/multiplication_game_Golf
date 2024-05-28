@@ -53,10 +53,10 @@ html {
 
 .grid-item {
   background-color: #e0e0e0;
-  padding: 10px;
+  padding: 2.1638330757341575vh;
   text-align: center;
-  width: 3vw;
-  height: 3vw;
+  width: 4vh;
+  height: 4vh;
   font-size: 11px;
   z-index: 9999;
 }
