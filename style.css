@@ -27,8 +27,8 @@ html {
   left: 0px;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 0px;
-  width: 9vw;
-  height: 9vw;
+  width: 9vh;
+  height: 9vh;
 
   z-index: 9000;
   /* Add border around the grid */
@@ -529,13 +529,12 @@ html {
 .coin-ejjeji83jjiejuUUUE {
   width: 55px;
   height: 55px;
-
 }
 
 .moneytext {
   font-family: 'Times New Roman', Times, serif;
   font-size: 30px;
-  top: -20px;
+  top: 20px;
   display: inline-block;
   position: relative;
   left: 57px;
@@ -544,7 +543,7 @@ html {
 
 .moneytext-fi9w8j983j {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 87px;
+  font-size: 18.6295503212vh;
 }
 
 .ei39--8rfakw3i_-2iek {

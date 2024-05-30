@@ -209,9 +209,8 @@ window.onload = function() {
     document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + 0;
   }
   var money________ = document.getElementById("money_-__---");
-  if (window.innerWidth < window.innerHeight) {
+  if (window.innerWidth < window.innerHeight && window.innerWidth < ((window.innerHeight)*2)) {
     money________.style.position = 'relative';
-    money________.style.top = '50px';
   }
   function preventSubmission(event) {
     // Prevent the default form submission behavior
@@ -813,15 +812,35 @@ async function loadlevelandsetUpGame(LEVEL) {
   var height = window.innerHeight;
   var width = window.innerWidth;
 
-  if (height < width) {
-    //document.querySelector('.grid-item').style.width = '3vh';
-    //document.querySelector('.grid-item').style.height = '3vh';
-  }
+  var gridItems = document.querySelectorAll('.grid-item');
 
   const X115 = document.getElementById("11X5");
 
   var X115Y = X115.getBoundingClientRect().top; // Corrected assignment
-  var X115X = X115.getBoundingClientRect().left; // Corrected assignment
+  var X115X = X115.getBoundingClientRect().left;
+
+  if (height > width) {
+    gridContainer.style.position = 'fixed';
+      
+    for (var i = 0; i < gridItems.length; i++) {
+      gridItems[i].style.padding = "3.65151515151vw";
+      gridItems[i].style.width = '1vw';
+      gridItems[i].style.height = '1vw';
+    }
+    setTimeout(() => {
+      const X115_ = document.getElementById("11X5");
+      var X115Y = X115_.getBoundingClientRect().top; // Corrected assignment
+      var X115X = X115_.getBoundingClientRect().left;
+      const ball = document.getElementById("golfHolder");
+
+      ball.style.position = 'fixed';
+      ball.style.top = X115Y + "px";
+      ball.style.left = X115X + "px";
+      console.log(X115Y, X115X);
+    }, 550);
+  }
+
+   // Corrected assignment
 
   setTimeout(() => {
     const ball = document.getElementById("golfHolder");
