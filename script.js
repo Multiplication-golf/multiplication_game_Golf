@@ -45,10 +45,10 @@ function init() {
     'Legacy', 'Sharp', 'Dead', 'Mew', 'Chuckle', 'Bubba', 'Bubble', 'Sandwich', 'Smasher', 'Extreme', 'Multi', 'Universe', 'Ultimate', 'Death', 'Ready', 'Monkey', 'Elevator', 'Wrench', 'Grease', 'Head', 'Theme', 'Grand', 'Cool', 'Kid', 'Boy', 'Girl', 'Vortex', 'Paradox'
   ];
   console.log(window.location.href)
-  if (window.location.href != 
-      "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
-    window.location.href != 
-      "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
+  if (window.location.href !=
+    "https://e003f692-2477-4601-b1a4-1ae94cf5bb25-00-2avlmwowl8bls.kirk.replit.dev/" ||
+    window.location.href !=
+    "https://b8635515-15af-44e2-bb54-07381d29aa84-00-1xyncflnqelko.janeway.replit.dev/") {
     if (getCookie("Name") == null || getCookie("Name") == "" || getCookie("Name") == undefined || getCookie("Name") == "undefined") {
       var Name = generate()
       setglobalCookie("Name", Name, 756)
@@ -107,7 +107,7 @@ function init() {
   xhr.send();
   if (window.innerWidth < 510) {
     selectBoxLG.style.left = 'calc(50% - 115px)';
-    
+
   }
 }
 enableScroll();
@@ -134,7 +134,7 @@ window.onload = function() {
     baLL_.src = getCookie('ballIMG');
     console.log(getCookie('ballIMG'));
   }
-  
+
   console.log("--ballIMG--", getCookie('ballIMG'));
   const swingbutton = document.getElementById("_swing_button_");
   const start__button_ = document.getElementById("start__button_");
@@ -209,7 +209,7 @@ window.onload = function() {
     document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + 0;
   }
   var money________ = document.getElementById("money_-__---");
-  if (window.innerWidth < window.innerHeight && window.innerWidth < ((window.innerHeight)*2)) {
+  if (window.innerWidth < window.innerHeight && window.innerWidth < ((window.innerHeight) * 2)) {
     money________.style.position = 'relative';
   }
   function preventSubmission(event) {
@@ -218,6 +218,17 @@ window.onload = function() {
 
     // Call swing__() function
     swing__();
+  }
+  if (window.innerWidth < window.innerHeight &&
+    window.innerWidth > 500 && window.innerWidth < 600) {
+    money________.style.position = 'relative';
+    money________.style.top = '50px';
+    alert("top")
+
+  } else if (window.innerWidth < window.innerHeight && window.innerWidth <= 500) {
+    alert("right")
+    money________.style.position = 'relative';
+    money________.style.right = '-90px';
   }
 
   // Get the form element
@@ -806,7 +817,7 @@ async function loadlevelandsetUpGame(LEVEL) {
     }
   }
 
-  
+
 
 
   var height = window.innerHeight;
@@ -821,7 +832,7 @@ async function loadlevelandsetUpGame(LEVEL) {
 
   if (height > width) {
     gridContainer.style.position = 'fixed';
-      
+
     for (var i = 0; i < gridItems.length; i++) {
       gridItems[i].style.padding = "3.65151515151vw";
       gridItems[i].style.width = '1vw';
@@ -840,7 +851,7 @@ async function loadlevelandsetUpGame(LEVEL) {
     }, 550);
   }
 
-   // Corrected assignment
+  // Corrected assignment
 
   setTimeout(() => {
     const ball = document.getElementById("golfHolder");
@@ -854,17 +865,17 @@ async function loadlevelandsetUpGame(LEVEL) {
     const gamingWIN = document.getElementById("_(level)_");
     if (gamingWIN.style.display == 'block') {
       const X115 = document.getElementById("11X5");
-  
+
       var X115Y = X115.getBoundingClientRect().top; // Corrected assignment
       var X115X = X115.getBoundingClientRect().left; // Corrected assignment
-  
+
       const ball = document.getElementById("golfHolder");
-  
+
       ball.style.top = X115Y + "px";
       ball.style.left = X115X + "px";
       console.log(X115Y, X115X);
     } else {
-      
+
     }
   });
 
@@ -1156,7 +1167,7 @@ async function newround() {
   //golfBall.style.animation = '';
   // Create the grid dynamically
   positions = [];
-  
+
 
   imageIndex = 0;
   for (let c = 0; c < 12; c++) {

@@ -543,7 +543,8 @@ html {
 
 .moneytext-fi9w8j983j {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 18.6295503212vh;
+  font-size: max(30px, min(18.6295503212vh, 88px));
+  
 }
 
 .ei39--8rfakw3i_-2iek {
@@ -699,5 +700,6 @@ html {
 .socail-media-button a {
   text-decoration: none;
   color: black;
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 12px);
+
 }
