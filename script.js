@@ -208,7 +208,7 @@ window.onload = function() {
   }
   if (MONEYCOIN !== "") {
     document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + MONEYCOIN;
-    
+
   } else {
     document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + 0;
   }
@@ -844,10 +844,8 @@ async function loadlevelandsetUpGame(LEVEL) {
     main_div____.style.position = 'fixed';
     main_div____.style.left = '0px';
     main_div____.style.top = (((_1X1.getBoundingClientRect().height * 12) / 2) + "px");
-    alert(`calc(100vh - ${(_1X1.getBoundingClientRect().height * 12)}px)`);
     main_div____.style.height = `calc(100vh  * 1px - ${(_1X1.getBoundingClientRect().height * 12)}px)`;
     main_div____.style.width = '100vw';
-    alert(main_div____.style.height)
     var remove3 = document.getElementById("remove3");
     remove3.remove();
     var remove2 = document.getElementById("remove2");
@@ -899,7 +897,7 @@ async function loadlevelandsetUpGame(LEVEL) {
         ball.style.left = X115X + "px";
         ballX = ball.getBoundingClientRect().left;
         ballY = ball.getBoundingClientRect().top;
-        console.log(X115Y,X115X);
+        console.log(X115Y, X115X);
       } else {
 
       }
@@ -1264,6 +1262,64 @@ async function newround() {
       }
     }
   }
+  var height_ = window.innerHeight;
+  var width_ = window.innerWidth;
+
+  var gridItems___ = document.querySelectorAll('.grid-item');
+  var main_div____ = document.getElementById('main_div__-__');
+
+  const X115 = document.getElementById("11X5");
+
+  var X115Y = X115.getBoundingClientRect().top; // Corrected assignment
+  var X115X = X115.getBoundingClientRect().left;
+  var _1X1 = document.querySelector('.grid-item');
+
+  if (height_ > width_) {
+    gridContainer.style.position = 'fixed';
+
+    main_div____.style.position = 'fixed';
+    main_div____.style.left = '0px';
+    main_div____.style.top = (((_1X1.getBoundingClientRect().height * 12) / 2) + "px");
+    main_div____.style.width = '100vw';
+
+
+    for (var i = 0; i < gridItems___.length; i++) {
+      gridItems___[i].style.padding = "3.65151515151vw";
+      gridItems___[i].style.width = '1vw';
+      gridItems___[i].style.height = '1vw';
+    }
+    setTimeout(() => {
+      const X115_ = document.getElementById("11X5");
+      var X115Y = X115_.getBoundingClientRect().top; // Corrected assignment
+      var X115X = X115_.getBoundingClientRect().left;
+      const ball = document.getElementById("golfHolder");
+
+      ball.style.position = 'fixed';
+      ball.style.top = X115Y + "px";
+      ball.style.left = X115X + "px";
+      console.log(X115Y, X115X);
+    }, 550);
+  }
+
+  // Corrected assignment
+  const ball________ = document.getElementById("fly_ball");
+  setTimeout(() => {
+    const ball = document.getElementById("golfHolder");
+
+    ball.style.top = X115Y + "px";
+    ball.style.left = X115X + "px";
+
+
+    console.log(X115Y, X115X);
+  }, 150);
+  setTimeout(() => {
+    if (ball________ && _1X1) {
+      ball________.style.width = (_1X1.getBoundingClientRect().width - 15) + "px";
+      ball________.style.height = (_1X1.getBoundingClientRect().height - 15) + "px";
+    } else {
+      console.error('One or both elements not found.');
+    }
+  }, 50);
 }
 function Direction(toX, toY, initialX, initialY) {
   const rotated = document.getElementById('fly_ball');
