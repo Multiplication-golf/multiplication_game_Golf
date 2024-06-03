@@ -7,8 +7,6 @@ const LeveL_ = getCookie("Userlevel");
 console.log("LeveL_", LeveL_);
 const MONEYCOIN = getCookie("Moneyscore");
 const flaskURL = "https://coderyoucantknow.pythonanywhere.com";
-var ballX = 0;
-var ballY = 0;
 //https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080
 //https://coderyoucantknow.pythonanywhere.com
 // { vars == === == === == === == ===}
@@ -302,13 +300,13 @@ function openDIS(__time_____) {
       }
     }
   }
-  if (__time____ >= 18) {
+  if (__time____ > 18) {
     document.getElementById("disIMG").src = 'next_pages/4.png';
-  } else if (__time____ >= 15) {
+  } else if (__time____ > 15) {
     document.getElementById("disIMG").src = 'next_pages/3.png';
-  } else if (__time____ >= 10) {
+  } else if (__time____ > 10) {
     document.getElementById("disIMG").src = 'next_pages/2.png';
-  } else if (__time____ >= 0) {
+  } else if (__time____ > 0) {
     document.getElementById("disIMG").src = 'next_pages/1.png';
   } else {
     document.getElementById("disIMG").src = 'next_pages/0.png';
@@ -669,7 +667,9 @@ function loadLevelData(___level_) {
         [4, 4, 4, 2, 2, 2, 4, 4, 4, 4, 4, 4],
         [4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 4]];
     }
-    else { }
+    else {
+      setCookie("Userlevel", 1, 756);
+    }
 
     console.log("imageNumbers", imageNumbers)
     return imageNumbers
@@ -711,7 +711,6 @@ function next() {
   var course_ = document.getElementById("NoneCourse").innerText;
   if (course_ == "classic") {
     setCookie("Userlevel", Number(_LEVEL___), 765);
-    alert(_LEVEL___);
   }
   document.getElementById('_(level)_').style.display = 'block';
   document.getElementById('_(login)_').style.display = 'none';
@@ -841,15 +840,10 @@ async function loadlevelandsetUpGame(LEVEL) {
 
     main_div____.style.position = 'fixed';
     main_div____.style.left = '0px';
-    main_div____.style.top = (((_1X1.getBoundingClientRect().height*12)/2)+"px");
-    alert(`calc(100vh - ${(_1X1.getBoundingClientRect().height*12)}px)`);
-    main_div____.style.height =  `calc(100vh  * 1px - ${(_1X1.getBoundingClientRect().height*12)}px)`;
+    main_div____.style.top = (_1X1.getBoundingClientRect().height*12)+"px";
+    alert((_1X1.getBoundingClientRect().height*12)+"px"`);
+    main_div____.style.height =  `calc(100vh - ${(_1X1.getBoundingClientRect().height*12)}px)`;
     main_div____.style.width =  '100vw';
-    alert(main_div____.style.height)
-    var remove3 = document.getElementById("remove3");
-    remove3.remove();
-    var remove2 = document.getElementById("remove2");
-    remove2.remove();
 
 
     for (var i = 0; i < gridItems.length; i++) {
@@ -882,26 +876,24 @@ async function loadlevelandsetUpGame(LEVEL) {
     console.log(X115Y, X115X);
   }, 150);
 
-  setTimeout( () => {
-    window.addEventListener('resize', () => {
-      const gamingWIN = document.getElementById("_(level)_");
-      if (gamingWIN.style.display == 'block') {
-        const X115 = document.getElementById("11X5");
 
-        var X115Y = X115.getBoundingClientRect().top; // Corrected assignment
-        var X115X = X115.getBoundingClientRect().left; // Corrected assignment
+  window.addEventListener('resize', () => {
+    const gamingWIN = document.getElementById("_(level)_");
+    if (gamingWIN.style.display == 'block') {
+      const X115 = document.getElementById("11X5");
 
-        const ball = document.getElementById("golfHolder");
+      var X115Y = X115.getBoundingClientRect().top; // Corrected assignment
+      var X115X = X115.getBoundingClientRect().left; // Corrected assignment
 
-        ball.style.top = X115Y + "px";
-        ball.style.left = X115X + "px";
-        console.log(X115Y, X115X);
-      } else {
+      const ball = document.getElementById("golfHolder");
 
-      }
-    });
-  },500)
-  
+      ball.style.top = X115Y + "px";
+      ball.style.left = X115X + "px";
+      console.log(X115Y, X115X);
+    } else {
+
+    }
+  });
   
   setTimeout(() => {
     if (ball________ && _1X1) {
@@ -1288,7 +1280,8 @@ function moveBall_(id, offsetx, offsety, speed_) {
   let y = Number(squareCoords.top);
   moveBallToSquare_(x - offsetx, y - offsety, speed_);
 }
-
+var ballX = 0;
+var ballY = 0;
 function moveBallToSquare_(x, y, speed) {
   const ballXnow = ball.getBoundingClientRect().left;
   const ballYnow = ball.getBoundingClientRect().top;
@@ -1337,16 +1330,14 @@ async function swing__() {
   }
   function moveBall(id, offsetx, offsety, speed_) {
     try {
-      setTimeout(( ) => {
-        var square = document.getElementById(id);
-        let squareCoords = square.getBoundingClientRect();
+      var square = document.getElementById(id);
+      let squareCoords = square.getBoundingClientRect();
 
-        let x = Number(squareCoords.left);
-        let y = Number(squareCoords.top);
-        moveBallToSquare(x - offsetx, y - offsety, speed_);
-      }, 5)
+      let x = Number(squareCoords.left);
+      let y = Number(squareCoords.top);
+      moveBallToSquare(x - offsetx, y - offsety, speed_);
     } catch {
-      console.log("failed id:",id)
+      console.log(id)
     }
   }
   function restball(_timeleft) {
