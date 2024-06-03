@@ -167,6 +167,7 @@ window.onload = function() {
       loadlevelandsetUpGame(__level___);
       if (course_ === "classic") {
         document.getElementById("swinglevel").innerText = level + 1;
+        document.getElementById("levelText").innerHTML = "level " + __level___;
       } else {
         document.getElementById("swinglevel").innerText = 1;
       }
@@ -207,6 +208,7 @@ window.onload = function() {
   }
   if (MONEYCOIN !== "") {
     document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + MONEYCOIN;
+    
   } else {
     document.getElementById("money_-__---").innerHTML = "<img alt='' class='coin-ejjeji83jjiejuUUUE' src='coinFORfrontpage.gif'>" + 0;
   }
@@ -222,7 +224,7 @@ window.onload = function() {
     swing__();
   }
   if (window.innerWidth < window.innerHeight &&
-    window.innerWidth > 500 && window.innerWidth < 600) {
+    window.innerWidth > 500 && window.innerWidth < 700) {
     money________.style.position = 'relative';
     money________.style.top = '50px';
 
@@ -841,10 +843,10 @@ async function loadlevelandsetUpGame(LEVEL) {
 
     main_div____.style.position = 'fixed';
     main_div____.style.left = '0px';
-    main_div____.style.top = (((_1X1.getBoundingClientRect().height*12)/2)+"px");
-    alert(`calc(100vh - ${(_1X1.getBoundingClientRect().height*12)}px)`);
-    main_div____.style.height =  `calc(100vh  * 1px - ${(_1X1.getBoundingClientRect().height*12)}px)`;
-    main_div____.style.width =  '100vw';
+    main_div____.style.top = (((_1X1.getBoundingClientRect().height * 12) / 2) + "px");
+    alert(`calc(100vh - ${(_1X1.getBoundingClientRect().height * 12)}px)`);
+    main_div____.style.height = `calc(100vh  * 1px - ${(_1X1.getBoundingClientRect().height * 12)}px)`;
+    main_div____.style.width = '100vw';
     alert(main_div____.style.height)
     var remove3 = document.getElementById("remove3");
     remove3.remove();
@@ -882,7 +884,7 @@ async function loadlevelandsetUpGame(LEVEL) {
     console.log(X115Y, X115X);
   }, 150);
 
-  setTimeout( () => {
+  setTimeout(() => {
     window.addEventListener('resize', () => {
       const gamingWIN = document.getElementById("_(level)_");
       if (gamingWIN.style.display == 'block') {
@@ -895,18 +897,20 @@ async function loadlevelandsetUpGame(LEVEL) {
 
         ball.style.top = X115Y + "px";
         ball.style.left = X115X + "px";
-        console.log(X115Y, X115X);
+        ballX = ball.getBoundingClientRect().left;
+        ballY = ball.getBoundingClientRect().top;
+        console.log(X115Y,X115X);
       } else {
 
       }
     });
-  },500)
-  
-  
+  }, 50)
+
+
   setTimeout(() => {
     if (ball________ && _1X1) {
-      ball________.style.width = (_1X1.getBoundingClientRect().width-15) + "px";
-      ball________.style.height = (_1X1.getBoundingClientRect().height-15) + "px";
+      ball________.style.width = (_1X1.getBoundingClientRect().width - 15) + "px";
+      ball________.style.height = (_1X1.getBoundingClientRect().height - 15) + "px";
     } else {
       console.error('One or both elements not found.');
     }
@@ -1323,7 +1327,7 @@ async function swing__() {
     ballY = ball.getBoundingClientRect().top;
   }
 
-  leveltext.innerText = "level" + (Number((leveltext.innerText).replace("level", '')) + 1);
+  leveltext.innerText = "level " + (Number((leveltext.innerText).replace("level ", '')) + 1);
 
 
   function moveBallToSquare(x, y, speed) {
@@ -1337,16 +1341,14 @@ async function swing__() {
   }
   function moveBall(id, offsetx, offsety, speed_) {
     try {
-      setTimeout(( ) => {
-        var square = document.getElementById(id);
-        let squareCoords = square.getBoundingClientRect();
+      var square = document.getElementById(id);
+      let squareCoords = square.getBoundingClientRect();
 
-        let x = Number(squareCoords.left);
-        let y = Number(squareCoords.top);
-        moveBallToSquare(x - offsetx, y - offsety, speed_);
-      }, 5)
+      let x = Number(squareCoords.left);
+      let y = Number(squareCoords.top);
+      moveBallToSquare(x - offsetx, y - offsety, speed_);
     } catch {
-      console.log("failed id:",id)
+      console.log(id)
     }
   }
   function restball(_timeleft) {
