@@ -223,10 +223,8 @@ window.onload = function() {
     window.innerWidth > 500 && window.innerWidth < 600) {
     money________.style.position = 'relative';
     money________.style.top = '50px';
-    alert("top")
 
   } else if (window.innerWidth < window.innerHeight && window.innerWidth <= 500) {
-    alert("right")
     money________.style.position = 'relative';
     money________.style.right = '-90px';
   }
@@ -763,6 +761,11 @@ async function loadlevelandsetUpGame(LEVEL) {
   var positions = [];
   let imageIndex = 0;
 
+
+
+
+
+
   document.getElementById('input-box').focus();
 
   for (let i = 0; i < 12; i++) {
@@ -824,6 +827,7 @@ async function loadlevelandsetUpGame(LEVEL) {
   var width = window.innerWidth;
 
   var gridItems = document.querySelectorAll('.grid-item');
+  var main_div____ = document.getElementById('main_div__-__');
 
   const X115 = document.getElementById("11X5");
 
@@ -832,6 +836,13 @@ async function loadlevelandsetUpGame(LEVEL) {
 
   if (height > width) {
     gridContainer.style.position = 'fixed';
+
+    main_div____.style.position = 'fixed';
+    main_div____.style.left = '0px';
+    main_div____.style.top = 'unknown';
+    main_div____.style.height = X115.getBoundingClientRect().left;
+    main_div____.style.height = '100vw';
+
 
     for (var i = 0; i < gridItems.length; i++) {
       gridItems[i].style.padding = "3.65151515151vw";
@@ -852,14 +863,17 @@ async function loadlevelandsetUpGame(LEVEL) {
   }
 
   // Corrected assignment
-
+  const ball________ = document.getElementById("fly_ball");
   setTimeout(() => {
     const ball = document.getElementById("golfHolder");
 
     ball.style.top = X115Y + "px";
     ball.style.left = X115X + "px";
+
+
     console.log(X115Y, X115X);
   }, 150);
+
 
   window.addEventListener('resize', () => {
     const gamingWIN = document.getElementById("_(level)_");
@@ -878,6 +892,16 @@ async function loadlevelandsetUpGame(LEVEL) {
 
     }
   });
+  var _1X1 = document.querySelector('.grid-item');
+  setTimeout(() => {
+    if (ball________ && _1X1) {
+      ball________.style.width = (_1X1.getBoundingClientRect().width-15) + "px";
+      ball________.style.height = (_1X1.getBoundingClientRect().height-15) + "px";
+    } else {
+      console.error('One or both elements not found.');
+    }
+  }, 50);
+
 
 
 
