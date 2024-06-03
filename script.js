@@ -713,7 +713,6 @@ function next() {
   var course_ = document.getElementById("NoneCourse").innerText;
   if (course_ == "classic") {
     setCookie("Userlevel", Number(_LEVEL___), 765);
-    alert(_LEVEL___);
   }
   document.getElementById('_(level)_').style.display = 'block';
   document.getElementById('_(login)_').style.display = 'none';
