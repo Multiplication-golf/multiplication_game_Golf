@@ -73,7 +73,8 @@ html {
 }
 
 .what_is {
-  font-size: min(8.56531049251vh, 50px);
+  /*font-size: max(8.56531049251vh, 30px);*/
+  font-size: max(min(5.15789473684vw, 56px), 30px);
   font-weight: bold;
   color: black;
   text-align: center;
