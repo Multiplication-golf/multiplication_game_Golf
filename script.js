@@ -12,7 +12,6 @@ var ballY = 0;
 //https://41245304-a1a2-410d-8aa4-2fb79ed67f93-00-13q9cm7t89rir.picard.replit.dev:8080
 //https://coderyoucantknow.pythonanywhere.com
 // { vars == === == === == === == ===}
-
 function init() {
   document.getElementById('_(level)_').style.display = 'none';
   document.getElementById('_(login)_').style.display = 'block';
@@ -120,6 +119,10 @@ init();
 // ToDO: add exsamples
 window.onload = function() {
   var baseURL_ = window.location.href;
+
+  document.getElementById("_(loading)_").style.display = "none";
+
+
   const herf = document.getElementById("herf to next builder");
   herf.setAttribute("href", `${baseURL_}/levelmaker.html`);
   const herfLB = document.getElementById("herf to next board");

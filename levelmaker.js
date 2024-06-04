@@ -361,7 +361,6 @@ function Direction(toX, toY, initialX, initialY) {
   return normalizedAngle; // Return true or any other value if needed
 }
 class Level_Builder {
-
   constructor(name) {
     this.name = name;
     this.isPointCreationMode = false;
@@ -563,12 +562,20 @@ class Level_Builder {
     gridItems.forEach(gridItem => {
       gridItem.remove(); // Remove all text content inside the grid item
     });
-    this.points = 0;
     this._X_ = [];
     this._X_Load = [];
+    this.basecreate = [0, 0, 255];
+    this.inPointNumber_ = 1;
+  }
+  clearInPoints() {
+    var gridItems = document.querySelectorAll('.InncorrectPoint');
+    console.log(gridItems, "clearPoints_ -> exe")
+    gridItems.forEach(gridItem => {
+      gridItem.remove(); // Remove all text content inside the grid item
+    });
+    this.points = 0;
     this.in_X_ = [];
     this.in_X_Load = [];
-    this.basecreate = [0, 0, 255];
     this.inPointNumber_ = 1;
   }
   // Add event listener to the Clear Grid button

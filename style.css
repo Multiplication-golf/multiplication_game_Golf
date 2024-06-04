@@ -15,6 +15,7 @@ html {
   0% {
     left: -5px;
   }
+
   100% {
     right: -5px;
   }
@@ -72,11 +73,12 @@ html {
 }
 
 .what_is {
-  font-size: 8.56531049251vh;
+  font-size: min(8.56531049251vh, 50px);
   font-weight: bold;
   color: black;
   text-align: center;
 }
+
 
 .swing_button {
   width: 170px;
@@ -168,7 +170,7 @@ html {
   position: absolute;
 
   top: 0%;
-  left:auto;
+  left: auto;
 
   /* Size should match the parent container */
   width: 20vw;
@@ -542,7 +544,7 @@ html {
 .moneytext-fi9w8j983j {
   font-family: 'Times New Roman', Times, serif;
   font-size: max(30px, min(18.6295503212vh, 88px));
-  
+
 }
 
 .ei39--8rfakw3i_-2iek {
@@ -570,6 +572,7 @@ html {
 #LinkToLevelBuilder:hover {
   color: lightblue;
 }
+
 .basediv {
   position: absolute;
   top: 0%;
@@ -644,6 +647,7 @@ html {
   display: inline-block;
   float: left;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 1;
@@ -684,6 +688,7 @@ html {
   background-color: lightgray;
   opacity: 75%;
 }
+
 .socail-media-button {
   text-decoration: none;
   color: white;
@@ -700,4 +705,60 @@ html {
   color: black;
   font-size: max(1.5vw, 12px);
 
+}
+
+.full-black-screen {
+  background-color: black;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0.1;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullimg-jej3di3jf933jaasmczp {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px 0px 0px 0px;
+}
+
+.reward--339rkfj4iso {
+  font-size: 49px;
+  color: white;
+  position: absolute;
+}
+
+.course_-_ {
+  font-size: 44px;
+  color: white;
+  position: absolute;
+  top: 53%;
+  left: 26%;
+}
+
+.coin-gif--lb0owlqodkewkd {
+  height: 45px;
+  width: 45px;
+  position: retive;
+}
+
+.XBUTTON {
+  position: absolute;
+  top: 10px;
+  right: 5.00000000px;
+  background-color: #00FFFF;
+  font-size: 20px;
+  border: None;
+}
+
+.loadingtext {
+  font-size: max(1.5vw, 12px);
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10001;
 }
