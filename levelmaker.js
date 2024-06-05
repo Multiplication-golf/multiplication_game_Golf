@@ -1031,9 +1031,12 @@ async function onloadcon__() {
     }
   });
 
+  in__clearPoints = document.getElementById("inclearPoints");
+
 
 
   __clearPoints.addEventListener("click", function() { levels___["level" + 1].clearPoints(); });
+  in__clearPoints.addEventListener("click", function() { levels___["level" + 1].clearInPoints(); });
   clearTextButton.addEventListener("click", function() { levels___["level" + 1].clearText(); });
 
   var plusButton = document.getElementById("+");
