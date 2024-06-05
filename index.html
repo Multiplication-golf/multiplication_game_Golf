@@ -4,6 +4,8 @@
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7542788218866664"
     crossorigin="anonymous"></script>
+  <script>window['stg'] = window['stg'] || {};window['stg'].optedOutCheckboxText="You’re opted out. Uncheck to opt in.";window['stg'].optedInCheckboxText="Opt out of data collection and usage";window['stg'].isGlobal=false;window['stg'].instanceHostname="https://multiplication-golf.containers.piwik.pro";</script><div id="_stg_opt_out_iframe_content" style="display: none;"><p>Privacy on this site: We collect and process your data on this site to better understand how it is used. You can opt in or out at any time.</p><input id="_stg_optout_checkbox" onclick="window.parent.storeUserOptOutPreferences();" type="checkbox"><label id="_stg_optout_checkbox_label" for="_stg_optout_checkbox"></label></div><script src="https://multiplication-golf.containers.piwik.pro/privacy/script.v2.js">
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="You can't know">
@@ -141,7 +143,42 @@
         - Leaderboards to track high scores and encourage friendly competition among students.<br>
       </p>
 
+      <div class="overlay" id="overlay">
+        <div class="modal">
+          <h2>By clicking agree you accept our <a href='https://multiplication-game-golf.pages.dev/privecy'>privicy policy</a>.                  <button onclick="closeModal()">Agree</button></h2>
+        </div>
+      </div>
+      <script>
+        const overlay = document.getElementById('overlay');
 
+        function getCookie(cname) {
+          let name = cname + "=";
+          let decodedCookie = decodeURIComponent(document.cookie);
+          let ca = decodedCookie.split(';');
+          for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+        alert(getCookie("agreed"));
+        if (!getCookie("agreed")) {
+          openModal();
+        }
+        function openModal() {
+          overlay.style.display = 'block';
+        }
+
+        function closeModal() {
+          overlay.style.display = 'none';
+          setCookie("agreed", true, 365); // ai is going to tell me how long to make it
+        }
+      </script>
     </div>
 
   </div>
