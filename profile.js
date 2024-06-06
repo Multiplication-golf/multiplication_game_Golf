@@ -88,7 +88,7 @@ window.onload = function() {
       if (xhr.status == 200) {
         var response = JSON.parse(xhr.responseText);
 
-        
+
 
       };
       xhr.send();
@@ -96,15 +96,30 @@ window.onload = function() {
 
     let charToRemove = "/";
     let regex = new RegExp(charToRemove, 'g');
-    var src1_ = src1.replace(regex, 'ST');
-    var src2_ = src2.replace(regex, 'ST');
-    var src3_ = src3.replace(regex, 'ST');
-    var src4_ = src4.replace(regex, 'ST');
+    try {
+      var src1_ = src1.replace(regex, 'ST');
+    } catch {
+      src1_ = 'decSTnone.png';
+    }
+    try {
+      var src2_ = src2.replace(regex, 'ST');
+    } catch {
+      src2_ = 'decSTnone.png';
+    }
+    try {
+      var src3_ = src3.replace(regex, 'ST');
+    } catch {
+      src3_ = 'decSTnone.png';
+    }
+    try {
+      var src4_ = src4.replace(regex, 'ST');
+    } catch {
+      src4_ = 'decSTnone.png';
+    }
     var xhr2 = new XMLHttpRequest();
     xhr2.open('GET', `${flaskURL}/UpdateDecCARD/${name}/${src1_}/${src2_}/${src3_}/${src4_}`, true);
 
     xhr2.onload = function() {
-      alert(xhr2.status)
       if (xhr2.status == 200) {
         var response = JSON.parse(xhr.responseText);
       } else {
@@ -117,11 +132,11 @@ window.onload = function() {
 
 
 
-      setTimeout(() => {
-        loading.remove()
-        document.getElementById('darkness').style.display = 'none';
-      }, 3500);
-    });
+    setTimeout(() => {
+      loading.remove()
+      document.getElementById('darkness').style.display = 'none';
+    }, 3500);
+  });
 
   if (getCookie('club') != '' && getCookie('club') != undefined && getCookie('club') != null && getCookie('club') != 'undefined') {
     var club = getCookie('club');
@@ -199,6 +214,7 @@ window.onload = function() {
     imgvalue1.src = transformString(getCookie('clubdec'));
     decopen.innerHTML = "Club decore<br>" + imgvalue1.outerHTML;
     var src1 = getCookie('clubdec');
+    console.log("src1:", src1)
   }
   if (getCookie('handledec') != '' && getCookie('handledec') != undefined && getCookie('handledec') != null) {
     addDec(getCookie('handledec'), '_handle');
@@ -209,6 +225,7 @@ window.onload = function() {
 
     decopen2.innerHTML = "Handle decore<br>" + imgvalue2.outerHTML;
     var src2 = getCookie('handledec');
+    console.log("src2:", src2)
   }
   if (getCookie('cross piecedec') != '' && getCookie('cross piecedec') != undefined && getCookie('cross piecedec') != null && getCookie('cross piecedec') != 'undefined') {
 
@@ -219,6 +236,7 @@ window.onload = function() {
     imgvalue3.className = 'smallimg';
     decopen3.innerHTML = "crosspiece decore<br>" + imgvalue3.outerHTML;
     var src3 = getCookie('cross piecedec');
+    console.log("src3:", src3)
   }
   if (getCookie('bardec') != '' && getCookie('bardec') != undefined && getCookie('bardec') != null && getCookie('bardec') != 'undefined') {
 
@@ -229,6 +247,7 @@ window.onload = function() {
     imgvalue4.className = 'smallimg';
     decopen4.innerHTML = "Bar decore<br>" + imgvalue4.outerHTML;
     var src4 = getCookie('bardec');
+    console.log("src4:", src4)
   }
 
 
@@ -535,7 +554,7 @@ window.onload = function() {
       imgvalue4 = wapper.innerHTML;
       imgvalue4.className = 'smallimg';
       // Update to get the color text correctly
-      decopen4.innerHTML = "Bar decore<br>" + imgvalue4; // Update the main button text
+      decopen4.innerHTML = "Bar decore<br>" + imgvalue4;// Update the main button text
       $('#decmaindrop4').hide(); // Close the dropdown menu after selection
     });
     wapper.appendChild(imgDiv);
@@ -620,7 +639,8 @@ window.onload = function() {
     imgvalue4.className = 'smallimg';
     // Update to get the color text correctly
     decopen4.innerHTML = "Bar decore<br>" + imgvalue4; // Update the main button text
-    $('#decmaindrop4').hide(); // Close the dropdown menu after selection
+    $('#decmaindrop4').hide();
+// Close the dropdown menu after selection
   });
   wapper4.appendChild(imgDiv4);
   decmain.appendChild(wapper4);
