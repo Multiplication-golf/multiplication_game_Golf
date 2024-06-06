@@ -87,40 +87,41 @@ window.onload = function() {
     xhr.onload = function() {
       if (xhr.status == 200) {
         var response = JSON.parse(xhr.responseText);
-        var xhr2 = new XMLHttpRequest();
 
-        let charToRemove = "/"; 
-        let regex = new RegExp(charToRemove, 'g'); 
         
-        var src1_ = src1.replace(regex,'ST');
-        var src2_ = src2.replace(regex,'ST');
-        var src3_ = src3.replace(regex,'ST');
-        var src4_ = src4.replace(regex,'ST');
-        xhr2.open('GET', `${flaskURL}/UpdateDecCARD/${name}/${src1_}/${src2_}/${src3_}/${src4_}`, true);
 
-        xhr2.onload = function() {
-          alert(xhr2.status)
-          if (xhr2.status == 200) {
-            var response = JSON.parse(xhr.responseText);
-          } else {
-            console.error('Request failed');
-          }
-        };
-        xhr2.send()
+      };
+      xhr.send();
+    }
+
+    let charToRemove = "/";
+    let regex = new RegExp(charToRemove, 'g');
+    var src1_ = src1.replace(regex, 'ST');
+    var src2_ = src2.replace(regex, 'ST');
+    var src3_ = src3.replace(regex, 'ST');
+    var src4_ = src4.replace(regex, 'ST');
+    var xhr2 = new XMLHttpRequest();
+    xhr2.open('GET', `${flaskURL}/UpdateDecCARD/${name}/${src1_}/${src2_}/${src3_}/${src4_}`, true);
+
+    xhr2.onload = function() {
+      alert(xhr2.status)
+      if (xhr2.status == 200) {
+        var response = JSON.parse(xhr.responseText);
       } else {
         console.error('Request failed');
       }
     };
-    xhr.send()
+
+    xhr2.send();
 
 
 
 
-    setTimeout(() => {
-      loading.remove()
-      document.getElementById('darkness').style.display = 'none';
-    }, 3500);
-  });
+      setTimeout(() => {
+        loading.remove()
+        document.getElementById('darkness').style.display = 'none';
+      }, 3500);
+    });
 
   if (getCookie('club') != '' && getCookie('club') != undefined && getCookie('club') != null && getCookie('club') != 'undefined') {
     var club = getCookie('club');
