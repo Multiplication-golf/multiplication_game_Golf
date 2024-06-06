@@ -87,12 +87,9 @@ window.onload = function() {
     xhr.onload = function() {
       if (xhr.status == 200) {
         var response = JSON.parse(xhr.responseText);
-
-
-
       };
-      xhr.send();
     }
+    xhr.send();
 
     let charToRemove = "/";
     let regex = new RegExp(charToRemove, 'g');
