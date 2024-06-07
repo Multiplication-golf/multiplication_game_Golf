@@ -17,10 +17,13 @@
 
     .golf-img {
       position: absolute;
-      top: 150px;
-      left: 37.7085889571vw;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 23.7914110429vw;
       height: 23.7914110429vw;
+      min-height: 200px;
+      min-width: 200px;
       z-index: 1;
     }
 
@@ -29,16 +32,18 @@
       top: 0;
       left: 0;
       background-color: white;
-      width: calc(100vw - 36px);
-      height: 12%;
-      padding: 15px;
+      width: calc(100vw);
+      height: 20%;
+      padding-top: 8px;
       border: 3px solid black;
       text-align: left;
     }
 
     .colordiv {
-      height: 40px;
-      width: 40px;
+      height: 3.91772771792vw;
+      width: 3.91772771792vw;
+      min-width: 30px;
+      min-height: 30px;
       border: 3px solid black;
       border-radius: 25%;
       font-size: 13px;
@@ -85,18 +90,26 @@
 
     .custom-dropdown {
       position: relative;
-      top: -28%;
       display: inline-block;
       text-align: center;
+      max-width: 100px;
+      max-height: 100px;
+      min-height: 80px;
+      min-width: 80px;
+      width: 9.79431929481vw;
+      height: 9.79431929481vw;
     }
 
     .custom-dropdownfix {
       position: relative;
-      top: -28%;
       display: inline-block;
       text-align: center;
-      max-width: 75px;
-      max-height: 75px;
+      max-width: 100px;
+      max-height: 100px;
+      min-height: 80px;
+      min-width: 80px;
+      width: 9.79431929481vw;
+      height: 9.79431929481vw;
     }
 
     .dropdown-toggle {
@@ -109,9 +122,18 @@
       border-radius: 5px;
       cursor: pointer;
       text-align: center;
-      max-width: 80px;
-      max-height: 80px;
+      min-height: 80px;
+      min-width: 80px;
+      max-width: 100px;
+      max-height: 100px;
     }
+    .centerbuttom {
+      position: fixed;
+      top: 99vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     .fixdropdown-toggle {
       background-color: #f1f1f1;
       color: #333;
@@ -122,8 +144,10 @@
       border-radius: 5px;
       cursor: pointer;
       text-align: center;
-      max-width: 80px;
-      max-height: 80px;
+      min-height: 80px;
+      min-width: 80px;
+      max-width: 100px;
+      max-height: 100px;
     }
 
     .dropdown-menu {
@@ -152,8 +176,6 @@
       padding: 8px 10px;
       text-align: center;
       text-decoration: none;
-      display: inline-block;
-      /* Display as inline-block */
       font-size: 24px;
       /* Font size */
       margin: 2px 1px;
@@ -161,30 +183,38 @@
       cursor: pointer;
       /* Cursor on hover */
       border-radius: 10px;
-      /* Rounded corners */
       transition-duration: 0.4s;
-      /* Smooth transition */
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
+
     .imgload {
-      width: 300px;
-      height: 300px; 
-      position: absolute; 
+      width: 32.1888412017vw;
+      height: 32.1888412017vw;
+      min-width: 200px;
+      min-height: 200px;
+      position: absolute;
       top: 50%;
       left: 50%;
       margin-top: -150px;
       margin-left: -150px;
       z-index: 1000;
     }
+
     .smallimg {
-      width: 50px;
-      height: 50px; 
+      width: 4.8971596474vw;
+      height: 4.8971596474vw;
+      min-width: 40px;
+      min-height: 40px;
     }
   </style>
 </head>
 
 <body style='background-color: black'>
   <div style='text-align: left; background-color: black;'>
-    <nav>
+    <nav id='topbar'>
       <div class="custom-dropdown" id='meun1'>
         <button class="dropdown-toggle" id='open' name='open'>
           Club
@@ -215,7 +245,7 @@
       </div>
       <div class="custom-dropdown" id='meun3'>
         <button class="dropdown-toggle" id='open3'>
-          Cross piece
+          Cross bar
           <div class='colordiv red'>
             <p class='vcenter'>red</p>
           </div>
@@ -241,6 +271,7 @@
           document.getElementById('maindrop4').style.width = width_ + "px";
         </script>
       </div>
+      <div id="br added" style='display: inline;'></div>
       <div class="custom-dropdown" id='decmeun1'>
         <button class="dropdown-toggle" id='decopen' name='decopen'>
           Club decore
@@ -265,7 +296,7 @@
       </div>
       <div class="custom-dropdown" id='decmeun3'>
         <button class="fixdropdown-toggle" id='decopen3'>
-          Cross piece decore
+          Cross bar decore
         </button>
         <div id='decmaindrop3' class="dropdown-menu">
         </div>
@@ -285,9 +316,7 @@
           document.getElementById('decmaindrop4').style.width = width_ + "px";
         </script>
       </div>
-      <div style='text-align: right; display: inline-block; top: -50%;'>
-        <button class='submit-button' id='save'>save</button>
-      </div>
+      <button class='submit-button' id='save'>save</button>
     </nav>
   </div>
   <div style=' text-align: center;'>
@@ -306,7 +335,9 @@
     <div>
       <img src='frame.png' class='golf-img' />
     </div>
-    <div id='darkness' style='width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; display: none; z-index: 10;'></div>
+    <div id='darkness'
+      style='width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; display: none; z-index: 10;'>
+    </div>
 
   </div>
   <div id="divID"></div>

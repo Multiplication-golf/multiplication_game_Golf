@@ -535,7 +535,7 @@ html {
 .moneytext {
   font-family: 'Times New Roman', Times, serif;
   font-size: 30px;
-  top: 20px;
+  top: -40px;
   display: inline-block;
   position: relative;
   left: 57px;
@@ -643,10 +643,12 @@ html {
 }
 
 .coin-r8jfwieofheoaiol {
+  position: relative;
   width: 55px;
   height: 55px;
   display: inline-block;
   float: left;
+  top: -60px;
 }
 
 @keyframes fadeIn {

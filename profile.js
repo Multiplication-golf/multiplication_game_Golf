@@ -6,6 +6,19 @@ var src4 = ''
 const flaskURL = "https://coderyoucantknow.pythonanywhere.com";
 
 window.onload = function() {
+  const savebutton = document.getElementById("save");
+  var dropdowns = document.getElementById("topbar");
+  var br_added = document.getElementById("br added");
+  if (window.innerWidth < window.innerHeight) {
+    dropdowns.style.height = "30%"
+    br_added.appendChild(document.createElement("br"));
+    savebutton.classList.add("centerbuttom");
+    savebutton.style['background-color'] = 'white';
+    savebutton.style['color'] = 'black';
+    savebutton.style['top'] = '90.99vh';
+    savebutton.style['left'] = 'calc(50%-69.09px)';
+    savebutton.style['transform'] = 'translateX(-50%)';
+  }
   const clubElem1 = document.getElementById("club");
   const clubElem2 = document.getElementById("bar");
   const clubElem3 = document.getElementById("handle");
@@ -42,7 +55,6 @@ window.onload = function() {
   const decopen3 = document.getElementById("decopen3");
   const decopen4 = document.getElementById("decopen4");
   const colors = document.getElementsByClassName("colordiv");
-  const savebutton = document.getElementById("save");
   savebutton.addEventListener('click', () => {
     const loading = document.createElement("img")
     loading.src = 'loading.gif';
@@ -416,7 +428,7 @@ window.onload = function() {
       changeImageColor(clubElem3, rgbs[rgbsKEYS[i]]);
 
       value3 = wapper.innerHTML; // Update to get the color text correctly
-      open3.innerHTML = "Cross piece<br>" + value3; // Update the main button text
+      open3.innerHTML = "Cross bar<br>" + value3; // Update the main button text
       $('#maindrop3').hide();  // Close the dropdown menu after selection
 
     });
@@ -527,7 +539,7 @@ window.onload = function() {
       imgvalue3 = wapper.innerHTML;
       imgvalue3.className = 'smallimg';
       // Update to get the color text correctly
-      decopen3.innerHTML = "crosspiece decore<br>" + imgvalue3; // Update the main button text
+      decopen3.innerHTML = "Cross bar decore<br>" + imgvalue3; // Update the main button text
       $('#decmaindrop3').hide(); // Close the dropdown menu after selection
     });
     wapper.appendChild(imgDiv);
@@ -617,7 +629,7 @@ window.onload = function() {
     imgvalue3 = wapper3.innerHTML;
     imgvalue3.className = 'smallimg';
     // Update to get the color text correctly
-    decopen3.innerHTML = "crosspiece decore<br>" + imgvalue3; // Update the main button text
+    decopen3.innerHTML = "Cross bar decore<br>" + imgvalue3; // Update the main button text
     $('#decmaindrop3').hide(); // Close the dropdown menu after selection
   });
   wapper3.appendChild(imgDiv3);
