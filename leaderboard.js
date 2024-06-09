@@ -257,11 +257,12 @@ window.onload = function() {
   };
   xhr.send()
   if (window.innerWidth < window.innerHeight) {
-    var ths = document.querySelectorAll("th")
+    var ths = document.querySelectorAll(".th")
     ths.forEach(th => {
       th.style.fontSize = "30px"
     });
   }
+    document.getElementById("X").addEventListener("click", ( ) => {document.getElementById('profile-container').style.display = 'none'})
 
 }
 

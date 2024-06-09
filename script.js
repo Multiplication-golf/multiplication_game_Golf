@@ -307,18 +307,40 @@ function openDIS(__time_____) {
       }
     }
   }
-  if (__time____ >= 18) {
-    document.getElementById("disIMG").src = 'next_pages/4.png';
-  } else if (__time____ >= 15) {
-    document.getElementById("disIMG").src = 'next_pages/3.png';
-  } else if (__time____ >= 10) {
-    document.getElementById("disIMG").src = 'next_pages/2.png';
-  } else if (__time____ >= 0) {
-    document.getElementById("disIMG").src = 'next_pages/1.png';
-  } else {
-    document.getElementById("disIMG").src = 'next_pages/0.png';
+  if (window.innerHeight < window.innerWidth) {
+    if (__time____ >= 18) {
+      document.getElementById("disIMG").src = 'next_pages/4.png';
+    } else if (__time____ >= 15) {
+      document.getElementById("disIMG").src = 'next_pages/3.png';
+    } else if (__time____ >= 10) {
+      document.getElementById("disIMG").src = 'next_pages/2.png';
+    } else if (__time____ >= 0) {
+      document.getElementById("disIMG").src = 'next_pages/1.png';
+    } else {
+      document.getElementById("disIMG").src = 'next_pages/0.png';
+    }
+  } else if (window.innerHeight > window.innerWidth) {
+    if (__time____ >= 18) {
+      document.getElementById("disIMG").src = 'next_pages/_5.png';
+    } else if (__time____ >= 15) {
+      document.getElementById("disIMG").src = 'next_pages/_4.png';
+    } else if (__time____ >= 10) {
+      document.getElementById("disIMG").src = 'next_pages/_3.png';
+    } else if (__time____ >= 0) {
+      document.getElementById("disIMG").src = 'next_pages/_2.png';
+    } else {
+      document.getElementById("disIMG").src = 'next_pages/_1png';
+    }
   }
 
+  if (window.innerHeight > window.innerWidth) {
+    document.getElementById("money_-__-").style.position = 'fixed';
+    document.getElementById("money_-__-").style.top = '10px';
+    document.querySelector(".coin-r8jfwieofheoaiol").style.top = '-120px';
+    document.querySelector(".coin-r8jfwieofheoaiol").style.left = '-70px';
+    document.querySelector(".XIDboxX____").style.padding = "0px";
+  }
+  
   setCookie("Moneyscore", Number(total_money), 765);
   animateValue('money_-__-');
   setTimeout(function() {
