@@ -88,3 +88,11 @@ th {
   width: 23.7914110429vw;
   height: 23.7914110429vw;
 }
+
+.back_ {
+  width: 3.7914110429vw;
+  height: 3.7914110429vw;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}

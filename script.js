@@ -234,6 +234,7 @@ window.onload = function() {
   } else if (window.innerWidth < window.innerHeight && window.innerWidth <= 500) {
     money________.style.position = 'relative';
     money________.style.right = '-90px';
+    document.getElementById("coverpage-").src='mobil start.webp'
   }
 
   document.getElementById('redirectForm').addEventListener('submit', function(event) {

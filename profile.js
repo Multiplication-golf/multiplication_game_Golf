@@ -12,6 +12,8 @@ window.onload = function() {
   if (window.innerWidth < window.innerHeight) {
     dropdowns.style.height = "30%"
     br_added.appendChild(document.createElement("br"));
+    var spacing = document.getElementById("spacing");
+    spacing.remove()
     savebutton.classList.add("centerbuttom");
     savebutton.style['background-color'] = 'white';
     savebutton.style['color'] = 'black';

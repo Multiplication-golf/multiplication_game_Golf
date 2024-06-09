@@ -510,7 +510,7 @@ html {
   width: 15vw;
   height: 12vh;
   min-width: 120px;
-  font-size: 38px;
+  font-size: min(30px,calc(3.2vw + 1.5vmin));
   text-align: center;
   font-family: 'Brush Script MT', brushe, cursive;
   border: 2px black solid;
