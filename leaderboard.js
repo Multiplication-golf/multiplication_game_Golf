@@ -184,15 +184,15 @@ window.onload = function() {
               var con_ = document.getElementById("setIMG");
               var rankPR = document.getElementById('rank');
               if (typeof users[III][3] == "object") {
-                rankPR.innerText = "Rank:"+users[III][4];
+                rankPR.innerText = "Rank:" + users[III][4];
               } else if (typeof users[III][2] == "object") {
-                rankPR.innerText = "Rank:"+users[III][3];
+                rankPR.innerText = "Rank:" + users[III][3];
               } else {
-                rankPR.innerText = "Rank:"+users[III][2];
+                rankPR.innerText = "Rank:" + users[III][2];
               }
-              
+
               var moneyPR = document.getElementById('money');
-              moneyPR.innerHTML = "<img src='coin.gif' style='position: relative; top:4.5px; width: 30px; height: 30px; margin-top: 5px;'/>"+users[III][1];
+              moneyPR.innerHTML = "<img src='coin.gif' style='position: relative; top:4.5px; width: 30px; height: 30px; margin-top: 5px;'/>" + users[III][1];
               club_.src = 'golf-club/1.png';
               crosspiece_.src = 'golf-club/2.png';
               bar_.src = 'golf-club/3.png';
@@ -218,7 +218,7 @@ window.onload = function() {
                 var crosspiece_dec = document.createElement('img');
                 var bar_dec = document.createElement('img');
                 var handle_dec = document.createElement('img');
-                console.log(users[III][3],users[III][3]['club'])
+                console.log(users[III][3], users[III][3]['club'])
                 club_dec.src = users[III][3]['club'];
                 crosspiece_dec.src = users[III][3]['crosspiece'];
                 bar_dec.src = users[III][3]['bar'];
@@ -256,13 +256,22 @@ window.onload = function() {
     }
   };
   xhr.send()
-  if (window.innerWidth < window.innerHeight) {
-    var ths = document.querySelectorAll(".th")
-    ths.forEach(th => {
-      th.style.fontSize = "30px"
-    });
-  }
-    document.getElementById("X").addEventListener("click", ( ) => {document.getElementById('profile-container').style.display = 'none'})
+  setTimeout(() => {
+    if (window.innerWidth < window.innerHeight) {
+      try {
+        var ths = $("th").get();
+        alert(ths)
+        ths.forEach(th => {
+          th.style.fontSize = "30px";
+          th.style["padding-left"] = "0.5px";
+          th.style["padding-right"] = "0.5px";
+        });
+      } catch (e) {
+        alert(e);
+      }
+    }
+  }, 1000)
+  document.getElementById("X").addEventListener("click", () => { document.getElementById('profile-container').style.display = 'none' })
 
 }
 
