@@ -236,6 +236,11 @@ window.onload = function() {
     money________.style.right = '-90px';
   }
 
+  document.getElementById('redirectForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      window.location.href = 'https://multiplication-game-golf.pages.dev/';
+  });
+
   // Get the form element
   var form = document.getElementById('sudmit___'); // Replace 'yourFormId' with the actual ID of your form
 
