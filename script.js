@@ -285,7 +285,6 @@ function transtonextpage() {
 //disableScroll()
 function openDIS(__time_____) {
   transtonextpage();
-  getJavaSRCX();
 
   document.getElementById("input-box").value = '';
   document.getElementById('_(intoP)_').style.display = 'block';
@@ -338,6 +337,8 @@ function openDIS(__time_____) {
       document.getElementById("disIMG").src = 'next_pages/_1png';
     }
   }
+
+  get_scripts();
 
   if (window.innerHeight > window.innerWidth) {
     document.getElementById("money_-__-").style.position = 'fixed';

@@ -534,11 +534,11 @@ html {
 
 .moneytext {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 30px;
-  top: -40px;
+  font-size: 4.22386483633vw;
   display: inline-block;
   position: relative;
-  left: 57px;
+  left: 0px;
+  top: -4.22386483633vw;
   z-index: 1;
 }
 
@@ -644,11 +644,11 @@ html {
 
 .coin-r8jfwieofheoaiol {
   position: relative;
-  width: 55px;
-  height: 55px;
+  width: 5.80781414995vw;
+  height: 5.80781414995vw;
+  min-height: 30px; min-width: 30px;
   display: inline-block;
-  float: left;
-  top: -60px;
+  top: -2.95670538543vw;
 }
 
 @keyframes fadeIn {
