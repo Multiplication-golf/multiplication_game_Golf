@@ -140,6 +140,33 @@ window.onload = function() {
     console.log(getCookie('ballIMG'));
   }
 
+  var toggle1 = false;
+  var toggle2 = false;
+  var toggle3 = false;
+  document.getElementById("sum1").addEventListener('click', () => {
+    if (document.getElementById("text summery1").style.display == "none") {
+      document.getElementById("text summery1").style.display = "block";
+    }
+    else if (document.getElementById("text summery1").style.display == "block") {
+      document.getElementById("text summery1").style.display = "none";
+    }
+  });
+  document.getElementById("sum2").addEventListener('click', () => {
+    if (document.getElementById("text summery2").style.display == "none") {
+      document.getElementById("text summery2").style.display = "block";
+    }
+    else if (document.getElementById("text summery2").style.display == "block") {
+      document.getElementById("text summery2").style.display = "none";
+    }
+  });
+  document.getElementById("sum3").addEventListener('click', () => {
+    if (document.getElementById("text summery3").style.display == "none") {
+      document.getElementById("text summery3").style.display = "block";
+    } else if (document.getElementById("text summery3").style.display == "block") {
+      document.getElementById("text summery3").style.display = "none";
+    }
+  });
+
   console.log("--ballIMG--", getCookie('ballIMG'));
   const swingbutton = document.getElementById("_swing_button_");
   const start__button_ = document.getElementById("start__button_");
@@ -234,12 +261,12 @@ window.onload = function() {
   } else if (window.innerWidth < window.innerHeight && window.innerWidth <= 500) {
     money________.style.position = 'relative';
     money________.style.right = '-90px';
-    document.getElementById("coverpage-").src='mobil start.webp'
+    document.getElementById("coverpage-").src = 'mobil start.webp'
   }
 
   document.getElementById('redirectForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      window.location.href = 'https://multiplication-game-golf.pages.dev/';
+    event.preventDefault();
+    window.location.href = 'https://multiplication-game-golf.pages.dev/';
   });
 
   // Get the form element
@@ -347,7 +374,7 @@ function openDIS(__time_____) {
     document.querySelector(".coin-r8jfwieofheoaiol").style.left = '-70px';
     document.querySelector(".XIDboxX____").style.padding = "0px";
   }
-  
+
   setCookie("Moneyscore", Number(total_money), 765);
   animateValue('money_-__-');
   setTimeout(function() {
